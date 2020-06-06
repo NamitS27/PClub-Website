@@ -2,23 +2,27 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
+    <link rel="icon" href="/media/fav.png" />
 </head>
+
 <body>
     <h2>Core :- </h2>
     {% for ab in about %}
-        <p>{{ab.club_description}}</p>
-        <li><img src="{{ab.secretary_photo.url}}" width="100" height="100">{{ab.secretary_fn}} {{ab.secretary_ln}}</li>
-        <li><img src="{{ab.joint_secretary_photo.url}}" width="100" height="100">{{ab.joint_secretary_fn}} {{ab.joint_secretary_ln}}</li>
-        <li><img src="{{ab.treasurer_photo.url}}" width="100" height="100">{{ab.treasurer_fn}} {{ab.treasurer_ln}}</li>
-        <li>{{ab.faculty_advisor_fn}} {{ab.faculty_advisor_ln}}</li>
+    <p>{{ab.club_description}}</p>
+    <li><img src="{{ab.secretary_photo.url}}" width="100" height="100">{{ab.secretary_fn}} {{ab.secretary_ln}}</li>
+    <li><img src="{{ab.joint_secretary_photo.url}}" width="100" height="100">{{ab.joint_secretary_fn}} {{ab.joint_secretary_ln}}</li>
+    <li><img src="{{ab.treasurer_photo.url}}" width="100" height="100">{{ab.treasurer_fn}} {{ab.treasurer_ln}}</li>
+    <li>{{ab.faculty_advisor_fn}} {{ab.faculty_advisor_ln}}</li>
     {% endfor %}
     <h2>Members :-</h2>
     {% for member in members %}
-        <li>{{member.member_fn}} {{member.member_ln}}</li>
+    <li>{{member.member_fn}} {{member.member_ln}}</li>
     {% endfor %}
 </body>
+
 </html>

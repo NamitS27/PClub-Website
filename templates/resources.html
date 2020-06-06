@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resources</title>
+    <link rel="icon" href="/media/fav.png" />
 </head>
+
 <body>
-   {%for re in resource%}
-        <p>{{re.resource_topic}}</p>
-        {% for key,value in links.items %}
-            {% if key == re.resource_topic %}
-                {%if value%}
-                    {%for l in value%}
-                        <li> {{l.0}} : {{l.1}}</li>
-                    {% endfor %}
-                {%else%}
-                    <p>No links</p>
-                {% endif%}
-            {%endif%}
-        {% endfor %}
-   {%endfor%}
+    {%for re in resource%}
+    <p>{{re.resource_topic}}</p>
+    {% for key,value in links.items %} {% if key == re.resource_topic %} {%if value%} {%for l in value%}
+    <li> {{l.0}} : {{l.1}}</li>
+    {% endfor %} {%else%}
+    <p>No links</p>
+    {% endif%} {%endif%} {% endfor %} {%endfor%}
 </body>
+
 </html>
