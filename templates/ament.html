@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <link rel="icon" href="/favicon.ico"> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="media/favicon.ico"/>
+    <title>Home</title>
+</head>
+<body>
+    {% for a in announce%}
+        <img src="{{a.announcement_image.url}}" width="150" height="120">
+        <p>{{a.announcement_title}}</p>
+        <p>{{a.announcement_date}}</p>
+        <p>{{a.announcement_description}}</p>
+    {% endfor %}
+</body>
+</html> 

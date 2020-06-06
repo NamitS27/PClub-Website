@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="stylesheet" href="{% static 'css/test.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="icon" href="/media/fav.png" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            {% for event in events %}
+            <div class="col-lg-4">
+                <div class="news">
+                    <figure class="article">
+                        <a href="{{event.id}}">
+                            <img src="{{event.logo.url}}" />
+                            <figcaption>
+                                <h3>{{event.name}}</h3>
+                                <p>{{event.date}}</p>
+                            </figcaption>
+                        </a>
+                    </figure>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+
+</html>

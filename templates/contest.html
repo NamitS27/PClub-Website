@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{platform}}</title>
+    <link rel="icon" href="/media/fav.png" />
+</head>
+
+<body>
+    {% for invcon in con %}
+    <h2>{{invcon.contest_name}}</h2>
+    <li>{{invcon.contest_start}}</li>
+    <li>{{invcon.contest_end}}</li>
+    <li>{{invcon.contest_duration}}</li>
+    <li><a href="{{invcon.contest_link}}">{{invcon.contest_link}}</a></li>
+    {% endfor %}
+</body>
+
+</html>

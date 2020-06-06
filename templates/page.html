@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details</title>
+</head>
+<body>
+    <p>Name : {{event.name}}</p>
+    <p>Desc : {{event.description|safe}}</p>
+    <p>Date : {{event.date}}</p>
+    <!-- <p>Registration Available : {{event.can_register}}</p> -->
+    {% if event.feedback_link %}
+        <p>Feedback : <a href="{{event.feedback_link}}"> {{event.feedback_link}}</a></p>
+    {% endif %}
+    <p>Images : <a href="{{event.photos_link}}"> {{event.photos_link}}</a></p>
+    <p>Registration Date : {{event.registration_date}}</p>
+    {% if event.can_register %}
+        <p>Registration Link : <a href="{{event.registration_link}}">{{event.registration_link}}</a></p>
+    {% endif %}
+</body>
+</html>
