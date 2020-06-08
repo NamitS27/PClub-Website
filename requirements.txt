@@ -4,3 +4,8 @@ Pillow==7.1.2
 requests==2.23.0
 python-dateutil==2.8.1
 secure-smtplib==0.1.1
+django-summernote==0.8.11.6
+
+
+
+

@@ -1,0 +1,77 @@
+body{
+    font-family:'Nunito';
+    margin: 0;
+    background:  #030707 url('media/images/back.jpeg');
+}
+.head{
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    margin: 0 0 0 0;
+    top: -1em;
+    background: gray;
+    z-index: -1;
+}
+.foot{
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    margin: 0 0 0 0;
+    bottom: -1em;
+    background: gray;
+    z-index: -1;
+}
+.navbar{
+    width: 550px;
+    background-color: black;
+    font-weight: bold;
+    font-size: medium;
+    border-radius: 30px;
+    margin-right:20px;
+    margin-left:600px;
+    opacity: 1;
+}
+ul{
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1em;
+} 
+a{
+    text-decoration: none;
+    color:grey;
+    padding: 1em;
+    margin: 3px;
+    position: relative;
+    transition: all ease-in-out 500ms;
+    position:relative;
+    z-index: 1; 
+}
+a::after{
+    transition: all ease-in-out 500ms; 
+    position: absolute;
+    bottom: 1px;
+    top: 1px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '';
+    color:transparent;
+    background:grey;
+    height: 2px;
+    border-radius: 30px;
+    visibility: none;
+    opacity: 0;
+    z-index: -2;
+}
+a:hover::after{
+    width: 100%;
+    opacity: 1;
+    visibility: visible;
+    height: 100%;
+}
+a:hover{
+    color:black;
+}

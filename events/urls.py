@@ -9,4 +9,3 @@ urlpatterns = [
     path('',views.all_events,name="all_events"),
     path('<slug:slug>',views.view_details,name="view_details"),
 ]
-

@@ -15,5 +15,5 @@ class Events(models.Model):
     registration_date = models.DateTimeField(default=None,blank=True)
     registration_link = models.URLField(max_length=200,blank=True) 
 
-    def __str__(self):
+    def _str_(self):
         return self.name + ' ' + self.date.strftime('%Y-%m-%d')

@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'events.apps.EventsConfig',
     'django_summernote',
     'resources',
     'contact_us',
@@ -45,6 +44,7 @@ INSTALLED_APPS = [
     'competitive_programming',
     'home_announce',
     'testing',
+    'events',
 ]
 
 MIDDLEWARE = [

@@ -4,15 +4,32 @@
     <!-- <link rel="icon" href="/favicon.ico"> -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap' rel='stylesheet'>
     <link rel="icon" href="media/favicon.ico"/>
+    <link rel="stylesheet" href="static/css/ament.css">
     <title>Home</title>
 </head>
 <body>
-    {% for a in announce%}
+    <!-- {% for a in announce%}
         <img src="{{a.announcement_image.url}}" width="150" height="120">
         <p>{{a.announcement_title}}</p>
         <p>{{a.announcement_date}}</p>
         <p>{{a.announcement_description}}</p>
-    {% endfor %}
+    {% endfor %} -->
+    <div class="head">  
+    </div>
+    <div class="navbar">
+        <ul>
+          <li> <a href="#">Home</a></li>
+          <li> <a href="#">Events</a></li>
+          <li> <a href="#">CC</a></li>
+          <li> <a href="#">Resources</a></li>
+          <li> <a href="#">About</a></li>
+          <li> <a href="#">Contact</a></li>  
+        </ul>
+    </div>
+    <div class="foot">
+        <h5>Footer</h5> 
+    </div>
 </body>
 </html> 
