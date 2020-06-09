@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- <link rel="icon" href="/favicon.ico"> -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap' rel='stylesheet'>
-    <link rel="icon" href="media/favicon.ico"/>
+    <link href='https://fonts.googleapis.com/css?family=Artifika' rel='stylesheet'>
+    <link rel="icon" href="media/favicon.ico" />
     <link rel="stylesheet" href="static/css/ament.css">
     <title>Home</title>
 </head>
+
 <body>
     <!-- {% for a in announce%}
         <img src="{{a.announcement_image.url}}" width="150" height="120">
@@ -16,20 +18,33 @@
         <p>{{a.announcement_date}}</p>
         <p>{{a.announcement_description}}</p>
     {% endfor %} -->
-    <div class="head">  
+    <div class="head">
     </div>
     <div class="navbar">
         <ul>
-          <li> <a href="#">Home</a></li>
-          <li> <a href="#">Events</a></li>
-          <li> <a href="#">CC</a></li>
-          <li> <a href="#">Resources</a></li>
-          <li> <a href="#">About</a></li>
-          <li> <a href="#">Contact</a></li>  
+            <li> <a href="/">Home</a></li>
+            <li> <a href="/events">Events</a></li>
+            <li> <a href="/cp">CC</a></li>
+            <li> <a href="/resources">Resources</a></li>
+            <li> <a href="/about_us">About</a></li>
+            <li> <a href="/contact_us">Contact</a></li>
         </ul>
     </div>
+    <!-- <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6"><h5>Footer</h5></div>
+            <div class="col-lg-6"><h5>Footer</h5></div>
+        </div>
+    </div>
+     -->
     <div class="foot">
-        <h5>Footer</h5> 
+        <div class="fc">
+            <p>Created By :</p>
+            <p>Suhanee Patel</p>
+            <p>Namit Shah</p>
+        </div>
     </div>
 </body>
-</html> 
+
+</html>
+<!-- col-ld-offset-4 -->
