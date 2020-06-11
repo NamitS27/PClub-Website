@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
 header {
     position: absolute;
     top: 0px;
@@ -449,7 +450,7 @@ body.nav-active .nav__list-item:nth-child(10) {
 
 footer {
     position: fixed;
-    color: wheat;
+    color: white;
     background-color: black;
     left: 0;
     right: 0;
@@ -465,6 +466,8 @@ footer {
 footer .foot {
     /* display: inline; */
     /* width: 40px; */
+    font-family: 'Dancing Script', cursive;
+    font-size: 20px;
     margin: 0 auto;
     padding-left: 10px;
 }
