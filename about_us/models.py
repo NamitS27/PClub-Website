@@ -5,11 +5,10 @@ class About(models.Model):
     club_description = models.TextField()
     faculty_advisor_fn = models.CharField(max_length=30)
     faculty_advisor_ln = models.CharField(max_length=30)
+    faculty_advisor_photo = models.ImageField(default=None,blank=True,upload_to="images/")
     secretary_fn = models.CharField(max_length=30)
     secretary_ln = models.CharField(max_length=30)
     secretary_photo = models.ImageField(default=None,blank=True,upload_to="images/")
-    # secretary_linkedin
-    # secreatary_github
     joint_secretary_fn = models.CharField(max_length=30)
     joint_secretary_ln = models.CharField(max_length=30)
     joint_secretary_photo = models.ImageField(default=None,blank=True,upload_to="images/")
