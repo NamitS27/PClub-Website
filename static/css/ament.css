@@ -98,3 +98,17 @@ a:hover {
     font-size: small;
     padding: 0%;
 }
+
+/* a:hover {
+    color: black;
+}
+
+.fc {
+    width: 200px;
+    display: inline-flex;
+    float: left;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: small;
+    padding: 0%;
+} 
+*/
