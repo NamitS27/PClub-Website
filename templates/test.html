@@ -7,34 +7,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/test.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tt.css' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="icon" href="/media/fav.png" />
 </head>
 
 <body>
 
-    <div class="container">
-        <div class="row">
-            {% for eve in events %}
-            <div class="col-lg-4">
-                <div class="news">
-                    <figure class="article">
-                        <a href="www.google.com">
-                            <img src="{{eve.3}}" />
-                            <figcaption>
-                                <h3>{{eve.0}}</h3>
-                                <p>{{eve.1}}</p>
-                            </figcaption>
-                        </a>
-                    </figure>
+    <header>
+        <nav class="nav npc">
+            <a href="#" class="nav-item" active-color="orange">Home</a>
+            <a href="#" class="nav-item" active-color="green">Practice & contest</a>
+            <a href="#" class="nav-item" active-color="blue">Events</a>
+            <a href="#" class="nav-item" active-color="red">Resources</a>
+            <a href="#" class="nav-item" active-color="rebeccapurple">About Us</a>
+            <a href="#" class="nav-item" active-color="aqua">Contact Us</a>
+            <span class="nav-indicator"></span>
+        </nav>
+        <header class="cd-header">
+            <div class="header-wrapper">
+                <div class="logo-wrap">
+                    <a href="#" class="hover-target"><span>div</span>dev</a>
+                </div>
+                <div class="nav-but-wrap">
+                    <div class="menu-icon hover-target">
+                        <span class="menu-icon__line menu-icon__line-left"></span>
+                        <span class="menu-icon__line"></span>
+                        <span class="menu-icon__line menu-icon__line-right"></span>
+                    </div>
                 </div>
             </div>
-            {% endfor %}
+        </header>
+        <div class="nav-overlay"></div>
+        <div class="nav nmb">
+            <div class="nav__content">
+                <ul class="nav__list">
+                    <li class="nav__list-item"><a href="#" class="hover-target">Home</a></li>
+                    <li class="nav__list-item"><a href="#" class="hover-target">Practice & contest</a></li>
+                    <li class="nav__list-item"><a href="#" class="hover-target">Events</a></li>
+                    <li class="nav__list-item"><a href="#" class="hover-target">Resources</a></li>
+                    <li class="nav__list-item"><a href="#" class="hover-target">About Us</a></li>
+                    <li class="nav__list-item"><a href="#" class="hover-target">Contact Us</a></li>
+                </ul>
+            </div>
+
         </div>
-    </div>
+    </header>
+    <script>
+        const indicator = document.querySelector(".nav-indicator");
+        const items = document.querySelectorAll(".nav-item");
+
+        function handleIndicator(el) {
+            items.forEach(item => {
+                item.classList.remove("is-active");
+                item.removeAttribute("style");
+            });
+
+            indicator.style.width = `${el.offsetWidth}px`;
+            indicator.style.left = `${el.offsetLeft}px`;
+            indicator.style.backgroundColor = el.getAttribute("active-color");
+
+            el.classList.add("is-active");
+            el.style.color = el.getAttribute("active-color");
+        }
+
+        items.forEach((item, index) => {
+            item.addEventListener("click", e => {
+                handleIndicator(e.target);
+            });
+            item.classList.contains("is-active") && handleIndicator(item);
+        });
+    </script>
 </body>
 
 </html>
