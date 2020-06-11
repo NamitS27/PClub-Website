@@ -1,79 +1,70 @@
-{% load static %}
+{% extends "test.html" %}{% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <link rel="icon" href="/media/fav.png" />
-    <title>About Us</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <link rel="stylesheet" href="/static/css/about_us.css">
-</head>
-
-<body>
-    <div class="wrapper">
-        <h1>About Us</h1>
-        <div class=disc>
-            <div class="img">
-                <img src="/media/images/logo.jpeg" alt="our_team">
-            </div>
-            <div class="text">
-                <h3>Programming Club</h3><br>
-                <h4>Welcome to the Programming Club,Ahmedabad University</h4><br>
-                <h5>A computer programmer, sometimes called only programmer or more recently a coder (especially in more informal contexts), is a person who creates computer software. The term computer programmer can refer to a specialist in one area of computers,
-                    or to a generalist who writes code for many kinds of software.</h5>
-            </div>
+<!-- Title Name -->
+{% block title%} About Us {% endblock %} {% block stylesheet %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+<link rel="stylesheet" href="/static/css/about_us.css"> {% endblock %}
+<!-- Main -->
+{% block main %}
+<div class="wrapper">
+    <h1>About Us</h1>
+    <div class=disc>
+        <div class="img">
+            <img src="/media/images/logo.jpeg" alt="our_team">
         </div>
-        <h1>Our Team</h1>
-        <div class="our_team">
-            <div class="team_member">
-                <div class="member_img">
-                    <img src="{{abt.faculty_advisor_photo.url}}" alt="our_team">
-                    <div class="social_media">
-                        <p>Mentor</p>
-                    </div>
-                </div>
-                <h3>{{abt.faculty_advisor_fn}} {{abt.faculty_advisor_ln}}</h3>
-            </div>
-            <div class="team_member">
-                <div class="member_img">
-                    <img src="{{abt.secretary_photo.url}}" alt="our_team">
-                    <div class="social_media">
-                        <p>Secretary</p>
-                    </div>
-                </div>
-                <h3>{{abt.secretary_fn}} {{abt.secretary_ln}}</h3>
-            </div>
-            <div class="team_member">
-                <div class="member_img">
-                    <img src="{{abt.joint_secretary_photo.url}}" alt="our_team">
-                    <div class="social_media">
-                        <p>Joint Secretary</p>
-                    </div>
-                </div>
-                <h3>{{abt.joint_secretary_fn}} {{abt.joint_secretary_ln}}</h3>
-            </div>
-            <div class="team_member">
-                <div class="member_img">
-                    <img src="{{abt.treasurer_photo.url}}" alt="our_team">
-                    <div class="social_media">
-                        <p>Treasurer</p>
-                    </div>
-                </div>
-                <h3>{{abt.treasurer_fn}} {{abt.treasurer_ln}}</h3>
-            </div>
-        </div>
-        <h1>Other Members</h1>
-        <div class="members">
-            {% for mem in members %}
-            <p>{{mem.member_fn}} {{mem.member_ln}}</p>
-            <!-- <p>Martand javia</p> -->
-            {% endfor %}
+        <div class="text">
+            <h3>Programming Club</h3><br>
+            <h4>Welcome to the Programming Club,Ahmedabad University</h4><br>
+            <h5>A computer programmer, sometimes called only programmer or more recently a coder (especially in more informal contexts), is a person who creates computer software. The term computer programmer can refer to a specialist in one area of computers,
+                or to a generalist who writes code for many kinds of software.</h5>
         </div>
     </div>
-</body>
-
-</html>
+    <h1>Our Team</h1>
+    <div class="our_team">
+        <div class="team_member">
+            <div class="member_img">
+                <img src="{{abt.faculty_advisor_photo.url}}" alt="our_team">
+                <div class="social_media">
+                    <p>Mentor</p>
+                </div>
+            </div>
+            <h3>{{abt.faculty_advisor_fn}} {{abt.faculty_advisor_ln}}</h3>
+        </div>
+        <div class="team_member">
+            <div class="member_img">
+                <img src="{{abt.secretary_photo.url}}" alt="our_team">
+                <div class="social_media">
+                    <p>Secretary</p>
+                </div>
+            </div>
+            <h3>{{abt.secretary_fn}} {{abt.secretary_ln}}</h3>
+        </div>
+        <div class="team_member">
+            <div class="member_img">
+                <img src="{{abt.joint_secretary_photo.url}}" alt="our_team">
+                <div class="social_media">
+                    <p>Joint Secretary</p>
+                </div>
+            </div>
+            <h3>{{abt.joint_secretary_fn}} {{abt.joint_secretary_ln}}</h3>
+        </div>
+        <div class="team_member">
+            <div class="member_img">
+                <img src="{{abt.treasurer_photo.url}}" alt="our_team">
+                <div class="social_media">
+                    <p>Treasurer</p>
+                </div>
+            </div>
+            <h3>{{abt.treasurer_fn}} {{abt.treasurer_ln}}</h3>
+        </div>
+    </div>
+    <h1>Other Members</h1>
+    <div class="members">
+        {% for mem in members %}
+        <p>{{mem.member_fn}} {{mem.member_ln}}</p>
+        <!-- <p>Martand javia</p> -->
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

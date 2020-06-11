@@ -4,6 +4,8 @@ header {
     margin: 0;
     margin-top: 0;
     margin-left: 0;
+    left: 0;
+    right: 0;
     width: 100%;
     align-content: center;
     text-align: right;
@@ -17,10 +19,7 @@ header {
 
 a {
     cursor: pointer;
-}
-
-a:hover {
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 .nav.npc {
@@ -446,4 +445,26 @@ body.nav-active .nav__list-item:nth-child(10) {
 
 .cd-header {
     display: none;
+}
+
+footer {
+    position: fixed;
+    color: wheat;
+    background-color: black;
+    left: 0;
+    right: 0;
+    /* width: 100%; */
+    display: flex;
+    position: sticky;
+    height: 40px;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .foot {
+    /* display: inline; */
+    /* width: 40px; */
+    margin: 0 auto;
+    padding-left: 10px;
 }

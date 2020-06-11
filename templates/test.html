@@ -6,14 +6,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/tt.css' %}">
+    <title>{% block title %} {% endblock%}</title>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="icon" href="/media/fav.png" />
+    <link rel="stylesheet" href="{% static 'css/tt.css' %}">
+    <link rel="icon" href="/media/fav.png" /> {% block stylesheet %}{% endblock %}
 </head>
 
 <body>
-
     <header>
         <nav class="nav npc">
             <a href="#" class="nav-item" active-color="orange">Home</a>
@@ -24,35 +24,15 @@
             <a href="#" class="nav-item" active-color="aqua">Contact Us</a>
             <span class="nav-indicator"></span>
         </nav>
-        <header class="cd-header">
-            <div class="header-wrapper">
-                <div class="logo-wrap">
-                    <a href="#" class="hover-target"><span>div</span>dev</a>
-                </div>
-                <div class="nav-but-wrap">
-                    <div class="menu-icon hover-target">
-                        <span class="menu-icon__line menu-icon__line-left"></span>
-                        <span class="menu-icon__line"></span>
-                        <span class="menu-icon__line menu-icon__line-right"></span>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <div class="nav-overlay"></div>
-        <div class="nav nmb">
-            <div class="nav__content">
-                <ul class="nav__list">
-                    <li class="nav__list-item"><a href="#" class="hover-target">Home</a></li>
-                    <li class="nav__list-item"><a href="#" class="hover-target">Practice & contest</a></li>
-                    <li class="nav__list-item"><a href="#" class="hover-target">Events</a></li>
-                    <li class="nav__list-item"><a href="#" class="hover-target">Resources</a></li>
-                    <li class="nav__list-item"><a href="#" class="hover-target">About Us</a></li>
-                    <li class="nav__list-item"><a href="#" class="hover-target">Contact Us</a></li>
-                </ul>
-            </div>
-
-        </div>
     </header>
+    {% block main%}{% endblock %}
+    <footer>
+        <div class="foot">
+            Hi
+        </div>
+    </footer>
+
+    {% block javascript %}{% endblock %}
     <script>
         const indicator = document.querySelector(".nav-indicator");
         const items = document.querySelectorAll(".nav-item");
