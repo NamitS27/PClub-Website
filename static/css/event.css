@@ -1,19 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 .news .article figcaption {
     position: absolute;
 }
+
 .news .article {
     position: relative;
     border-radius: 50px;
 }
+
 .news {
     display: flex;
 }
 
 body {
     background: #24282f;
-    font-family: 'Alegreya Sans';
+    font-family: 'Source Sans Pro', sans-serif;
     margin-top: 100px;
 }
 
@@ -36,7 +37,7 @@ body {
 
 .news .article figcaption {
     font-size: 14px;
-    font-family: 'Slabo 27px', serif;
+    font-family: 'Source Sans Pro', sans-serif;
     text-shadow: 0 1px 0 rgba(51, 51, 51, 0.3);
     color: #fff;
     left: 0;
@@ -58,6 +59,13 @@ body {
     font-weight: bold;
 }
 
+.news .article figcaption p {
+    /* color: white; */
+    font-size: 24px;
+    /* margin-bottom: 0; */
+    /* font-weight: bold; */
+}
+
 .news .article:hover img,
 .news .article:focus img,
 .news .article:active img {
@@ -70,4 +78,19 @@ body {
 .news .article:active figcaption {
     opacity: 1;
     transform: none;
+}
+
+.eve {
+    display: flex;
+    margin-left: 15%;
+    padding-bottom: 20px;
+}
+
+.eve .name {
+    width: 400px;
+}
+
+.eve .name h1 {
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
 }

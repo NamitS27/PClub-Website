@@ -9,12 +9,17 @@
     <title>{% block title %} {% endblock%}</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'css/tt.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="icon" href="/media/fav.png" /> {% block stylesheet %}{% endblock %}
 </head>
 
 <body>
     <header>
+        <!-- <div class="logo">
+            <div class="img_cont">
+                <img src="/media/images/0.jpg" alt="logo" width=50 height=50>
+            </div>
+        </div> -->
         <nav class="nav npc">
             <a href="#" class="nav-item" active-color="orange">Home</a>
             <a href="#" class="nav-item" active-color="green">Practice & contest</a>
