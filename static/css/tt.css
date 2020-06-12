@@ -10,7 +10,7 @@ header {
     width: 100%;
     align-content: center;
     text-align: right;
-    background-color: black;
+    background-color: grey;
     height: 100px;
 }
 
@@ -451,7 +451,7 @@ body.nav-active .nav__list-item:nth-child(10) {
 footer {
     position: fixed;
     color: white;
-    background-color: black;
+    background-color:grey;
     left: 0;
     right: 0;
     /* width: 100%; */
