@@ -450,16 +450,14 @@ body.nav-active .nav__list-item:nth-child(10) {
 }
 
 footer {
-    position: fixed;
+    position: relative;
     background: rgb(189, 195, 199);
     background: linear-gradient(90deg, rgba(189, 195, 199, 1) 0%, rgba(44, 62, 80, 1) 50%);
-    left: 0;
-    right: 0;
     display: flex;
     /* position: sticky; */
-    /* margin-top: auto; */
-    height: 40px;
+    /* margin-top: 20px; */
     bottom: 0;
+    height: 40px;
     justify-content: center;
     align-items: center;
 }

@@ -151,7 +151,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-    width: 25px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -160,6 +160,6 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient( 45deg, #06dee1, #79ff6c);
+    background: linear-gradient( 45deg,red, #79ff6c);
     border-radius: 3px;
 }
