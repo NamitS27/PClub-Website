@@ -15,13 +15,17 @@
 
 <body>
 
-    <form action="/problems/" method="POST">{% csrf_token %}
+    <form action="problems" method="POST" id="prob-forms">{% csrf_token %}
         <p>Min Rating : <input type="number" name="min" id="min"></p>
         <p>Max Rating : <input type="number" name="max" id="max"></p>
         <p>User Name : <input type="text" name="username" id="username"></p>
         <p>Tag : <input type="text" name="tag" placeholder=" &quot ; &quot Seperated" id="tag"></p>
         <button type="submit" id = "sub_id" class="save btn btn-default">Get Questions</button>
     </form>
+
+    {%for ep in prob%}
+        <p><a href="{{ep}}">{{ep}}</a></p>
+    {% endfor %}
 
     <div>
         <p><a href="1">Codechef</a></p>
@@ -53,38 +57,23 @@
     </ul> -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        $("#sub_id").click(function getProblems() {
-            console.log("Here");
-            var minr = document.getElementById("min").value
-            var maxr = document.getElementById("max").value
-            var usrname = document.getElementById("username")
-            var tags = document.getElementById("tag")
-            console.log("hey")
-            $.ajax({
-                url: 'problems/',
-                type: "POST",
-                data: {
-                    min: minr,
-                    max: maxr,
-                    username: usrname,
-                    tag: tags,
-                },
-                // dateType = "json",
-                success: function(data) {
-                    console.log("Data");
-                    console.log(data);
-                    // var temp = {{data|safe}};
-                    // for (let i = 0; i < temp.length; i++) {
-                    //     var st = "";
-                    //     // var temp = {{prob|safe}};
-                    //     st = "<p><a href=&quot" + temp[i] + "&quot>" + temp[i] + "</a></p>";
-                    //     $("#prob").append(st);
-                    // }
-                }
-
-            });
-        });
+    <script type="text/javascript">
+       $(document).on('submit','#prob-froms',function(e){
+           e.preventDefault()
+           $.ajax({
+               type:'POST',
+               url:'/cp/problems',
+               data:{
+                    minr: $('#min').val(),
+                    maxr: $('#max').val(),
+                    username:$('#username').val(),
+                    tag:$('#tag').val(),
+               },
+               success:function(data){
+                   console.log(data)
+               }
+           });
+       });
     </script>
 
     <!-- function change_session(){

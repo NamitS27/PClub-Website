@@ -6,6 +6,6 @@ app_name = "comptetitive_programming"
 
 urlpatterns = [
     path('',contest,name="contest"),
+    path('problems',get_problems,name="get_prob"),
     path('<int:v>',show_contest,name="show_contest"),
-    path('problems',get_problems,name="problems") 
 ]

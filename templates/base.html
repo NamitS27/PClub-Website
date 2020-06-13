@@ -2,67 +2,72 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %} {% endblock%}</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <link rel="icon" href="/media/fav.png" /> {% block stylesheet %}{% endblock %}
-</head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <link rel="icon" href="/media/fav.png" />
+    {% block stylesheet %}{% endblock %}
+  </head>
 
-<body>
+  <body>
     <header>
-        <!-- <div class="logo">
+      <!-- <div class="logo">
             <div class="img_cont">
                 <img src="/media/images/0.jpg" alt="logo" width=50 height=50>
             </div>
         </div> -->
-        <nav class="nav npc">
-            <a href="#" class="nav-item" active-color="orange">Home</a>
-            <a href="#" class="nav-item" active-color="green">Practice & contest</a>
-            <a href="#" class="nav-item" active-color="blue">Events</a>
-            <a href="#" class="nav-item" active-color="red">Resources</a>
-            <a href="#" class="nav-item" active-color="rebeccapurple">About Us</a>
-            <a href="#" class="nav-item" active-color="aqua">Contact Us</a>
-            <span class="nav-indicator"></span>
-        </nav>
+      <nav class="nav npc">
+        <a href="#" class="nav-item" active-color="orange">Home</a>
+        <a href="#" class="nav-item" active-color="green">Practice & contest</a>
+        <a href="#" class="nav-item" active-color="blue">Events</a>
+        <a href="#" class="nav-item" active-color="red">Resources</a>
+        <a href="#" class="nav-item" active-color="rebeccapurple">About Us</a>
+        <a href="#" class="nav-item" active-color="aqua">Contact Us</a>    
+        <span class="nav-indicator"></span>
+      </nav>
     </header>
+    
     {% block main%}{% endblock %}
     <footer>
-        <div class="foot">
-            Created by Suhanee Patel
-        </div>
+      <div class="foot">
+        Created by Suhanee Patel
+      </div>
     </footer>
 
     {% block javascript %}{% endblock %}
     <script>
-        const indicator = document.querySelector(".nav-indicator");
-        const items = document.querySelectorAll(".nav-item");
+      const indicator = document.querySelector(".nav-indicator");
+      const items = document.querySelectorAll(".nav-item");
 
-        function handleIndicator(el) {
-            items.forEach(item => {
-                item.classList.remove("is-active");
-                item.removeAttribute("style");
-            });
-
-            indicator.style.width = `${el.offsetWidth}px`;
-            indicator.style.left = `${el.offsetLeft}px`;
-            indicator.style.backgroundColor = el.getAttribute("active-color");
-
-            el.classList.add("is-active");
-            el.style.color = el.getAttribute("active-color");
-        }
-
-        items.forEach((item, index) => {
-            item.addEventListener("click", e => {
-                handleIndicator(e.target);
-            });
-            item.classList.contains("is-active") && handleIndicator(item);
+      function handleIndicator(el) {
+        items.forEach((item) => {
+          item.classList.remove("is-active");
+          item.removeAttribute("style");
         });
-    </script>
-</body>
 
+        indicator.style.width = `${el.offsetWidth}px`;
+        indicator.style.left = `${el.offsetLeft}px`;
+        indicator.style.backgroundColor = el.getAttribute("active-color");
+
+        el.classList.add("is-active");
+        el.style.color = el.getAttribute("active-color");
+      }
+
+      items.forEach((item, index) => {
+        item.addEventListener("click", (e) => {
+          handleIndicator(e.target);
+        });
+        item.classList.contains("is-active") && handleIndicator(item);
+      });
+    </script>
+  </body>
 </html>
