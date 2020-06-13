@@ -4,6 +4,7 @@ from other_files import suggest_problems as sp
 from datetime import datetime,timezone,timedelta
 from .models import Platform,Contest,Server_time
 from dateutil.relativedelta import relativedelta
+from django.http import JsonResponse
 import time
 import pytz
 
@@ -42,9 +43,18 @@ def define_table():
     st.server_update_time = datetime.now(tz)
     st.save()
 
+def get_problems(request):
+    r1 = int(request.POST['min'])
+    r2 = int(request.POST['max'])
+    cf = request.POST['username']
+    tag = request.POST['tag']
+    # print(tag)
+    prob = sp.get_problems(r1,r2,cf,tag)
+    # print(prob)
+    return JsonResponse({'prob':prob})
 
 def contest(request):
-    if request.method == 'GET':
+    # if request.method == 'GET':
         get_time = Server_time.objects.all()
         ser_tm = None
         for t in get_time:
@@ -54,15 +64,15 @@ def contest(request):
         if time_interval>1000:
             define_table()
         return render(request,'cp.html')
-    else:
-        r1 = int(request.POST['min'])
-        r2 = int(request.POST['max'])
-        cf = request.POST['username']
-        tag = request.POST['tag']
-        # print(tag)
-        prob = sp.get_problems(r1,r2,cf,tag)
-        # print(prob)
-        return render(request,'cp.html',{'prob':prob})
+    # else:
+    #     r1 = int(request.POST['min'])
+    #     r2 = int(request.POST['max'])
+    #     cf = request.POST['username']
+    #     tag = request.POST['tag']
+    #     # print(tag)
+    #     prob = sp.get_problems(r1,r2,cf,tag)
+    #     # print(prob)
+    #     return render(request,'cp.html',{'prob':prob})
 
 
 def get_contest(which_contest):
