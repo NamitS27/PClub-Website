@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Competitive Programming</title>
     <!-- <link rel="stylesheet" href="{% static 'css/styles.css' %}"> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
     <link rel="icon" href="/media/fav.png" />
 
 
@@ -15,22 +15,13 @@
 
 <body>
 
-    <!-- <form action="getProblems()" method="POST">{% csrf_token %} -->
-    <p>Min Rating : <input type="number" name="min" id="min"></p>
-    <p>Max Rating : <input type="number" name="max" id="max"></p>
-    <p>User Name : <input type="text" name="username" id="username"></p>
-    <p>Tag : <input type="text" name="tag" placeholder=" &quot ; &quot Seperated" id="tag"></p>
-    <button id = "sub_id" class="save btn btn-default">Get Questions</button>
-    <!-- </form> -->
-
-
-    <div class="problems" id="prob">
-        <!-- {% for ep in prob%}
-        <p><a href="{{ep}}">{{ep}}</a></p>
-        {% endfor %} -->
-    </div>
-
-
+    <form action="/problems/" method="POST">{% csrf_token %}
+        <p>Min Rating : <input type="number" name="min" id="min"></p>
+        <p>Max Rating : <input type="number" name="max" id="max"></p>
+        <p>User Name : <input type="text" name="username" id="username"></p>
+        <p>Tag : <input type="text" name="tag" placeholder=" &quot ; &quot Seperated" id="tag"></p>
+        <button type="submit" id = "sub_id" class="save btn btn-default">Get Questions</button>
+    </form>
 
     <div>
         <p><a href="1">Codechef</a></p>
@@ -61,7 +52,7 @@
         </li>
     </ul> -->
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $("#sub_id").click(function getProblems() {
             console.log("Here");
