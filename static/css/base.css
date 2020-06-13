@@ -102,7 +102,7 @@ footer {
   margin-top: auto;
   height: 40px;
   bottom: 0;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -110,8 +110,8 @@ footer .foot {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 20px;
   color: whitesmoke;
-  margin: 0 auto;
-  padding-left: 10px;
+  /* margin: 0 auto; */
+  padding: 10px;
 }
 
 .logo {
