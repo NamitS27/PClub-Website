@@ -149,20 +149,3 @@ body {
     /* padding: 0px 505px; */
     /* justify-content: left; */
 }
-
-<<<<<<< HEAD
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    border: 7px solid #232943;
-    box-shadow: inset 0 0 2.5px 2px rgba(0, 0, 0, 0.5);
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient( 45deg,red, #79ff6c);
-    border-radius: 3px;
-}
-=======
->>>>>>> 076becf272ba1c459c2a91f2dc399c41c3624909

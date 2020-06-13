@@ -29,7 +29,7 @@ header {
   position: relative;
   overflow: hidden;
   max-width: 100%;
-  background-color: black;
+  background-color: #111;
   margin-right: 40px;
   margin-top: 20px;
   padding: 0 20px;
@@ -124,22 +124,9 @@ footer .foot {
   justify-content: right;
 }
 
-<<<<<<< HEAD
-footer {
-    position: relative;
-    background: rgb(189, 195, 199);
-    background: linear-gradient(90deg, rgba(189, 195, 199, 1) 0%, rgba(44, 62, 80, 1) 50%);
-    display: flex;
-    /* position: sticky; */
-    /* margin-top: 20px; */
-    bottom: 0;
-    height: 40px;
-    justify-content: center;
-    align-items: center;
-=======
 ::-webkit-scrollbar {
-  width: 25px;
->>>>>>> 076becf272ba1c459c2a91f2dc399c41c3624909
+  width: 15px;
+  visibility: visible;
 }
 
 ::-webkit-scrollbar-track {
@@ -148,6 +135,6 @@ footer {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, #06dee1, #79ff6c);
+  background: linear-gradient(45deg, blue,crimson);
   border-radius: 3px;
 }
