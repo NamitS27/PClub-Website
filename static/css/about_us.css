@@ -150,6 +150,7 @@ body {
     /* justify-content: left; */
 }
 
+<<<<<<< HEAD
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -163,3 +164,5 @@ body {
     background: linear-gradient( 45deg,red, #79ff6c);
     border-radius: 3px;
 }
+=======
+>>>>>>> 076becf272ba1c459c2a91f2dc399c41c3624909

@@ -1,0 +1,18 @@
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main .right-side {
+  width: 14%;
+  height: 100vh;
+  background-color: palegoldenrod;
+}
+
+.main .left-side-bar {
+  width: 86%;
+  height: 100vh;
+  background-color: greenyellow;
+}
+/*# sourceMappingURL=resources.css.map */
