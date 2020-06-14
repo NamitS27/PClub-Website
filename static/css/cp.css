@@ -13,6 +13,7 @@ body {
     display: flex;
 }
 .main .get_cont {
+    overflow-y:auto;
     width: 70%;
     height: 100%;
     background-color:#111;
@@ -21,6 +22,10 @@ body {
     width: 30%;
     height: 100%;
     background-color:gray;
+}
+
+.main .get_que .prob{
+    color: black;
 }
 .cards-list {
     z-index: 0;

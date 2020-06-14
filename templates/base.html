@@ -19,13 +19,13 @@
   </head>
 
   <body>
-    <header>
+    <!-- <header> -->
       <!-- <div class="logo">
             <div class="img_cont">
                 <img src="/media/images/0.jpg" alt="logo" width=50 height=50>
             </div>
         </div> -->
-        <nav class="nav npc">
+        <!-- <nav class="nav npc">
             <a href="" class="nav-item" active-color="orange">Home</a>
             <a href="/cp" class="nav-item" active-color="green">Practice & contest</a>
             <a href="/events" class="nav-item" active-color="blue">Events</a>
@@ -34,7 +34,34 @@
             <a href="/contact_us" class="nav-item" active-color="aqua">Contact Us</a>
             <span class="nav-indicator"></span>
         </nav>
-    </header>
+    </header> -->
+
+    <section class="navigation">
+    <div class="nav-container">
+      <div class="brand">
+        <a href="#!">Programming Club</a>
+      </div>
+      <nav>
+        <div class="nav-mobile">
+          <a id="nav-toggle" href="#!"><span></span></a>
+        </div>
+        <ul class="nav-list">
+          <!-- Setting the links to #! will ensure that no action takes place on click. -->
+          <li><a href="#!">Home</a></li>
+          <li><a href="#!">About</a></li>
+          <li><a href="#!">Services</a>
+            <ul class="nav-dropdown">
+              <li><a href="#!">Web Design</a></li>
+              <li><a href="#!">Web Development</a></li>
+              <li><a href="#!">Graphic Design</a></li>
+            </ul>
+          </li>
+          <li><a href="#!">Pricing</a></li>
+          <li><a href="#!">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    </section>
     
     {% block main%}{% endblock %}
     <footer>
@@ -45,29 +72,27 @@
 
     {% block javascript %}{% endblock %}
     <script>
-      const indicator = document.querySelector(".nav-indicator");
-      const items = document.querySelectorAll(".nav-item");
+        $(document).ready(function(){
+        $("#mobile_nav").click(function(){
+          
+          //toggles nav and ensures other elements play nice too
+          if($("#primary_nav").css('left') < "0px"){
+            $("#primary_nav").animate({left: "0px"}, 200);
+            $("#wrapper_main_content").animate({left: "150px"}, 200);
+            $("#wrapper_main_content").css("overflow-y","hidden");
+            $("body").css("overflow-x","hidden");
+            $("#primary_nav").css("overflow-y","hidden");
+          }else{
+            $("#primary_nav").animate({left: "-115px"}, 200);
+            $("#wrapper_main_content").animate({left: "0px"}, 200);
+            $("#wrapper_main_content").css("overflow-y","hidden");
+            $("body").css("overflow-x","hidden");
+            
+          }
 
-      function handleIndicator(el) {
-        items.forEach((item) => {
-          item.classList.remove("is-active");
-          item.removeAttribute("style");
         });
-
-        indicator.style.width = `${el.offsetWidth}px`;
-        indicator.style.left = `${el.offsetLeft}px`;
-        indicator.style.backgroundColor = el.getAttribute("active-color");
-
-        el.classList.add("is-active");
-        el.style.color = el.getAttribute("active-color");
-      }
-
-      items.forEach((item, index) => {
-        item.addEventListener("click", (e) => {
-          handleIndicator(e.target);
-        });
-        item.classList.contains("is-active") && handleIndicator(item);
-      });
+        
+      });//end
     </script>
   </body>
 </html>

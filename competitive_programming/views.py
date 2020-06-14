@@ -34,10 +34,11 @@ def define_table():
             events = []
             cnt += 1
             duration = str(timedelta(seconds=event['duration']))
+            # print(cl.change_time(event['start']),cl.change_time(event['end']))
             start,end = cl.change_time(event['start']),cl.change_time(event['end'])
             name = event['event']
             link = event['href']
-            cts = Contest(contest_name=name,contest_duration=duration,contest_start=start.replace(tzinfo=tz),contest_end=end.replace(tzinfo=tz),contest_link=link,contest_id=pt)
+            cts = Contest(contest_name=name,contest_duration=duration,contest_start=start,contest_end=end,contest_link=link,contest_id=pt)
             cts.save()
     st = Server_time()
     st.server_update_time = datetime.now(tz)
@@ -62,7 +63,7 @@ def contest(request):
         ser_tm = t.server_update_time
     time_interval = int((datetime.now(tz)-ser_tm).total_seconds())
     # print(time_interval)
-    if time_interval>1000:
+    if time_interval>100:
         define_table()
     return render(request,'cp.html')
     # else:

@@ -1,0 +1,125 @@
+{% extends "base.html" %}{% load static %}
+{% block title%} CP {% endblock %}
+
+{% block stylesheet %}
+    <link rel="icon" href="/media/fav.png" />
+    <link rel="stylesheet" href="/static/css/cp.css"> 
+{% endblock %}
+
+{% block main %}
+    <div class="main">
+        <div class="get_cont">
+            <div class="cards-list">
+                <div class="card">
+                    <div class="card_image"> 
+                        <a href="1"><img src="/media/images/chef.png" /></a> 
+                    </div>
+                    <!-- <div class="card_title">
+                        <p>Code Chef</p>
+                    </div> -->
+                </div>
+                <div class="card">
+                    <div class="card_image">
+                        <a href="2"><img src="/media/images/cf.jpg" /></a>
+                    </div>
+                    <!-- <div class="card_title">
+                        <p>Code Forces</p>
+                    </div> -->
+                </div>
+                <div class="card">
+                    <div class="card_image">
+                        <a href="3"> <img src="/media/images/atcoder.png" /></a>
+                    </div>
+                    <!-- <div class="card_title">
+                        <p>AtCoder</p>
+                    </div> -->
+                </div>
+                <div class="card">
+                    <div class="card_image">
+                        <a href="4"><img src="/media/images/tc.jpg" /></a>
+                    </div>
+                    <!-- <div class="card_title">
+                        <p>TopCoder</p>
+                    </div> -->
+                </div>
+                <div class="card">
+                    <div class="card_image">
+                        <a href="5"><img src="/media//images/hr.jpg" /></a> 
+                    </div>
+                    <!-- <div class="card_title">
+                      <p>Hackerrank</p>
+                    </div> -->
+              </div>
+              <div class="card">
+                    <div class="card_image">
+                        <a href="6"><img src="/media//images/he.png" /></a>
+                    </div>
+                    <!-- <div class="card_title">
+                      <p>Hackerearth</p>
+                    </div> -->
+              </div>
+              <div class="card">
+                    <div class="card_image">
+                        <a href="7"><img src="/media/images/google.png" /></a>
+                    </div>
+                    <!-- <div class="card_title">
+                      <p>Google</p>
+                    </div> -->
+              </div>
+                    
+            </div>
+        </div>
+        <div class="get_que">
+            <form method="POST" id="prob-form">{% csrf_token %}
+                <p>Min Rating : <input type="number" name="min" id="min"></p>
+                <p>Max Rating : <input type="number" name="max" id="max"></p>
+                <p>User Name : <input type="text" name="username" id="username"></p>
+                <p>Tag : <input type="text" name="tag" placeholder=" &quot ; &quot Seperated" id="tag"></p>
+                <button type="button" id = "sub_id" class="save btn btn-default">Get Questions</button>
+            </form>
+
+            <div class="prob" id="p">
+            </div>
+        </div>
+        
+    </div>  
+
+
+{% endblock %}
+    <!-- <p style="color:white">{{timestamp}}</p>
+    <ul id="countdown" data-time-upto="{{timestamp}}">
+        <li id="days">
+            <div class="number">00</div>
+            <div class="label">D</div>
+        </li>
+        <li id="hours">
+            <div class="number">00</div>
+            <div class="label">H</div>
+        </li>
+        <li id="minutes">
+            <div class="number">00</div>
+            <div class="label">M</div>
+        </li>
+        <li id="seconds">
+            <div class="number">00</div>
+            <div class="label">S</div>
+        </li>
+    </ul> -->
+{% block javascript %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+       $('#sub_id').click(function(e){
+           $.ajax({
+               type:'POST',
+               url:'/cp/problems',
+               data:$('#prob-form').serialize(),
+               success:function(data){
+                   console.log(data['prob']);
+                   $('#p').append("<p>" + data['prob'][0] + "</p>");
+                   $('#p').append("<p>" + data['prob'][1] + "</p>");
+                   document.getElementById("prob-form").reset();
+               }
+           });
+       });
+    </script>
+{% endblock %}

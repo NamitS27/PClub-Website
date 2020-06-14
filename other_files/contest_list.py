@@ -14,6 +14,7 @@ def geturl(site,username='namit27',api_key='6192bb33c473389cb10a4fa954d1b21276f8
     url = "https://clist.by/api/v1/json/contest/?resource__name={}&start__gte={}&end__lt={}&order_by=end&username={}&api_key={}".format(site,date,end,username,api_key)
     response = requests.request("GET",url)
     texting = response.text
+    # print(json.dumps(json.loads(texting),indent=2))
     return json.loads(texting)
 
 def change_time(time):
