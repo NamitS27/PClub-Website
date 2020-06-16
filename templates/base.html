@@ -39,8 +39,8 @@
     <nav class="menu">
       
       <ol>
-        <li class="menu-item"><a class="menu-item-links" href="#0">Home</a></li>
-        <li class="menu-item"><a class="menu-item-links" href="#0">Resources</a></li>
+        <li class="menu-item"><a class="menu-item-links" href="/home">Home</a></li>
+        <li class="menu-item"><a class="menu-item-links" href="{% url 'list_resources' %}">Resources</a></li>
         <li class="menu-item">
           <a class="menu-item-links" href="#0"
             >Events
@@ -96,24 +96,24 @@
             </svg>
           </a>
           <ol class="sub-menu">
-            <li class="sub-menu-item"><a class="menu-item-links" href="#0">Upcoming Events</a></li>
-            <li class="sub-menu-item"><a class="menu-item-links" href="#0">Live Events</a></li>
-            <li class="sub-menu-item"><a class="menu-item-links" href="#0">Past Events</a></li>
+            <li class="sub-menu-item"><a class="menu-item-links" href="/events/upcoming_events">Upcoming Events</a></li>
+            <li class="sub-menu-item"><a class="menu-item-links" href="/events/live_events">Live Events</a></li>
+            <li class="sub-menu-item"><a class="menu-item-links" href="/events/past_events">Past Events</a></li>
           </ol>
         </li>
-        <li class="menu-item"><a class="menu-item-links" href="#0">Competitive Programming</a></li>
-        <li class="menu-item"><a class="menu-item-links" href="#0">About Us</a></li>
-        <li class="menu-item"><a class="menu-item-links" href="#0">Contact Us</a></li>
+        <li class="menu-item"><a class="menu-item-links" href="/cp">Competitive Programming</a></li>
+        <li class="menu-item"><a class="menu-item-links" href="/about_us">About Us</a></li>
+        <li class="menu-item"><a class="menu-item-links" href="/contact_us">Contact Us</a></li>
       </ol>
       <span></span>
     </nav>
 
     {% block main%}{% endblock %}
-    <footer>
+    <!-- <footer>
       <div class="foot">
         Created by Suhanee Patel
       </div>
-    </footer>
+    </footer> -->
 
     {% block javascript %}{% endblock %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>

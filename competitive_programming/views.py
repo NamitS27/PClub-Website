@@ -44,8 +44,29 @@ def define_table():
     st.server_update_time = datetime.now(tz)
     st.save()
 
-def get_problems(request):
-    if request.method == 'POST':
+# def get_problems(request):
+#     if request.method == 'POST':
+#         r1 = int(request.POST['min'])
+#         r2 = int(request.POST['max'])
+#         cf = request.POST['username']
+#         tag = request.POST['tag']
+#         # print(tag)
+#         prob = sp.get_problems(r1,r2,cf,tag)
+#         # print(prob)
+#         return JsonResponse({'prob':prob})
+
+def contest(request):
+    if request.method == 'GET':
+        get_time = Server_time.objects.all()
+        ser_tm = None
+        for t in get_time:
+            ser_tm = t.server_update_time
+        time_interval = int((datetime.now(tz)-ser_tm).total_seconds())
+        # print(time_interval)
+        if time_interval>10000:
+            define_table()
+        return render(request,'cp_prev.html')
+    elif request.is_ajax():
         r1 = int(request.POST['min'])
         r2 = int(request.POST['max'])
         cf = request.POST['username']
@@ -55,26 +76,6 @@ def get_problems(request):
         # print(prob)
         return JsonResponse({'prob':prob})
 
-def contest(request):
-    # if request.method == 'GET':
-    get_time = Server_time.objects.all()
-    ser_tm = None
-    for t in get_time:
-        ser_tm = t.server_update_time
-    time_interval = int((datetime.now(tz)-ser_tm).total_seconds())
-    # print(time_interval)
-    if time_interval>10000:
-        define_table()
-    return render(request,'cp.html')
-    # else:
-    #     r1 = int(request.POST['min'])
-    #     r2 = int(request.POST['max'])
-    #     cf = request.POST['username']
-    #     tag = request.POST['tag']
-    #     # print(tag)
-    #     prob = sp.get_problems(r1,r2,cf,tag)
-    #     # print(prob)
-    #     return render(request,'cp.html',{'prob':prob})
 
 
 def get_contest(which_contest):

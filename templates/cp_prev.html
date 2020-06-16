@@ -111,7 +111,7 @@
        $('#sub_id').click(function(e){
            $.ajax({
                type:'POST',
-               url:'/cp/problems',
+               url:"{% url 'contest' %}",
                data:$('#prob-form').serialize(),
                success:function(data){
                    console.log(data['prob']);

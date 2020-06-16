@@ -11,7 +11,7 @@ urlpatterns = [
     path('contact_us/',include("contact_us.urls")),
     path('about_us/',include("about_us.urls")),
     path('cp/',include("competitive_programming.urls")),
-    path('',include("home_announce.urls")),
+    path('home/',include("home_announce.urls")),
     path('testing/',include("testing.urls")),
 ]
 

@@ -16,7 +16,7 @@ body {
     background: #24282f;
     font-family: 'Source Sans Pro', sans-serif;
     padding-bottom: 50px;
-    /* margin-top: 100px; */
+    margin-top: 50px;
 }
 
 .news {
@@ -38,7 +38,7 @@ body {
 
 #name{
     padding-top: 20px;
-    padding-left: 50px;
+    padding-left: 40px;
     font-family: 'Source Sans Pro', sans-serif;
     color: white;
     font-size: 40px;
