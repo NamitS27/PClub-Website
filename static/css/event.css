@@ -104,3 +104,30 @@ body {
     color: white;
     font-family: 'Source Sans Pro', sans-serif;
 }
+.bg-modal{
+    height: 100%;
+    width:100%;
+    background-color: rgba(6, 18, 53, 0.6);
+    position: absolute;
+    top :0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display:none;
+}
+.modal-content{
+    position: relative;
+    width :600px;
+    height:500px;
+    background-color: #fff;
+    opacity: 1;
+    text-align: center;
+}
+.close{
+    position: absolute;
+    top: 0;
+    right:14px;
+    font-size: 45px;
+    transform: rotate(45deg);
+    color: black;
+}

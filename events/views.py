@@ -38,9 +38,9 @@ def past_events(request):
     return render(request,"event.html",content)
 
 
-def view_details(request,slug):
-    event_obj = get_object_or_404(Events,pk=slug) 
-    data = {
-        "event" : event_obj,
-    }
-    return render(request,"page.html",data)
+# def view_details(request,slug):
+#     event_obj = get_object_or_404(Events,pk=slug) 
+#     data = {
+#         "event" : event_obj,
+#     }
+#     return render(request,"page.html",data)
