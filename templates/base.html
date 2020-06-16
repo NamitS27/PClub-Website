@@ -20,12 +20,12 @@
 
   <body>
     <!-- <header> -->
-      <!-- <div class="logo">
+    <!-- <div class="logo">
             <div class="img_cont">
                 <img src="/media/images/0.jpg" alt="logo" width=50 height=50>
             </div>
         </div> -->
-        <!-- <nav class="nav npc">
+    <!-- <nav class="nav npc">
             <a href="" class="nav-item" active-color="orange">Home</a>
             <a href="/cp" class="nav-item" active-color="green">Practice & contest</a>
             <a href="/events" class="nav-item" active-color="blue">Events</a>
@@ -36,33 +36,78 @@
         </nav>
     </header> -->
 
-    <section class="navigation">
-    <div class="nav-container">
-      <div class="brand">
-        <a href="#!">Programming Club</a>
-      </div>
-      <nav>
-        <div class="nav-mobile">
-          <a id="nav-toggle" href="#!"><span></span></a>
-        </div>
-        <ul class="nav-list">
-          <!-- Setting the links to #! will ensure that no action takes place on click. -->
-          <li><a href="#!">Home</a></li>
-          <li><a href="#!">About</a></li>
-          <li><a href="#!">Services</a>
-            <ul class="nav-dropdown">
-              <li><a href="#!">Web Design</a></li>
-              <li><a href="#!">Web Development</a></li>
-              <li><a href="#!">Graphic Design</a></li>
-            </ul>
-          </li>
-          <li><a href="#!">Pricing</a></li>
-          <li><a href="#!">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-    </section>
-    
+    <nav class="menu">
+      
+      <ol>
+        <li class="menu-item"><a class="menu-item-links" href="#0">Home</a></li>
+        <li class="menu-item"><a class="menu-item-links" href="#0">Resources</a></li>
+        <li class="menu-item">
+          <a class="menu-item-links" href="#0"
+            >Events
+            <svg
+              version="1.1"
+              class="plus-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 18 18"
+            >
+              <line
+                fill="none"
+                stroke-width="4"
+                stroke-linecap="round"
+                stroke-miterlimit="10"
+                x1="10"
+                y1="9"
+                x2="17"
+                y2="9"
+              />
+              <line
+                fill="none"
+                stroke-width="4"
+                stroke-linecap="round"
+                stroke-miterlimit="10"
+                x1="9"
+                y1="9"
+                x2="9"
+                y2="1"
+              />
+              <g id="lineGroup_1">
+                <line
+                  fill="none"
+                  stroke-width="4"
+                  stroke-linecap="round"
+                  stroke-miterlimit="10"
+                  x1="1"
+                  y1="9"
+                  x2="8"
+                  y2="9"
+                />
+                <line
+                  fill="none"
+                  stroke-width="4"
+                  stroke-linecap="round"
+                  stroke-miterlimit="10"
+                  x1="9"
+                  y1="17"
+                  x2="9"
+                  y2="9"
+                />
+              </g>
+            </svg>
+          </a>
+          <ol class="sub-menu">
+            <li class="sub-menu-item"><a class="menu-item-links" href="#0">Upcoming Events</a></li>
+            <li class="sub-menu-item"><a class="menu-item-links" href="#0">Live Events</a></li>
+            <li class="sub-menu-item"><a class="menu-item-links" href="#0">Past Events</a></li>
+          </ol>
+        </li>
+        <li class="menu-item"><a class="menu-item-links" href="#0">Competitive Programming</a></li>
+        <li class="menu-item"><a class="menu-item-links" href="#0">About Us</a></li>
+        <li class="menu-item"><a class="menu-item-links" href="#0">Contact Us</a></li>
+      </ol>
+      <span></span>
+    </nav>
+
     {% block main%}{% endblock %}
     <footer>
       <div class="foot">
@@ -71,28 +116,53 @@
     </footer>
 
     {% block javascript %}{% endblock %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
     <script>
-        $(document).ready(function(){
-        $("#mobile_nav").click(function(){
-          
-          //toggles nav and ensures other elements play nice too
-          if($("#primary_nav").css('left') < "0px"){
-            $("#primary_nav").animate({left: "0px"}, 200);
-            $("#wrapper_main_content").animate({left: "150px"}, 200);
-            $("#wrapper_main_content").css("overflow-y","hidden");
-            $("body").css("overflow-x","hidden");
-            $("#primary_nav").css("overflow-y","hidden");
-          }else{
-            $("#primary_nav").animate({left: "-115px"}, 200);
-            $("#wrapper_main_content").animate({left: "0px"}, 200);
-            $("#wrapper_main_content").css("overflow-y","hidden");
-            $("body").css("overflow-x","hidden");
-            
-          }
+      let tl = new TimelineLite(),
+        links = document.querySelectorAll(".menu-item"),
+        pIcon = document.querySelectorAll(".plus-icon");
+      tl.staggerFromTo(
+        links,
+        0.4,
+        { autoAlpha: 0 },
+        { autoAlpha: 1, ease: Sine.easeInOut },
+        0.2
+      );
 
+      links[2].addEventListener("mouseenter", function () {
+        TweenMax.to(pIcon[0], 0.15, { rotation: -45, ease: Power1.easeIn });
+        TweenMax.to("#lineGroup_1", 0.2, {
+          attr: { "stroke-dashoffset": "8", "stroke-dasharray": "8" },
+          ease: Power1.easeIn,
         });
-        
-      });//end
+      });
+      links[2].addEventListener("mouseleave", function () {
+        TweenMax.to(pIcon[0], 0.15, { rotation: 0, ease: Power1.easeIn });
+        TweenMax.to("#lineGroup_1", 0.2, {
+          attr: { "stroke-dashoffset": "0", "stroke-dasharray": "0" },
+          ease: Power1.easeIn,
+        });
+      });
+      links[3].addEventListener("mouseenter", function () {
+        TweenMax.to(pIcon[1], 0.15, { rotation: -45, ease: Power1.easeIn });
+        TweenMax.to("#lineGroup_2", 0.2, {
+          attr: { "stroke-dashoffset": "8", "stroke-dasharray": "8" },
+          ease: Power1.easeIn,
+        });
+      });
+      links[3].addEventListener("mouseleave", function () {
+        TweenMax.to(pIcon[1], 0.15, { rotation: 0, ease: Power1.easeIn });
+        TweenMax.to("#lineGroup_2", 0.2, {
+          attr: { "stroke-dashoffset": "0", "stroke-dasharray": "0" },
+          ease: Power1.easeIn,
+        });
+      });
+
+      const menuToggle = document.querySelector(".menu span");
+      const menu = document.querySelector(".menu");
+      menuToggle.addEventListener("click", function () {
+        menu.classList.toggle("open");
+      });
     </script>
   </body>
 </html>

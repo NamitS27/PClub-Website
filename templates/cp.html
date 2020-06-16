@@ -1,11 +1,53 @@
-{% extends "base.html" %}{% load static %}
-{% block title%} CP {% endblock %}
-
-{% block stylesheet %}
-    <link rel="icon" href="/media/fav.png" />
-    <link rel="stylesheet" href="/static/css/cp.css"> 
-{% endblock %}
-
-{% block main %}
-    <div></div>
+{% extends "base.html" %}{% load static %} {% block title%} CP {% endblock %} 
+{%block stylesheet %}
+<link rel="icon" href="/media/fav.png" />
+<link rel="stylesheet" href="/static/css/competitive.css" />
+{% endblock %} {% block main %}
+<div class="main-container">
+  <div id="check">
+    <div class="clist">
+      <div id="butt">
+        <button type="button" id="but">Submit</button>
+      </div>
+      <div class="name" style="height: 100px;">
+        <a href="#"
+          ><img src="{% static 'images/cc.png' %}" style="height: 100%;"
+        /></a>
+      </div>
+      <div class="name" style="height: 100px;">
+        <a href="#"
+          ><img src="{% static 'images/cf.png' %}" style="height: 100%;"
+        /></a>
+      </div>
+      <div class="name" style="height: 100px;">
+        <a href="#"
+          ><img src="{% static 'images/ac.png' %}" style="height: 100%;"
+        /></a>
+      </div>
+      <div class="name" style="height: 100px;">
+        <a href="#"
+          ><img src="{% static 'images/hr.png' %}" style="height: 100%;"
+        /></a>
+      </div>
+      <div class="name" style="height: 100px;">
+        <a href="#"
+          ><img src="{% static 'images/he.png' %}" style="height: 100%;"
+        /></a>
+      </div>
+      <div class="name" style="height: 100px;">
+        <a href="#"
+          ><img src="{% static 'images/Google.png' %}" style="height: 100%;"
+        /></a>
+      </div>
+      <div class="name" style="height: 100px;">
+        <a href="#"
+          ><img src="{% static 'images/tp.png' %}" style="height: 100%;"
+        /></a>
+      </div>
+    </div>
+  </div>
+  <div class="ctst" style="color: black;">
+    Second Part
+  </div>
+</div>
 {% endblock %}

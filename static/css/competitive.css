@@ -1,0 +1,68 @@
+.main-container {
+  min-height: 100vh;
+}
+
+.main-container #check {
+  padding-bottom: 20px;
+  position: fixed;
+  left: 0;
+  top: 50px;
+  bottom: 0px;
+  width: 24%;
+  overflow-y: auto;
+  overflow-y: scroll;
+  scrollbar-color: #585858 black;
+  scrollbar-width: thin;
+}
+
+.main-container #check .clist {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: black;
+  margin-bottom: 32px;
+}
+
+.main-container #check .clist #butt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 40%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: blueviolet;
+}
+
+.main-container #check .clist #butt #but {
+  padding: 0px 40px;
+}
+
+.main-container #check .clist .name {
+  margin-bottom: 25px;
+}
+
+.main-container #check .clist .name a {
+  margin-bottom: 10px;
+}
+
+.main-container #check .clist .name a img {
+  border-radius: 20px;
+}
+
+.main-container .ctst {
+  margin-left: 20%;
+  height: 200vh;
+}
+/*# sourceMappingURL=competitive.css.map */
