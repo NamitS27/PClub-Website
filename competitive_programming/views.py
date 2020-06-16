@@ -65,7 +65,7 @@ def contest(request):
         # print(time_interval)
         if time_interval>10000:
             define_table()
-        return render(request,'cp_prev.html')
+        return render(request,'cp.html')
     elif request.is_ajax():
         r1 = int(request.POST['min'])
         r2 = int(request.POST['max'])
