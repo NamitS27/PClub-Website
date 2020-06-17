@@ -46,17 +46,6 @@ def define_table():
     st.server_update_time = datetime.now(tz)
     st.save()
 
-# def get_problems(request):
-#     if request.method == 'POST':
-#         r1 = int(request.POST['min'])
-#         r2 = int(request.POST['max'])
-#         cf = request.POST['username']
-#         tag = request.POST['tag']
-#         # print(tag)
-#         prob = sp.get_problems(r1,r2,cf,tag)
-#         # print(prob)
-#         return JsonResponse({'prob':prob})
-
 @csrf_exempt
 def contest(request):
     if request.method == 'GET':
@@ -68,14 +57,15 @@ def contest(request):
         # print(time_interval)
         if time_interval>10000:
             define_table()
-        return render(request,'cp_prev.html')
+        return render(request,'cp.html')
     elif request.is_ajax():
         if request.POST['choose']=="contests":
             platform_name,contests = get_contest(int(request.POST['id']))
-            contest = [{'name': cont.contest_name, 'start': cont.contest_start,'end':cont.contest_end,'duration':cont.contest_duration,'link':cont.contest_link} for cont in contests]
+            contest = [{'name': cont.contest_name, 'start': str(cont.contest_start)[:19],'end':str(cont.contest_end)[:19],'duration':cont.contest_duration,'link':cont.contest_link} for cont in contests]
             content ={
                 'platform':platform_name,
                 'contest':contest,
+                # 'number_of_contest':len(contest),
             }
             return JsonResponse(content)
         else:

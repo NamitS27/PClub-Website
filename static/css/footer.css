@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+.footer {
+  background-color: #ba25ff;
+}
+
+.footer .footer-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+}
+
+.footer .footer-container .footer-right {
+  width: 100%;
+}
+
+.footer .footer-container .footer-right p {
+  position: relative;
+  top: 50%;
+  font-size: 14px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: #000000;
+  padding: 20px 30px;
+  text-align: center;
+}
+
+@media (min-width: 820px) {
+  .footer .footer-container .footer-right {
+    width: 50%;
+  }
+  .footer .footer-container .footer-right p {
+    text-align: right;
+  }
+}
+
+.footer .footer-container .footer-left {
+  width: 50%;
+}
+
+.footer .footer-container .footer-left .image-holder {
+  padding: 10px 30px;
+  height: 70px;
+  width: 100%;
+}
+
+.footer .footer-container .footer-left .image-holder img {
+  height: 100%;
+}
+
+@media (max-width: 820px) {
+  .footer .footer-container .footer-left {
+    width: 100%;
+  }
+  .footer .footer-container .footer-left .image-holder {
+    text-align: center;
+  }
+}
+/*# sourceMappingURL=footer.css.map */

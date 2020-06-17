@@ -1,10 +1,17 @@
+<!-- Including base.html and loading static -->
 {% extends "base.html" %}{% load static %}
 
 
 <!-- Title Name -->
-{% block title%} About Us {% endblock %} {% block stylesheet %}
+{% block title%} About Us {% endblock %} 
+
+<!-- CSS Files -->
+{% block stylesheet %}
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-<link rel="stylesheet" href="/static/css/about_us.css"> {% endblock %}
+<link rel="stylesheet" href="/static/css/about_us.css"> 
+{% endblock %}
+
+
 <!-- Main -->
 {% block main %}
 <div class="wrapper">
@@ -73,8 +80,6 @@
                 </div>
             </div>
         </div>
-        <!-- <p>{{mem.member_fn}} {{mem.member_ln}}</p> -->
-        <!-- <p>Martand javia</p> -->
         {% endfor %}
     </div>
 </div>

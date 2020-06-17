@@ -88,4 +88,9 @@
       -ms-flex-align: center;
           align-items: center;
 }
+
+.main-container .ctst .contest {
+  color: black;
+  font-size: 20px;
+}
 /*# sourceMappingURL=competitive.css.map */

@@ -1,8 +1,17 @@
-{% extends "base.html" %}{% load static %} {% block title%} CP {% endblock %} 
+<!-- Including base.html and loading static -->
+{% extends "base.html" %}{% load static %} 
+
+<!-- Title -->
+{% block title%} CP {% endblock %} 
+
+<!-- CSS -->
 {%block stylesheet %}
 <link rel="icon" href="/media/fav.png" />
 <link rel="stylesheet" href="/static/css/competitive.css" />
-{% endblock %} {% block main %}
+{% endblock %} 
+
+<!-- Main -->
+{% block main %}
 <div class="main-container">
   <div id="check">
     <div class="clist">
@@ -44,7 +53,10 @@
 {% endblock %}
 
 
+<!-- Javascript -->
 {% block javascript %}
+<script src="{% static 'js/jquery.countdown.js' %}"></script>
+<script src="{% static 'js/jquery.countdown.min.js' %}"></script>
 <script>
   $('.name').click(function(e){
     $("#checkk").html("");
@@ -57,17 +69,23 @@
         choose:'contests',
       },
       success:function(data){
-        console.log(data['contest'][0]['name']);
+        console.log(data['contest'].length);
         for(let i=0;i<data['contest'].length;i++){
           var name = data['contest'][i]['name'];
           var start = data['contest'][i]['start'];
           var end = data['contest'][i]['end'];
           var duration = data['contest'][i]['duration'];
           var link = data['contest'][i]['link'];
-          $('#checkk').append("<p>" + name + "</p>\n<p>" + start + "</p>\n<p>" + end + "</p>\n<p>" + duration + '<p>\n<a href="' + link + '" target= "_blank">' + link + "</a>");
+          $('#checkk').append('<div class="contest">\n<p>' + name + '</p>\n<p>' + start + "</p>\n<p>" + end + "</p>\n<p>" + duration + '<p>\n <p class ="countdown" data-countdown="'+ start +'"> </p>\n<a href="' + link + '" target= "_blank">' + link + "</a>\n</div>");
+          $('[data-countdown]').each(function() {
+            var $this = $(this), finalDate = $(this).data('countdown');
+            $this.countdown(finalDate, function(event) {
+              $this.html(event.strftime('%D days %H:%M:%S'));
+            });
+          }); 
         }
       }
     }); 
   });
-</script>
+</script> 
 {% endblock %}

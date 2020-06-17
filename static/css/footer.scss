@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+
+// * {
+// 	margin: 0;
+// 	padding: 0;
+// 	-webkit-box-sizing: border-box;
+// 	box-sizing: border-box;
+// }
+
+// body {
+// 	font-family: Source Sans Pro;
+// 	color: black;
+// }
+
+// .main {
+// 	min-height: 100vh;
+// }
+
+.footer {
+	// position: r	elative;
+	// bottom: 0;
+	// left: 0;
+	// right: 0;
+	background-color: #ba25ff;
+	.footer-container {
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+
+		.footer-right {
+			width: 100%;
+
+			p {
+				position: relative;
+				top: 50%;
+				font-size: 14px;
+				transform: translateY(-50%);
+				color: #000000;
+				padding: 20px 30px;
+				text-align: center;
+			}
+
+			@media (min-width: 820px) {
+				width: 50%;
+				p {
+					text-align: right;
+				}
+			}
+		}
+
+		.footer-left {
+			width: 50%;
+
+			.image-holder {
+				padding: 10px 30px;
+				height: 70px;
+				width: 100%;
+
+				img {
+					height: 100%;
+				}
+			}
+
+			@media (max-width: 820px) {
+				width: 100%;
+				.image-holder {
+					text-align: center;
+				}
+			}
+		}
+	}
+}

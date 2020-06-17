@@ -1,9 +1,9 @@
 {% extends "base.html" %}{% load static %}
 
-<!--  -->
+<!-- Title -->
 {% block title %} Events {% endblock %}
 
-<!--  -->
+<!-- CSS -->
 {% block stylesheet %}
 <link rel="stylesheet" href="{% static 'css/event.css' %}" /> {% endblock %}
 
@@ -20,14 +20,12 @@
     <div class="col-lg-4">
       <div id="news" class="news" data-event-id = "{{event.id}}">
         <figure class="article">
-          <!-- <a href="{{event.id}}"> -->
             <img src="{{event.logo.url}}" />
             <figcaption>
               <h3>{{event.name}}</h3>
               <br/>
               <p>{{event.date}}</p>
             </figcaption>
-          <!-- </a> -->
         </figure>
       </div>
     </div>
@@ -42,7 +40,6 @@
 <!-- modal section -->
 <div class="bg-modal">
   <div class="modal-content" id="test">
-
     <!-- <img src="{{event.logo.url}}" /> -->
     <!-- <p id="eve_name">Name : {{event.name}}</p>
     <p id="eve_desc">Desc : {{event.description|safe}}</p>
@@ -59,15 +56,11 @@
 </div>
 {% endblock %}
 
-<!--  -->
+<!--  Javacript -->
 {% block javascript %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script>
-  //document.getElementById('ev').addEventListener('click',
-  //function(){
-    //document.querySelector('.bg-modal').style.display="flex";
-  //});
   $('.news').click(function(e){
     document.querySelector('.bg-modal').style.display="flex";
     $('#test').html("");
@@ -91,16 +84,19 @@
       success:function(data){
         console.log(data['event']);
         var html_to_write = "";
-        html_to_write += '<div class="close" onclick="bandhkaro()">+</div> <img src="'+data['event']['logo']+'"/> <p id=" eve_name" >Name'+data['event']['name']+'</p> <p id="eve_desc">Desc : '+data['event']['description']+'</p> <p id=" eve_date">Date : '+data['event']['date']+'</p>';
+        html_to_write += '<div class="close" onclick="close_popup()">+</div> <img src="'+data['event']['logo']+'"/> <p id=" eve_name" >Name'+data['event']['name']+'</p> <p id="eve_desc">Desc : '+data['event']['description']+'</p> <p id=" eve_date">Date : '+data['event']['date']+'</p>';
         //html_to_write += 
+        if(data['event'['feedback_link']]){
+          html_to_write += "";
+        }
         document.getElementById("test").innerHTML = html_to_write;
       }
     });
   });
-  //document.querySelector('.bg-modal .modal-content .close').addEventListener('click',function(){
-  function bandhkaro(){
-    console.log("Fuck Yeah");
+  
+  function close_popup(){
    document.querySelector('.bg-modal').style.display="none";
   };
+
 </script>
 {% endblock %}

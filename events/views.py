@@ -4,15 +4,6 @@ from datetime import datetime
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
-# Create your views here.
-
-# def all_events(request):
-#     events = Events.objects.all()
-#     content = {
-#         "events" : events,
-#     }
-#     return render(request,"event.html",content)
-
 @csrf_exempt
 def upcoming_events(request):
     if request.method =='GET':

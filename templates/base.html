@@ -14,30 +14,16 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}" />
     <link rel="icon" href="/media/fav.png" />
+
+    <!-- Block for CSS files -->
     {% block stylesheet %}{% endblock %}
   </head>
 
   <body>
-    <!-- <header> -->
-    <!-- <div class="logo">
-            <div class="img_cont">
-                <img src="/media/images/0.jpg" alt="logo" width=50 height=50>
-            </div>
-        </div> -->
-    <!-- <nav class="nav npc">
-            <a href="" class="nav-item" active-color="orange">Home</a>
-            <a href="/cp" class="nav-item" active-color="green">Practice & contest</a>
-            <a href="/events" class="nav-item" active-color="blue">Events</a>
-            <a href="/resources" class="nav-item" active-color="red">Resources</a>
-            <a href="/about_us" class="nav-item" aive-color="rebeccapurple">About Us</a>
-            <a href="/contact_us" class="nav-item" active-color="aqua">Contact Us</a>
-            <span class="nav-indicator"></span>
-        </nav>
-    </header> -->
-
+    <!-- Navbar -->
     <nav class="menu">
-      
       <ol>
         <li class="menu-item"><a class="menu-item-links" href="/home">Home</a></li>
         <li class="menu-item"><a class="menu-item-links" href="/resources">Resources</a></li>
@@ -108,14 +94,27 @@
       <span></span>
     </nav>
 
+    <!-- Block for main html -->
     {% block main%}{% endblock %}
-    <!-- <footer>
-      <div class="foot">
-        Created by Suhanee Patel
-      </div>
-    </footer> -->
 
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+      <div class="footer-container">
+          <div class="footer-left">
+              <div class="image-holder">
+                  <img src="{% static 'images/pclub_hs.png' %}" alt="">
+              </div>
+          </div>
+          <div class="footer-right">
+              <p>&#x270D; Created by Namit Shah &amp; Suhanee Patel </p>
+          </div>
+      </div>
+    </footer>
+
+    <!-- Block for writing Javascript -->
     {% block javascript %}{% endblock %}
+
+    <!-- Other Javascripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
     <script>
       let tl = new TimelineLite(),

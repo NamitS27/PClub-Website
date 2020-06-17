@@ -6,4 +6,4 @@ def make_announce(request):
     content={
         'announce':announcement
     }
-    return render(request,'ament.html',content)
+    return render(request,'home.html',content)

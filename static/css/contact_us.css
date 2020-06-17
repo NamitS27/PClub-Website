@@ -1,3 +1,19 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a {
+	color: #c0c2c2;
+	text-decoration: none;
+}
+/* /*  */
+a:hover {
+	/* color: #f5fcff; */
+	text-decoration: none;
+}
+
 .contact-section {
   padding-top: 100px;
   /* background: url(bg.png) no-repeat center; */

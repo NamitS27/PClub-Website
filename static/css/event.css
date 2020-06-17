@@ -15,8 +15,12 @@
 body {
     background: #24282f;
     font-family: 'Source Sans Pro', sans-serif;
-    padding-bottom: 50px;
     margin-top: 50px;
+    min-height: 100vh;
+}
+
+.container{
+    min-height: 100vh;
 }
 
 .news {
