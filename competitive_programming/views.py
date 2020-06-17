@@ -65,7 +65,7 @@ def contest(request):
         # print(time_interval)
         if time_interval>10000:
             define_table()
-        return render(request,'cp.html')
+        return render(request,'cp_prev.html')
     elif request.is_ajax():
         r1 = int(request.POST['min'])
         r2 = int(request.POST['max'])
@@ -75,7 +75,6 @@ def contest(request):
         prob = sp.get_problems(r1,r2,cf,tag)
         # print(prob)
         return JsonResponse({'prob':prob})
-
 
 
 def get_contest(which_contest):

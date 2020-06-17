@@ -1,0 +1,76 @@
+<div class="main">
+        <div class="get_cont">
+            <div class="cards-list">
+                <div class="card">
+                    <div class="card_image"> 
+                        <a href="1"><img src="/media/images/chef.png" /></a> 
+                    </div>
+                    <!-- <div class="card_title">
+                        <p>Code Chef</p>
+                    </div> -->
+                </div>
+                <div class="card">
+                    <div class="card_image">
+                        <a href="2"><img src="/media/images/cf.jpg" /></a>
+                    </div>
+                    <!-- <div class="card_title">
+                        <p>Code Forces</p>
+                    </div> -->
+                </div>
+                <div class="card">
+                    <div class="card_image">
+                        <a href="3"> <img src="/media/images/atcoder.png" /></a>
+                    </div>
+                    <!-- <div class="card_title">
+                        <p>AtCoder</p>
+                    </div> -->
+                </div>
+                <div class="card">
+                    <div class="card_image">
+                        <a href="4"><img src="/media/images/tc.jpg" /></a>
+                    </div>
+                    <!-- <div class="card_title">
+                        <p>TopCoder</p>
+                    </div> -->
+                </div>
+                <div class="card">
+                    <div class="card_image">
+                        <a href="5"><img src="/media//images/hr.jpg" /></a> 
+                    </div>
+                    <!-- <div class="card_title">
+                      <p>Hackerrank</p>
+                    </div> -->
+              </div>
+              <div class="card">
+                    <div class="card_image">
+                        <a href="6"><img src="/media//images/he.png" /></a>
+                    </div>
+                    <!-- <div class="card_title">
+                      <p>Hackerearth</p>
+                    </div> -->
+              </div>
+              <div class="card">
+                    <div class="card_image">
+                        <a href="7"><img src="/media/images/google.png" /></a>
+                    </div>
+                    <!-- <div class="card_title">
+                      <p>Google</p>
+                    </div> -->
+              </div>
+                    
+            </div>
+        </div>
+        <div class="get_que">
+            <form method="POST" id="prob-form">{% csrf_token %}
+                <p>Min Rating : <input type="number" name="min" id="min"></p>
+                <p>Max Rating : <input type="number" name="max" id="max"></p>
+                <p>User Name : <input type="text" name="username" id="username"></p>
+                <p>Tag : <input type="text" name="tag" placeholder=" &quot ; &quot Seperated" id="tag"></p>
+                <button type="button" id = "sub_id" class="save btn btn-default">Get Questions</button>
+            </form>
+
+            <div class="prob" id="p">
+            </div>
+        </div>
+        
+    </div>

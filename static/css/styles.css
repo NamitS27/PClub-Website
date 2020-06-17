@@ -15,31 +15,12 @@ body {
     height: 100%;
 }
 
-ul#countdown {
-    /* position: relative; */
-    top: 50%;
-    width: 10%;
-    margin: 0 auto;
-    padding: 5px 0 10px 0;
-    color: #fff;
-    /* border: 1px solid #adafb2; */
-    /* border-width: 1px 0; */
-    overflow: hidden;
-    font-family: 'Arial Narrow', Arial, sans-serif;
-    font-weight: bold;
+body{
+    margin-top:100px;
 }
 
-ul#countdown li {
-    margin: 0 -3px 0 0;
-    padding: 0;
-    display: inline-block;
-    width: 25%;
-    font-size: 15px;
-    text-align: center;
-}
-
-ul#countdown li .label {
-    color: #adafb2;
-    font-size: 10px;
-    text-transform: uppercase;
+#countdown{
+    width: 20%;
+    color: white;
+    font-size: 20px;
 }
