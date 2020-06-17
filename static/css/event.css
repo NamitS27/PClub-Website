@@ -81,6 +81,7 @@ body {
 .news .article:active img {
     filter: blur(3px);
     transform: scale(0.97);
+    cursor: pointer;
 }
 
 .news .article:hover figcaption,
@@ -88,6 +89,7 @@ body {
 .news .article:active figcaption {
     opacity: 1;
     transform: none;
+    cursor: pointer;
 }
 
 .eve {
@@ -125,7 +127,7 @@ body {
 }
 .close{
     position: absolute;
-    top: 0;
+    top: 0px;
     right:14px;
     font-size: 45px;
     transform: rotate(45deg);

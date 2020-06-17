@@ -11,14 +11,14 @@
 {% block main %}
 <div class="container">
   <div class="row">
-    <div class="col-lg-12" id="name">
+    <div class="col-lg-12" id="name" data-event-type="{{eve_type}}">
       { {{eve_type}} }
     </div>
   </div>
   <div id="ev" class="row">
     {% if events %} {% for event in events %}
     <div class="col-lg-4">
-      <div id="news" class="news">
+      <div id="news" class="news" data-event-id = "{{event.id}}">
         <figure class="article">
           <!-- <a href="{{event.id}}"> -->
             <img src="{{event.logo.url}}" />
@@ -41,20 +41,20 @@
 
 <!-- modal section -->
 <div class="bg-modal">
-  <div class="modal-content">
-    <div class="close">+</div>
-    <img src="{{event.logo.url}}" />
-    <p>Name : {{event.name}}</p>
-    <p>Desc : {{event.description|safe}}</p>
-    <p>Date : {{event.date}}</p>
+  <div class="modal-content" id="test">
+
+    <!-- <img src="{{event.logo.url}}" /> -->
+    <!-- <p id="eve_name">Name : {{event.name}}</p>
+    <p id="eve_desc">Desc : {{event.description|safe}}</p>
+    <p id="eve_date">Date : {{event.date}}</p>
     {% if event.feedback_link %}
-    <p>Feedback : <a href="{{event.feedback_link}}"> {{event.feedback_link}}</a></p>
+    <p>Feedback : <a href="{{event.feedback_link}}" id="fl"> {{event.feedback_link}}</a></p>
     {% endif %}
-    <p>Images : <a href="{{event.photos_link}}"> {{event.photos_link}}</a></p>
+    <p>Images : <a href="{{event.photos_link}}" id="pl"> {{event.photos_link}}</a></p>
     <p>Registration Date : {{event.registration_date}}</p>
     {% if event.can_register %}
     <p>Registration Link : <a href="{{event.registration_link}}">{{event.registration_link}}</a></p>
-    {% endif %}
+    {% endif %} -->
   </div>
 </div>
 {% endblock %}
@@ -64,13 +64,43 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script>
-  document.getElementById('ev').addEventListener('click',
-  function(){
+  //document.getElementById('ev').addEventListener('click',
+  //function(){
+    //document.querySelector('.bg-modal').style.display="flex";
+  //});
+  $('.news').click(function(e){
     document.querySelector('.bg-modal').style.display="flex";
+    $('#test').html("");
+    var event_id = $(this).data('event-id');
+    var urlap = $('#name').data('event-type');
+    if(urlap==="Upcoming Events"){
+      urlap='upcoming_events';
+    } else if(urlap=="Live Events"){
+      urlap='live_evnets';
+    } else{
+      urlap = 'past_events';
+    }
+    var url = "/events/"+urlap; 
+    console.log(event_id);
+    $.ajax({
+      type:'POST',
+      url:url,
+      data:{
+        id:event_id,
+      },
+      success:function(data){
+        console.log(data['event']);
+        var html_to_write = "";
+        html_to_write += '<div class="close" onclick="bandhkaro()">+</div> <img src="'+data['event']['logo']+'"/> <p id=" eve_name" >Name'+data['event']['name']+'</p> <p id="eve_desc">Desc : '+data['event']['description']+'</p> <p id=" eve_date">Date : '+data['event']['date']+'</p>';
+        //html_to_write += 
+        document.getElementById("test").innerHTML = html_to_write;
+      }
+    });
   });
-  document.querySelector('.close').addEventListener('click',
-  function(){
-    document.querySelector('.bg-modal').style.display="none";
-  });
+  //document.querySelector('.bg-modal .modal-content .close').addEventListener('click',function(){
+  function bandhkaro(){
+    console.log("Fuck Yeah");
+   document.querySelector('.bg-modal').style.display="none";
+  };
 </script>
 {% endblock %}
