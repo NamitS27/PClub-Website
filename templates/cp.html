@@ -10,37 +10,64 @@
         <button type="button" id="but">Submit</button>
       </div>
       
-      <div class="name" >
+      <div class="name" id="1">
           <img src="{% static 'images/cc.png' %}">
       </div>
-      <div class="name" >
+      <div class="name" id="2">
         <img src="{% static 'images/cf.png' %}"
         />
       </div>
-      <div class="name" >
+      <div class="name" id="3">
        <img src="{% static 'images/ac.png' %}"
         />
       </div>
-      <div class="name" >
+      <div class="name" id="4">
          <img src="{% static 'images/hr.png' %}"
         />
       </div>
-      <div class="name" >
+      <div class="name" id="5">
         <img src="{% static 'images/he.png' %}"
         />
       </div>
-      <div class="name" >
+      <div class="name" id="6">
         <img src="{% static 'images/Google.png' %}"
         />
       </div>
-      <div class="name" >
+      <div class="name" id="7">
         <img src="{% static 'images/tp.png' %}"
         />
       </div>
     </div>
   </div>
-  <div class="ctst" style="color: black;">
-    Second Part
-  </div>
+  <div class="ctst" id="checkk"></div>
 </div>
+{% endblock %}
+
+
+{% block javascript %}
+<script>
+  $('.name').click(function(e){
+    $("#checkk").html("");
+    var respid = $(this).attr('id');
+    $.ajax({
+      type:'POST',
+      url:'/cp/',
+      data:{
+        id:respid,
+        choose:'contests',
+      },
+      success:function(data){
+        console.log(data['contest'][0]['name']);
+        for(let i=0;i<data['contest'].length;i++){
+          var name = data['contest'][i]['name'];
+          var start = data['contest'][i]['start'];
+          var end = data['contest'][i]['end'];
+          var duration = data['contest'][i]['duration'];
+          var link = data['contest'][i]['link'];
+          $('#checkk').append("<p>" + name + "</p>\n<p>" + start + "</p>\n<p>" + end + "</p>\n<p>" + duration + '<p>\n<a href="' + link + '" target= "_blank">' + link + "</a>");
+        }
+      }
+    }); 
+  });
+</script>
 {% endblock %}

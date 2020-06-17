@@ -5,6 +5,8 @@ from datetime import datetime,timezone,timedelta
 from .models import Platform,Contest,Server_time
 from dateutil.relativedelta import relativedelta
 from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.core import serializers
 import time
 import pytz
 
@@ -55,6 +57,7 @@ def define_table():
 #         # print(prob)
 #         return JsonResponse({'prob':prob})
 
+@csrf_exempt
 def contest(request):
     if request.method == 'GET':
         get_time = Server_time.objects.all()
@@ -65,16 +68,23 @@ def contest(request):
         # print(time_interval)
         if time_interval>10000:
             define_table()
-        return render(request,'cp_prev.html')
+        return render(request,'cp.html')
     elif request.is_ajax():
-        r1 = int(request.POST['min'])
-        r2 = int(request.POST['max'])
-        cf = request.POST['username']
-        tag = request.POST['tag']
-        # print(tag)
-        prob = sp.get_problems(r1,r2,cf,tag)
-        # print(prob)
-        return JsonResponse({'prob':prob})
+        if request.POST['choose']=="contests":
+            platform_name,contests = get_contest(int(request.POST['id']))
+            contest = [{'name': cont.contest_name, 'start': cont.contest_start,'end':cont.contest_end,'duration':cont.contest_duration,'link':cont.contest_link} for cont in contests]
+            content ={
+                'platform':platform_name,
+                'contest':contest,
+            }
+            return JsonResponse(content)
+        else:
+            r1 = int(request.POST['min'])
+            r2 = int(request.POST['max'])
+            cf = request.POST['username']
+            tag = request.POST['tag']
+            prob = sp.get_problems(r1,r2,cf,tag)
+            return JsonResponse({'prob':prob})
 
 
 def get_contest(which_contest):

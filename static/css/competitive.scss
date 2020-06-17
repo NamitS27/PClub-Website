@@ -1,9 +1,10 @@
 .main-container {
-  // display: flex;
+  display: flex;
   min-height: 100vh;
   // overflow: hidden;
   #check {
     // padding-bottom: 20px;
+    // display: flex;
     position: fixed;
     left: 0;
     top: 50px;
@@ -60,8 +61,14 @@
     }
   }
   .ctst {
-    margin-left: 20%;
+    background-color: pink;
+    margin-left: 24%;
     height: 200vh;
-    // width: 80%;
+    width: 76%;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
