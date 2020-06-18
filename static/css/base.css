@@ -8,7 +8,7 @@
 body {
 	/* width: 100%; */
 	font-family: "Nunito", "Raleway", sans-serif;
-  color: #1f2833;
+  /* color: #1f2833; */
   /* font-family: Roboto; */
   /* background: #ede7f6; */
   margin: 0;
@@ -20,7 +20,7 @@ a {
 }
 /* /*  */
 a:hover {
-	color: #edf2f4;
+	color: #ef233c;
 	text-decoration: none;
 }
 
@@ -30,11 +30,12 @@ a:hover {
 
 .menu-item-links{
   font-weight: 700;
+  font-size: 16px;
   text-decoration: none !important;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   position: relative;
-  color: #edf2f4;
+  color: #e8eddf;
   padding: 10px 0px;
 }
 
@@ -43,7 +44,7 @@ a:hover {
   top:0;
   left:0;
   right:0;
-  background: #2b2d42;
+  background: #333533;
   /* margin: auto; */
   text-align: center;
   padding: 0px;
@@ -73,7 +74,7 @@ a:hover {
 }
 
 .menu-item:hover{
-  border-bottom: 3px solid #edf2f4;
+  border-bottom: 3px solid #ef233c;
   /* width: 100%; */
   /* left: 0%; */
   -webkit-transition: 0.2s ease-in-out;
@@ -83,7 +84,7 @@ a:hover {
 .sub-menu {
   position: absolute;
   left: 0%;
-  background: #2b2d42;
+  background: #14213d;
   top: 38px;
   padding: 0;
   text-align: left;
