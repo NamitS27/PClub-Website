@@ -7,7 +7,7 @@
 }
 
 body {
-    background: #1a1b1b;
+    background: #F6F8FA;
 }
 
 .wrapper {
@@ -24,7 +24,7 @@ body {
 .wrapper h1 {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 48px;
-    color: white;
+    color: #3F4448;
     margin-bottom: 25px;
     padding-top: 50px;
 }
@@ -54,7 +54,7 @@ body {
     font-size: 25px;
     padding-top: 88px;
     width: 700px;
-    color: gray;
+    color: #3F4448;
     font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -70,16 +70,17 @@ body {
 }
 
 .our_team .team_member .member_img {
-    background: #111;
-    max-width: 230px;
+    background: #3F4448;
+    max-width: 190px;
     width: 100%;
-    height: 250px;
+    height: 190px;
     margin: 0 auto;
-    /* border-radius: 30px; */
-    padding-top: 30px;
+    border-radius: 30px;
+    /* padding-top: 30px;
     padding-bottom: 50px;
     padding-left: 10px;
-    padding-right: 10px;
+    padding-right: 10px; */
+    padding: 5px;
     position: relative;
     cursor: pointer;
 }
@@ -87,7 +88,7 @@ body {
 .our_team .team_member .member_img img {
     width: 100%;
     height: 100%;
-    /* border-radius: 30px; */
+    border-radius: 30px;
 }
 
 .our_team .team_member h3 {
@@ -96,15 +97,15 @@ body {
     line-height: 18px;
     letter-spacing: 2px;
     margin: 15px 0 0px;
-    color: white;
+    color: #3F4448;
     font-family: 'Source Sans Pro', sans-serif;
 }
-/* 
+
 .our_team .team_member span {
     font-size: 20px;
     color: #2b2d42;
     font-family: 'Source Sans Pro', sans-serif;
-} */
+}
 
 .our_team .team_member p {
     margin-top: 20px;
@@ -119,7 +120,7 @@ body {
     background: rgba(40, 40, 100, 0.25);
     width: 95%;
     height: 95%;
-    /* border-radius: 30px; */
+    border-radius: 30px;
     display: flex;
     justify-content: center; 
     align-items: center ;
@@ -132,7 +133,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: cursive;
-    color: rgb(211, 20, 125);
+    color: white;
 }
 
 .our_team .team_member .member_img .social_media .item {
@@ -150,7 +151,7 @@ body {
 
 .members {
     padding-bottom: 50px;
-    color: gray;
+    color: #3F4448;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 15px;
 }

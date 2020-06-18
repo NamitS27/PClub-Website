@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
 .footer {
-  background: #c57112;
-  background: -webkit-gradient(linear, left top, right top, color-stop(10%, #c57112), color-stop(51%, #eb326e), color-stop(91%, #b61717));
-  background: linear-gradient(90deg, #c57112 10%, #eb326e 51%, #b61717 91%);
+  background: #24292E;
 }
 
 .footer .footer-container {

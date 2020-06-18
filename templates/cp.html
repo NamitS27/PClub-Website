@@ -16,9 +16,10 @@
   <div id="check">
     <div class="clist">
       <div id="butt">
-        <button type="button" id="but">Submit</button>
+        <button type="button" id="but" class="modal-btn">
+          Practice
+        </button>
       </div>
-      
       <div class="name" id="1">
           <img src="{% static 'images/cc.png' %}">
       </div>
@@ -49,6 +50,21 @@
     </div>
   </div>
   <div class="ctst" id="checkk"></div>
+</div>
+
+<div class="modal-bg">
+  <div class="modal">
+    <h2>Get Questions</h2>
+    <input type="number" name="min" id="min" placeholder="Minimum Rating">
+    <input type="number" name="max" id="max" placeholder="Maximum Rating">
+    <input type="text" name="username" id="username" placeholder="Codeforces Username">
+    <input type="text" name="tag" placeholder=" &quot ; &quot Seperated" id="tag">
+    <button type="button" id = "sub_id" class="modalb">Open Questions</button>
+    <div class="loading" id="loading">
+      <img src="{% static 'images/ajax-loader.gif '%}" >
+    </div>
+    <span class="modal-close">X</span>
+  </div>
 </div>
 {% endblock %}
 
@@ -88,4 +104,54 @@
     }); 
   });
 </script> 
+<script>
+  var mb = document.querySelector('.modal-btn');
+  var md = document.querySelector('.modal-bg'); 
+  var mc = document.querySelector('.modal-close');
+
+  mb.addEventListener('click',function(){
+    md.classList.add('bg-active');
+  });
+
+  mc.addEventListener('click',function(){
+    md.classList.remove('bg-active');
+  });
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+       $('#sub_id').click(function(e){
+           //$('.loading').show();
+           $.ajax({
+               type:'POST',
+               url:"/cp/",
+               data:{
+                   min:$('#min').val(),
+                   max:$('#max').val(),
+                   username:$('#username').val(),
+                   tag:$('#tag').val(),
+                   choose:"prob"
+                },
+               beforeSend:function(){
+                   loadingShow();
+               },
+               success:function(data){
+                   console.log(data['prob']);
+                   $('#loading').hide();
+                   //document.getElementById('sub-id').style.display="block";
+                   window.open(data['prob'][0],'_blank');
+                   window.open(data['prob'][1],'_blank');
+                   //document.getElementById("prob-form").reset();
+                   document.getElementById('min').value = '';
+                   document.getElementById('max').value = '';
+                   document.getElementById('username').value = '';
+                   document.getElementById('tag').value = '';
+               },
+           });
+       });
+
+       function loadingShow(){
+           //document.getElementById('sub-id').style.display="none";
+           $('#loading').show();
+       }
+    </script>
 {% endblock %}
