@@ -7,21 +7,20 @@
 
 body {
 	/* width: 100%; */
-	font-family: "Nunito", "Raleway", sans-serif;
-  color: #1f2833;
-  /* font-family: Roboto; */
-  /* background: #ede7f6; */
+	/* font-family: "Nunito", "Raleway", sans-serif; */
   margin: 0;
 }
 
 a {
-	/* color: #c0c2c2; */
+	/* color: white; */
 	text-decoration: none;
 }
 /* /*  */
 a:hover {
-	color: #edf2f4;
-	text-decoration: none;
+	color: #1a1b1b;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
 }
 
 /* .menu .menu-item .sub-menu .sub-menu-item a:hover{
@@ -30,11 +29,12 @@ a:hover {
 
 .menu-item-links{
   font-weight: 700;
+  font-size: 14px;
   text-decoration: none !important;
   text-transform: uppercase;
   letter-spacing: 3px;
   position: relative;
-  color: #edf2f4;
+  color: white;
   padding: 10px 0px;
 }
 
@@ -43,7 +43,10 @@ a:hover {
   top:0;
   left:0;
   right:0;
-  background: #2b2d42;
+  /* background: #e71d36; */
+  /* background: #c57112; */
+  background: rgb(197,113,18);
+  background: linear-gradient(90deg, rgba(197,113,18,1) 10%, rgba(235,50,110,1) 51%, rgba(182,23,23,1) 91%);
   /* margin: auto; */
   text-align: center;
   padding: 0px;
@@ -73,7 +76,7 @@ a:hover {
 }
 
 .menu-item:hover{
-  border-bottom: 3px solid #edf2f4;
+  border-bottom: 3px solid white;
   /* width: 100%; */
   /* left: 0%; */
   -webkit-transition: 0.2s ease-in-out;
@@ -81,9 +84,11 @@ a:hover {
 }
 
 .sub-menu {
+
   position: absolute;
   left: 0%;
-  background: #2b2d42;
+  background:  rgba(235,50,110,1);
+  /* background: linear-gradient(90deg, rgba(197,113,18,1) 10%, rgba(235,50,110,1) 51%, rgba(182,23,23,1) 91%); */
   top: 38px;
   padding: 0;
   text-align: left;
@@ -102,7 +107,7 @@ a:hover {
 .menu-item:nth-child(n + 3):nth-child(-n + 4) .plus-icon {
   width: 10px;
   height: 10px;
-  stroke: #edf2f4;
+  stroke: white;
   margin-bottom: 1px;
 }
 .menu-item:nth-child(n + 3):nth-child(-n + 4) .sub-menu-item {
@@ -127,7 +132,7 @@ a:hover {
   transition: 0.15s ease all;
 }
 .menu-item:nth-child(n + 3):nth-child(-n + 4):hover .sub-menu-item a:hover {
-  color: white;
+  color: #1a1b1b;
 }
 .menu-item:nth-child(n + 3):nth-child(-n + 4):hover .sub-menu-item:first-child {
   -webkit-transform: translateY(0px);
@@ -176,7 +181,7 @@ a:hover {
     position: fixed;
     width: 26px;
     height: 4px;
-    background-color: #edf2f4;
+    background-color: white;
     top: 22px;
     right: 15px;
     -webkit-transition: 0.15s ease all;
@@ -187,7 +192,7 @@ a:hover {
     position: fixed;
     width: 26px;
     height: 4px;
-    background-color: #edf2f4;
+    background-color: white;
     -webkit-transform: rotate(90deg);
             transform: rotate(90deg);
     right: 15px;
@@ -211,10 +216,10 @@ a:hover {
     display: block;
   }
   .menu.open .menu-item a:hover {
-    color: #edf2f4;
+    color: #1a1b1b;
   }
   .menu.open .menu-item a:hover .plus-icon {
-    stroke: #edf2f4;
+    stroke: #1a1b1b;
   }
   .menu.open .menu-item:nth-child(3):hover .sub-menu-item {
     margin: 10px auto;
@@ -260,8 +265,7 @@ a:hover {
             transition-delay: 0s;
   }
 }
-
-/* ::-webkit-scrollbar {
+ ::-webkit-scrollbar {
   width: 15px;
   visibility: visible;
 }
@@ -272,6 +276,7 @@ a:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, blue,crimson);
+  background: rgb(197,113,18);
+  background: linear-gradient(45deg, rgba(197,113,18,1) 10%, rgba(235,50,110,1) 51%, rgba(182,23,23,1) 91%);
   border-radius: 3px;
-} */
+} 
