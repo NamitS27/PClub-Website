@@ -8,21 +8,21 @@
 
 {% block main %}
       
-
-   <!-- <p style="color:white">Hello</p> -->
-   
-    
-
-    <!--  <div class="countdown" id="2" data-time-upto="2020/6/17 23:00:00"></div> -->
-
-    <div class="countdown" data-countdown="2020-06-19T17:00:00Z"></div>
-    <div class="countdown" data-countdown="2020-06-18 22:41:00Z"></div>
-    <div class="countdown" data-countdown="2020/06/18 22:42:00"></div>
     <div class="countdown" data-countdown="2020/06/18 22:43:00"></div>
 
+    <form method="POST" id="prob-form">{% csrf_token %}
+        <p>Min Rating : <input type="number" name="min" id="min"></p>
+        <p>Max Rating : <input type="number" name="max" id="max"></p>
+        <p>User Name : <input type="text" name="username" id="username"></p>
+        <p>Tag : <input type="text" name="tag" placeholder=" &quot ; &quot Seperated" id="tag"></p>
+        <button type="button" id = "sub_id" class="save btn btn-default">Get Questions</button>
+    </form>
 
-    <!-- <div class="countdown" id="4" data-time-upto="2020/6/18 00:00:00"></div> --> -->
+    <div class="loading"></div>
+      
 
+    <div class="prob" id="p">
+    </div>
 
 {% endblock %}
     
@@ -30,16 +30,25 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript">
        $('#sub_id').click(function(e){
+           $('.loading').show();
            $.ajax({
                type:'POST',
                url:"/cp/",
-               data:$('#prob-form').serialize(),
+               data:{
+                   min:$('#min').val(),
+                   max:$('#max').val(),
+                   username:$('#username').val(),
+                   tag:$('#tag').val(),
+                   choose:"prob"
+                },
                success:function(data){
                    console.log(data['prob']);
+                   $('.loading').hide();
                    $('#p').append("<p>" + data['prob'][0] + "</p>");
                    $('#p').append("<p>" + data['prob'][1] + "</p>");
                    document.getElementById("prob-form").reset();
-               }
+                   
+               },
            });
        });
     </script>

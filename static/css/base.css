@@ -8,21 +8,25 @@
 body {
 	/* width: 100%; */
 	font-family: "Nunito", "Raleway", sans-serif;
-  color: #272829;
+  color: #1f2833;
   /* font-family: Roboto; */
-  background: #ede7f6;
+  /* background: #ede7f6; */
   margin: 0;
 }
 
 a {
-	color: #c0c2c2;
+	/* color: #c0c2c2; */
 	text-decoration: none;
 }
 /* /*  */
 a:hover {
-	/* color: #f5fcff; */
+	color: #edf2f4;
 	text-decoration: none;
 }
+
+/* .menu .menu-item .sub-menu .sub-menu-item a:hover{
+  color:white;
+} */
 
 .menu-item-links{
   font-weight: 700;
@@ -30,7 +34,7 @@ a:hover {
   text-transform: uppercase;
   letter-spacing: 3px;
   position: relative;
-  color: #9575cd;
+  color: #edf2f4;
   padding: 10px 0px;
 }
 
@@ -39,7 +43,7 @@ a:hover {
   top:0;
   left:0;
   right:0;
-  background: #fff;
+  background: #2b2d42;
   /* margin: auto; */
   text-align: center;
   padding: 0px;
@@ -69,7 +73,7 @@ a:hover {
 }
 
 .menu-item:hover{
-  border-bottom: 3px solid #9575cd;
+  border-bottom: 3px solid #edf2f4;
   /* width: 100%; */
   /* left: 0%; */
   -webkit-transition: 0.2s ease-in-out;
@@ -79,7 +83,7 @@ a:hover {
 .sub-menu {
   position: absolute;
   left: 0%;
-  background: #fff;
+  background: #2b2d42;
   top: 38px;
   padding: 0;
   text-align: left;
@@ -98,7 +102,7 @@ a:hover {
 .menu-item:nth-child(n + 3):nth-child(-n + 4) .plus-icon {
   width: 10px;
   height: 10px;
-  stroke: #9575cd;
+  stroke: #edf2f4;
   margin-bottom: 1px;
 }
 .menu-item:nth-child(n + 3):nth-child(-n + 4) .sub-menu-item {
@@ -123,7 +127,7 @@ a:hover {
   transition: 0.15s ease all;
 }
 .menu-item:nth-child(n + 3):nth-child(-n + 4):hover .sub-menu-item a:hover {
-  color: #7850bf;
+  color: white;
 }
 .menu-item:nth-child(n + 3):nth-child(-n + 4):hover .sub-menu-item:first-child {
   -webkit-transform: translateY(0px);
@@ -172,7 +176,7 @@ a:hover {
     position: fixed;
     width: 26px;
     height: 4px;
-    background-color: #9575cd;
+    background-color: #edf2f4;
     top: 22px;
     right: 15px;
     -webkit-transition: 0.15s ease all;
@@ -183,7 +187,7 @@ a:hover {
     position: fixed;
     width: 26px;
     height: 4px;
-    background-color: #9575cd;
+    background-color: #edf2f4;
     -webkit-transform: rotate(90deg);
             transform: rotate(90deg);
     right: 15px;
@@ -207,10 +211,10 @@ a:hover {
     display: block;
   }
   .menu.open .menu-item a:hover {
-    color: #7850bf;
+    color: #edf2f4;
   }
   .menu.open .menu-item a:hover .plus-icon {
-    stroke: #7850bf;
+    stroke: #edf2f4;
   }
   .menu.open .menu-item:nth-child(3):hover .sub-menu-item {
     margin: 10px auto;

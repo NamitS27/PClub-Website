@@ -10,13 +10,15 @@ html {
 
 html,
 body {
-    background-color: #000;
+    background-color: wheat;
     width: 100%;
     height: 100%;
+    min-height: 100vh;
 }
 
 body{
     margin-top:100px;
+    
 }
 
 .countdown{
@@ -24,3 +26,29 @@ body{
     color: white;
     font-size: 20px;
 }
+
+.ajax-loader {
+    visibility: hidden;
+    background-color: rgba(255,255,255,0.7);
+    position: absolute;
+    z-index: +100 !important;
+    width: 50px;
+    height:50px;
+  }
+  
+  .ajax-loader img {
+    position: relative;
+    top:50%;
+    left:50%;
+  }
+
+.loading
+{
+    width: 16px;
+    height: 16px;
+    background:transparent '/media/images/ajax-loader.gif' no-repeat 0 0;
+    font-size: 0px;
+    display: inline-block;
+}
+
+  

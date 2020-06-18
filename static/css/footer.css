@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
 .footer {
-  background-color: #ba25ff;
+  background-color: #2b2d42;
 }
 
 .footer .footer-container {
@@ -19,11 +19,11 @@
 .footer .footer-container .footer-right p {
   position: relative;
   top: 50%;
-  font-size: 14px;
+  font-size: 17px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  color: #000000;
-  padding: 20px 30px;
+  color: #edf2f4;
+  padding: 10px 30px;
   text-align: center;
 }
 

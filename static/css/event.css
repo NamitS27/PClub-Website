@@ -13,7 +13,7 @@
 }
 
 body {
-    background: #24282f;
+    background: #edf2f4;
     font-family: 'Source Sans Pro', sans-serif;
     margin-top: 50px;
     min-height: 100vh;
@@ -44,7 +44,7 @@ body {
     padding-top: 20px;
     padding-left: 40px;
     font-family: 'Source Sans Pro', sans-serif;
-    color: white;
+    color: #2b2d42;
     font-size: 40px;
 }
 
