@@ -46,9 +46,9 @@ body{
 {
     width: 16px;
     height: 16px;
-    background:transparent '/media/images/ajax-loader.gif' no-repeat 0 0;
+    /* background:transparent '/static/images/ajax-loader.gif' no-repeat 0 0; */
     font-size: 0px;
-    display: inline-block;
+    display: none;
 }
 
   
