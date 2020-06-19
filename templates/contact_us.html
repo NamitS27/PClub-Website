@@ -1,32 +1,82 @@
 <!-- Including base.html and loading static -->
-{% extends "base.html"%}
-{% load static %}
+{% extends "base.html"%} {% load static %}
 
 <!-- Title -->
-{% block title%}
-    Contact Us
-{% endblock %}
+{% block title%} Contact Us {% endblock %}
 
 <!-- CSS -->
 {% block stylesheet%}
-    <link rel="stylesheet" type="text/css" href="/static/css/contact_us.css">
-    <link href='https://fonts.googleapis.com/css?family=Artifika' rel='stylesheet'>
+<link rel="stylesheet" type="text/css" href="/static/css/contact_us.css" />
+<link
+    href="https://fonts.googleapis.com/css?family=Artifika"
+    rel="stylesheet"
+/>
 {% endblock %}
 
 <!-- Main -->
 {% block main %}
 <div class="contact-section">
     <h1>Contact Us</h1>
-    <div class  = "cont">
-      <form class="contact-form" action="contact.html" method="post">
-        <input type="text" class="contact-form-text" placeholder="Your name">
-        <input type="email" class="contact-form-text" placeholder="Your email">
-        <input type="text" class="contact-form-text" placeholder="Your phone">
-        <textarea class="contact-form-text" placeholder="Your message"></textarea>
-        <input type="checkbox" id="jw" name="jw" value="jw">
-        <label for="jw"> Join our Whatsapp group</label><br>
-        <input type="submit" class="contact-form-btn" value="Send">
-      </form>
+    <div class="cont">
+        <form class="contact-form" action="contact.html" method="post">
+            <input
+                type="text"
+                class="contact-form-text"
+                placeholder="Your name"
+                autocomplete="none"
+            />
+            <input
+                type="email"
+                class="contact-form-text"
+                placeholder="Your email"
+            />
+            <input
+                type="text"
+                class="contact-form-text"
+                placeholder="Your phone"
+            />
+            <textarea
+                class="contact-form-text"
+                placeholder="Your message"
+                id = "texting"
+            ></textarea>
+            <input type="checkbox" id="jw" name="jw" value="jw" />
+            <label for="jw"> Join our Whatsapp group</label><br />
+            <input type="submit" class="contact-form-btn" value="Send" />
+        </form>
     </div>
-  </div>
+</div>
+{% endblock %} {% block javascript %}
+<script>
+    var observe;
+    if (window.attachEvent) {
+        observe = function (element, event, handler) {
+            element.attachEvent("on" + event, handler);
+        };
+    } else {
+        observe = function (element, event, handler) {
+            element.addEventListener(event, handler, false);
+        };
+    }
+    function init() {
+        var text = document.getElementById("texting");
+        function resize() {
+            text.style.height = "auto";
+            text.style.height = text.scrollHeight + "px";
+        }
+        /* 0-timeout to get the already changed text */
+        function delayedResize() {
+            window.setTimeout(resize, 0);
+        }
+        observe(text, "change", resize);
+        observe(text, "cut", delayedResize);
+        observe(text, "paste", delayedResize);
+        observe(text, "drop", delayedResize);
+        observe(text, "keydown", delayedResize);
+
+        text.focus();
+        text.select();
+        resize();
+    }
+</script>
 {% endblock %}

@@ -1,0 +1,104 @@
+.main {
+    margin-top: 50px;
+    height: 120vh;
+    display: flex;
+    flex-direction: column;
+    .search {
+        width: 100%;
+        height: 10%;
+    }
+    .topics {
+        height: 90%;
+        width: 100%;
+        flex-direction: column;
+        background-color: white;
+        .ind-topic {
+            width: 100%;
+            height: 80px;
+            display: flex;
+            .topic-name {
+                display: flex;
+                width: 90%;
+                font-size: 30px;
+                align-items: center;
+                justify-content: flex-start;
+                padding-left: 20px;
+                // color: black;
+            }
+
+            .more {
+                cursor: pointer;
+                display: flex;
+                width: 10%;
+                height: 100%;
+                font-size: 40px;
+                font-style: bold;
+                transform: rotate(-90deg);
+                justify-content: center;
+                align-items: center;
+                // .arrow-down {
+                //     width: 0;
+                //     height: 0;
+                //     border-left: 20px solid transparent;
+                //     border-right: 20px solid transparent;
+                //     border-top: 20px solid white;
+                // }
+            }
+        }
+        .ind-topic:nth-child(odd) {
+            background-color: red;
+            color: black;
+        }
+        .ind-topic:nth-child(even) {
+            background-color: blue;
+            color: black;
+        }
+    }
+}
+
+.modal-bg {
+    // margin-top:100px;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: wheat;
+    display: flex;
+    visibility: hidden;
+    flex-direction: column;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+    .modal {
+        background-color: red;
+        width: 100%;
+        height: 80px;
+        display: flex;
+        #topic_name {
+            display: flex;
+            width: 90%;
+            font-size: 30px;
+            align-items: center;
+            justify-content: flex-start;
+            padding-left: 20px;
+            // color: black;
+        }
+        .less {
+            cursor: pointer;
+            display: flex;
+            width: 10%;
+            height: 100%;
+            font-size: 40px;
+            font-style: bold;
+            transform: rotate(90deg);
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+.bg-active {
+    visibility: visible;
+    opacity: 1;
+    z-index: 5000;
+}

@@ -76,6 +76,22 @@
 {% block javascript %}
 <script src="{% static 'js/jquery.countdown.js' %}"></script>
 <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+
+<script>
+  $(document).scroll(function () {
+    var $check = $("#check");
+    var marginBottom =  $(window).scrollTop() + $(window).height() - $(document).height() + $('.footer').height();
+    console.log(marginBottom);
+    if(marginBottom>=0){
+      $check.css("margin-bottom",marginBottom+"px");
+    }
+    else{
+      $check.css("margin-bottom","0px");
+    }
+    //$check.toggleClass('scrolled',);
+});
+</script>
+
 <script type="text/javascript">
   $('.name').click(function(e){
     $("#checkk").html("");
@@ -95,7 +111,13 @@
           var end = data['contest'][i]['end'];
           var duration = data['contest'][i]['duration'];
           var link = data['contest'][i]['link'];
-          $('#checkk').append('<div class="contest"><p>' + name + '</p><p>' + start + "</p><p>" + end + "</p><p>" + duration + '<p><p class ="countdown" data-countdown="'+ start +'"> </p><a id="here" href="' + link + '" target= "_blank">' + link + "</a></div>");
+          
+          if(respid=='1'){
+            $('#checkk').append('<div class="contest"><p>' + name + '</p><p>' + start + "</p><p>" + end + "</p><p>" + duration + '<p><p class ="countdown" data-countdown="'+ start +'"><p> Platform : '+data['contest'][i]['platform'] + '</p></p><a id="here" href="' + link + '" target= "_blank">' + link + "</a></div>");
+          }  
+          else{
+            $('#checkk').append('<div class="contest"><p>' + name + '</p><p>' + start + "</p><p>" + end + "</p><p>" + duration + '<p><p class ="countdown" data-countdown="'+ start +'"></p><a id="here" href="' + link + '" target= "_blank">' + link + "</a></div>");
+          }
         }
         $('[data-countdown]').each(function() {
           var $this = $(this), finalDate = $(this).data('countdown');

@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+
 * {
 	margin: 0;
 	padding: 0;
@@ -6,8 +8,9 @@
 }
 
 body {
-	/* width: 100%; */
-	/* font-family: "Nunito", "Raleway", sans-serif; */
+  /* width: 100%; */
+  /* min-height: 100vh; */
+  font-family: "Source Sans Pro", sans-serif !important;
   margin: 0;
 }
 
