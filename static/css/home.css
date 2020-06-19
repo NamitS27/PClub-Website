@@ -1,0 +1,54 @@
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #111;
+    height: 100vh;
+   
+}
+.container{
+    display: flex;
+    width: 100%;
+}
+.item {
+    width: 40rem;
+    padding: 5px 5px;
+    font-size: 2rem;
+    line-height: 1;
+    text-align: center;  
+    margin: 10px; 
+}
+.ann{
+    background-color: #e6e6e6;
+     height: 1000px;
+    /*width:1000px;
+   margin-left: 30%; */
+   margin-top: 100px;
+   margin-bottom: 20px;
+   padding-top: 20px;
+   flex-basis: 150rem;
+}
+.ann p{
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Staatliches', cursive;
+    color: #c3073f;
+    font-style: bold;
+}
+.tim{
+    background-color: #c3073f;
+    margin-top: 200px;
+   padding-top: 20px;
+    height: 150px;
+    flex-basis: 60rem;
+}
+.tim p{
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Staatliches', cursive;
+    color: #e6e6e6;
+    font-style: bold;
+}

@@ -45,8 +45,7 @@ a:hover {
   right:0;
   /* background: #e71d36; */
   /* background: #c57112; */
-  background: rgb(197,113,18);
-  background: linear-gradient(90deg, rgba(197,113,18,1) 10%, rgba(235,50,110,1) 51%, rgba(182,23,23,1) 91%);
+  background:#111;
   /* margin: auto; */
   text-align: center;
   padding: 0px;
@@ -87,7 +86,7 @@ a:hover {
 
   position: absolute;
   left: 0%;
-  background:  rgba(235,50,110,1);
+  background:  #111;
   /* background: linear-gradient(90deg, rgba(197,113,18,1) 10%, rgba(235,50,110,1) 51%, rgba(182,23,23,1) 91%); */
   top: 38px;
   padding: 0;
@@ -266,7 +265,7 @@ a:hover {
   }
 }
  ::-webkit-scrollbar {
-  width: 15px;
+  width: 7px;
   visibility: visible;
 }
 
@@ -276,7 +275,6 @@ a:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(197,113,18);
-  background: linear-gradient(45deg, rgba(197,113,18,1) 10%, rgba(235,50,110,1) 51%, rgba(182,23,23,1) 91%);
+  background: #c3073f;
   border-radius: 3px;
 } 
