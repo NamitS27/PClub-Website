@@ -39,8 +39,13 @@
         align-items: center;
         justify-content: center;
         // padding: 20px;
-        color: blueviolet;
+        // color: blueviolet;
         #but {
+          background-color: blue;
+          color:white;
+          border: none;
+          cursor: pointer;
+          height: 30px;
           padding: 0px 40px;
         }
       }
@@ -76,3 +81,5 @@
     }
   }
 }
+
+

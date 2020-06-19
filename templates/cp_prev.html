@@ -18,7 +18,9 @@
         <button type="button" id = "sub_id" class="save btn btn-default">Get Questions</button>
     </form>
 
-    <div class="loading"></div>
+    <div class="loading" id="loading">
+        <img src="{% static 'images/ajax-loader.gif '%}" >
+    </div>
       
 
     <div class="prob" id="p">
@@ -30,7 +32,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript">
        $('#sub_id').click(function(e){
-           $('.loading').show();
+           //$('.loading').show();
            $.ajax({
                type:'POST',
                url:"/cp/",
@@ -41,9 +43,12 @@
                    tag:$('#tag').val(),
                    choose:"prob"
                 },
+               beforeSend:function(){
+                   loadingShow();
+               },
                success:function(data){
                    console.log(data['prob']);
-                   $('.loading').hide();
+                   $('#loading').hide();
                    $('#p').append("<p>" + data['prob'][0] + "</p>");
                    $('#p').append("<p>" + data['prob'][1] + "</p>");
                    document.getElementById("prob-form").reset();
@@ -51,6 +56,10 @@
                },
            });
        });
+
+       function loadingShow(){
+           $('#loading').show();
+       }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
