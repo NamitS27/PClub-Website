@@ -38,20 +38,8 @@
 </div>
 
 <!-- modal section -->
-<div class="bg-modal">
-  <div class="modal-content" id="test">
-    <!-- <img src="{{event.logo.url}}" /> -->
-    <!-- <p id="eve_name">Name : {{event.name}}</p>
-    <p id="eve_desc">Desc : {{event.description|safe}}</p>
-    <p id="eve_date">Date : {{event.date}}</p>
-    {% if event.feedback_link %}
-    <p>Feedback : <a href="{{event.feedback_link}}" id="fl"> {{event.feedback_link}}</a></p>
-    {% endif %}
-    <p>Images : <a href="{{event.photos_link}}" id="pl"> {{event.photos_link}}</a></p>
-    <p>Registration Date : {{event.registration_date}}</p>
-    {% if event.can_register %}
-    <p>Registration Link : <a href="{{event.registration_link}}">{{event.registration_link}}</a></p>
-    {% endif %} -->
+<div class="modal-bg">
+  <div class="modal" id="test">
   </div>
 </div>
 {% endblock %}
@@ -62,7 +50,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script>
   $('.news').click(function(e){
-    document.querySelector('.bg-modal').style.display="flex";
+    //document.querySelector('.bg-modal').style.display="flex";
+    document.querySelector('.modal-bg').classList.add('bg-active');
     $('#test').html("");
     var event_id = $(this).data('event-id');
     var urlap = $('#name').data('event-type');
@@ -84,19 +73,26 @@
       success:function(data){
         console.log(data['event']);
         var html_to_write = "";
-        html_to_write += '<div class="close" onclick="close_popup()">+</div> <img src="'+data['event']['logo']+'"/> <p id=" eve_name" >Name'+data['event']['name']+'</p> <p id="eve_desc">Desc : '+data['event']['description']+'</p> <p id=" eve_date">Date : '+data['event']['date']+'</p>';
-        //html_to_write += 
-        if(data['event'['feedback_link']]){
-          html_to_write += "";
+        html_to_write += '<div class="modal-close" id="close">+</div><p id=" eve_name" >Name : '+data['event']['name']+'</p> <p id="eve_desc">Desc : '+data['event']['description']+'</p> <p id=" eve_date">Date : '+data['event']['date']+'</p>';
+        if(data['event']['feedback_link']){
+          html_to_write += '<p>Feedback : <a href="'+data['event']['feedback_link'] +'" id="fl">'+data['event']['feedback_link']+'</a></p>';
+        }
+        if(data['event']['photos_link']){
+          html_to_write += '<p>Photos : <a href="'+data['event']['photos_link'] +'" id="fl">'+data['event']['photos_link']+'</a></p>';
+        }
+        html_to_write += '<p>Registration Date : '+data['event']['registration_date']+'</p>'
+        if(data['event']['can_register']){
+          html_to_write += '<p>Registration Link : <a href="'+data['event']['registration_link'] +'" id="fl">'+data['event']['registration_link']+'</a></p>';
         }
         document.getElementById("test").innerHTML = html_to_write;
+        var close = document.querySelector('#close');
+        console.log(close);
+        close.addEventListener('click',()=>{
+        document.querySelector('.modal-bg').classList.remove('bg-active');
+      });
       }
     });
   });
-  
-  function close_popup(){
-   document.querySelector('.bg-modal').style.display="none";
-  };
 
-</script>
+</script>  
 {% endblock %}

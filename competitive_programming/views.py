@@ -55,7 +55,7 @@ def contest(request):
             ser_tm = t.server_update_time
         time_interval = int((datetime.now(tz)-ser_tm).total_seconds())
         # print(time_interval)
-        if time_interval>100:
+        if time_interval>10000:
             define_table()
         return render(request,'cp.html')
     elif request.is_ajax():
