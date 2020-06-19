@@ -23,13 +23,13 @@
   display: flex;
   width: 100%;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  background-color: black;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #F6F8FA;
 }
 
 .main-container #check .clist #butt {
@@ -39,11 +39,11 @@
   display: flex;
   width: 40%;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .main-container #check .clist #butt #but {
@@ -58,6 +58,7 @@
 .main-container #check .clist .name {
   height: 100px;
   margin-bottom: 25px;
+  border-radius: 20px;
 }
 
 .main-container #check .clist .name img {
@@ -66,16 +67,14 @@
 }
 
 .main-container #check .clist .name:hover {
-  -webkit-transform: scale(1.05, 1.05);
-  transform: scale(1.05, 1.05);
-  -webkit-box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25),
-    -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
-  box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25),
-    -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
+  -webkit-transform: scale(1.025, 1.025);
+          transform: scale(1.025, 1.025);
+  -webkit-box-shadow: 2px 2px 15px 10px rgba(0, 0, 0, 0.25), -2px -2px 15px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 2px 2px 15px 10px rgba(0, 0, 0, 0.25), -2px -2px 15px 10px rgba(0, 0, 0, 0.22);
 }
 
 .main-container .ctst {
-  background-color: pink;
+  background-color: #F6F8FA;
   margin-left: 24%;
   height: 200vh;
   width: 76%;
@@ -85,21 +84,25 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .main-container .ctst .contest {
   color: black;
   font-size: 20px;
+  width: 80%;
 }
-/*# sourceMappingURL=competitive.css.map */
+
+.main-container .ctst .contest #here {
+  text-decoration: none !important;
+}
 
 .modal-bg {
   position: fixed;
@@ -108,29 +111,41 @@
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   visibility: hidden;
   opacity: 0;
+  -webkit-transition: visibility 0s, opacity 0.5s;
   transition: visibility 0s, opacity 0.5s;
 }
-.bg-active {
-  visibility: visible;
-  opacity: 1;
-}
 
-.modal {
+.modal-bg .modal {
   position: relative;
   background-color: white;
   width: 30%;
-  height:50%;
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
-.modalb {
+
+.modal-bg .modal .modalb {
   padding: 10px 30px;
   background-color: #2980b9;
   color: white;
@@ -138,15 +153,7 @@
   cursor: pointer;
 }
 
-.loading
-{
-    width: 16px;
-    height: 16px;
-    font-size: 0px;
-    display: none;
-}
-
-.modal-close {
+.modal-bg .modal .modal-close {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -154,17 +161,15 @@
   cursor: pointer;
 }
 
-/* a{
-  position: relative;
-  left: 10%;
-  transform: translate(-50%,-50%);
-  width: 50px;
-  height: 20px;
-  text-align: center;
-  line-height: 10px;
-  text-transform: uppercase;
-  font-size: 14px;
-  letter-spacing: 2px;
-  color: white;
-  text-decoration: none;
-} */
+.bg-active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.loading {
+  width: 16px;
+  height: 16px;
+  font-size: 0px;
+  display: none;
+}
+/*# sourceMappingURL=competitive.css.map */

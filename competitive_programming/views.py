@@ -2,7 +2,7 @@ from django.shortcuts import render
 from other_files import contest_list as cl
 from other_files import suggest_problems as sp
 from datetime import datetime,timezone,timedelta
-from .models import Platform,Contest,Server_time
+from .models import Platform,Contest,Server_time,PClub_contest
 from dateutil.relativedelta import relativedelta
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -55,18 +55,29 @@ def contest(request):
             ser_tm = t.server_update_time
         time_interval = int((datetime.now(tz)-ser_tm).total_seconds())
         # print(time_interval)
-        if time_interval>10000:
+        if time_interval>100:
             define_table()
         return render(request,'cp.html')
     elif request.is_ajax():
         if request.POST['choose']=="contests":
-            platform_name,contests = get_contest(int(request.POST['id']))
-            contest = [{'name': cont.contest_name, 'start': str(cont.contest_start)[:19],'end':str(cont.contest_end)[:19],'duration':cont.contest_duration,'link':cont.contest_link} for cont in contests]
-            content ={
-                'platform':platform_name,
-                'contest':contest,
-                # 'number_of_contest':len(contest),
-            }
+            cid = int(request.POST['id'])
+            # print(cid)
+            if cid>1:
+                platform_name,contests = get_contest(cid)
+                contest = [{'name': cont.contest_name, 'start': str(cont.contest_start + timedelta(hours=5, minutes=30))[:19],'end':str(cont.contest_end + timedelta(hours=5, minutes=30))[:19],'duration':cont.contest_duration,'link':cont.contest_link} for cont in contests]
+                content ={
+                    'platform':platform_name,
+                    'contest':contest,
+                    # 'number_of_contest':len(contest),
+                }
+                # print(contest)
+            else:
+                contests = PClub_contest.objects.all();
+                contest = [{'platform':eachc.platform_name,'name':eachc.contest_name,'duration':eachc.contest_duration,'start':eachc.contest_start.strftime("%Y-%m-%d %H:%M:%S"),'end':eachc.contest_end.strftime("%Y-%m-%d %H:%M:%S"),'link':eachc.contest_link} for eachc in contests]
+                content = {
+                    'contest':contest,
+                }
+            # print(content)
             return JsonResponse(content)
         else:
             r1 = int(request.POST['min'])
@@ -79,7 +90,7 @@ def contest(request):
 
 def get_contest(which_contest):
     arr = ["CODECHEF","CODEFORCES","ATCODER","TOPCODER","HACKEREARTH","HACKERRANK","GOOGLE"]
-    plat = Platform.objects.filter(platform_name=arr[which_contest-1])
+    plat = Platform.objects.filter(platform_name=arr[which_contest-2])
     platform = None
     for i in plat: platform = i
     contests = Contest.objects.filter(contest_id__id=platform.id)

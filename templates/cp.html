@@ -21,29 +21,32 @@
         </button>
       </div>
       <div class="name" id="1">
-          <img src="{% static 'images/cc.png' %}">
+        <img src="{% static 'images/pc.png'%}">
       </div>
       <div class="name" id="2">
+          <img src="{% static 'images/cc.png' %}">
+      </div>
+      <div class="name" id="3">
         <img src="{% static 'images/cf.png' %}"
         />
       </div>
-      <div class="name" id="3">
+      <div class="name" id="4">
        <img src="{% static 'images/ac.png' %}"
         />
       </div>
-      <div class="name" id="4">
+      <div class="name" id="5">
          <img src="{% static 'images/hr.png' %}"
         />
       </div>
-      <div class="name" id="5">
+      <div class="name" id="6">
         <img src="{% static 'images/he.png' %}"
         />
       </div>
-      <div class="name" id="6">
+      <div class="name" id="7">
         <img src="{% static 'images/Google.png' %}"
         />
       </div>
-      <div class="name" id="7">
+      <div class="name" id="8">
         <img src="{% static 'images/tp.png' %}"
         />
       </div>
@@ -73,7 +76,7 @@
 {% block javascript %}
 <script src="{% static 'js/jquery.countdown.js' %}"></script>
 <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
-<script>
+<script type="text/javascript">
   $('.name').click(function(e){
     $("#checkk").html("");
     var respid = $(this).attr('id');
@@ -92,14 +95,14 @@
           var end = data['contest'][i]['end'];
           var duration = data['contest'][i]['duration'];
           var link = data['contest'][i]['link'];
-          $('#checkk').append('<div class="contest">\n<p>' + name + '</p>\n<p>' + start + "</p>\n<p>" + end + "</p>\n<p>" + duration + '<p>\n <p class ="countdown" data-countdown="'+ start +'"> </p>\n<a href="' + link + '" target= "_blank">' + link + "</a>\n</div>");
-          $('[data-countdown]').each(function() {
-            var $this = $(this), finalDate = $(this).data('countdown');
-            $this.countdown(finalDate, function(event) {
-              $this.html(event.strftime('%D days %H:%M:%S'));
-            });
-          }); 
+          $('#checkk').append('<div class="contest"><p>' + name + '</p><p>' + start + "</p><p>" + end + "</p><p>" + duration + '<p><p class ="countdown" data-countdown="'+ start +'"> </p><a id="here" href="' + link + '" target= "_blank">' + link + "</a></div>");
         }
+        $('[data-countdown]').each(function() {
+          var $this = $(this), finalDate = $(this).data('countdown');
+          $this.countdown(finalDate, function(event) {
+            $this.html(event.strftime('%D days %H:%M:%S'));
+          });
+        });
       }
     }); 
   });
@@ -117,8 +120,7 @@
     md.classList.remove('bg-active');
   });
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript">
+<script type="text/javascript">
        $('#sub_id').click(function(e){
            //$('.loading').show();
           if(document.getElementById('min').value.length==0 || document.getElementById('max').value.length==0 || document.getElementById('max').value.length==0){ 
@@ -167,5 +169,5 @@
           //document.getElementById('sub-id').style.display="none";
           $('#loading').show();
       }
-    </script>
+</script>
 {% endblock %}
