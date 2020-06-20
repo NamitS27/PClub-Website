@@ -29,7 +29,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: black;
+  background-color: #F6F8FA;
 }
 
 .main-container #check .clist #butt {
@@ -58,6 +58,7 @@
 .main-container #check .clist .name {
   height: 100px;
   margin-bottom: 25px;
+  border-radius: 20px;
 }
 
 .main-container #check .clist .name img {
@@ -66,14 +67,14 @@
 }
 
 .main-container #check .clist .name:hover {
-  -webkit-transform: scale(1.05, 1.05);
-          transform: scale(1.05, 1.05);
-  -webkit-box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25), -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
-          box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25), -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
+  -webkit-transform: scale(1.025, 1.025);
+          transform: scale(1.025, 1.025);
+  -webkit-box-shadow: 2px 2px 15px 10px rgba(0, 0, 0, 0.25), -2px -2px 15px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 2px 2px 15px 10px rgba(0, 0, 0, 0.25), -2px -2px 15px 10px rgba(0, 0, 0, 0.22);
 }
 
 .main-container .ctst {
-  background-color: pink;
+  background-color: #F6F8FA;
   margin-left: 24%;
   height: 200vh;
   width: 76%;
@@ -96,5 +97,82 @@
 .main-container .ctst .contest {
   color: black;
   font-size: 20px;
+  width: 80%;
+}
+
+.main-container .ctst .contest #here {
+  text-decoration: none !important;
+}
+
+.modal-bg {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility 0s, opacity 0.5s;
+  transition: visibility 0s, opacity 0.5s;
+}
+
+.modal-bg .modal {
+  position: relative;
+  background-color: white;
+  width: 30%;
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.modal-bg .modal .modalb {
+  padding: 10px 30px;
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-bg .modal .modal-close {
+  position: absolute;
+  top: 0px;
+  right: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  font-size: 35px;
+}
+
+.bg-active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.loading {
+  width: 16px;
+  height: 16px;
+  font-size: 0px;
+  display: none;
 }
 /*# sourceMappingURL=competitive.css.map */

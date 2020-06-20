@@ -1,2 +1,70 @@
 {% extends "base.html" %}
+{% load static %}
 
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/resources.css' %}">
+{% endblock %}
+
+{% block main%}
+
+<div class="main">
+    <div class="search"></div>
+    <div class="topics">
+        {% for indtopic in resource %}
+            <div class=ind-topic>
+                <div class="topic-name" id="topic-name" data-name="{{indtopic.resource_topic}}">
+                    {{indtopic.resource_topic}}
+                </div>
+                <div class="more">
+                    &#10094
+                    <!-- <div class="arrow-down"></div> -->
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="modal-bg">
+    <div class="modal">
+        <div id="topic_name">
+
+        </div>
+        <div class="less">
+            &#10094
+        </div>
+    </div>
+    <div class="content">
+
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block javascript %}
+<script type="text/javascript">
+    $('.more').click(function(){
+        var topic_name = $('#topic-name').data('name');
+        console.log(topic_name);
+        document.querySelector('.modal-bg').classList.add('bg-active');
+        //document.querySelector('.menu').hide();
+        document.getElementById('topic_name').innerHTML = "";
+        
+        $.ajax({
+            type:"POST",
+            url:"/resources/",
+            data:{
+                name:topic_name,
+            },
+            success:function(data){
+                console.log(topic_name);
+                document.getElementById('topic_name').append(topic_name);
+                console.log(data);
+                var close = document.querySelector('.less');
+                close.addEventListener('click',()=>{
+                    document.querySelector('.modal-bg').classList.remove('bg-active');
+                });
+            }
+        });
+    });
+</script>
+{% endblock %}

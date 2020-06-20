@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+
 * {
 	margin: 0;
 	padding: 0;
@@ -6,17 +8,18 @@
 }
 
 body {
-	/* width: 100%; */
-	/* font-family: "Nunito", "Raleway", sans-serif; */
+  /* width: 100%; */
+  /* min-height: 100vh; */
+  font-family: "Source Sans Pro", sans-serif !important;
   margin: 0;
 }
 
-a {
+.menu a {
 	/* color: white; */
 	text-decoration: none;
 }
 /* /*  */
-a:hover {
+.menu a:hover {
 	color: white;
   text-decoration: none;
   font-weight: 700;
@@ -43,7 +46,10 @@ a:hover {
   top:0;
   left:0;
   right:0;
-  background:#111;
+  /* background: #e71d36; */
+  background: #24292E;
+  /* background: rgb(197,113,18);
+  background: linear-gradient(90deg, rgba(197,113,18,1) 10%, rgba(235,50,110,1) 51%, rgba(182,23,23,1) 91%); */
   /* margin: auto; */
   text-align: center;
   padding: 0px;
@@ -84,7 +90,7 @@ a:hover {
 
   position: absolute;
   left: 0%;
-  background:  #111;
+  background:  #24292E;
   /* background: linear-gradient(90deg, rgba(197,113,18,1) 10%, rgba(235,50,110,1) 51%, rgba(182,23,23,1) 91%); */
   top: 38px;
   padding: 0;
@@ -274,6 +280,8 @@ a:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c3073f;
+  background: #24292E;
+  
+  /* background: linear-gradient(45deg, rgba(197,113,18,1) 10%, rgba(235,50,110,1) 51%, rgba(182,23,23,1) 91%); */
   border-radius: 3px;
 } 

@@ -1,118 +1,121 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
 .news .article figcaption {
-    position: absolute;
+  position: absolute;
 }
 
 .news .article {
-    position: relative;
-    border-radius: 0;
+  position: relative;
+  border-radius: 0;
 }
 
 .news {
-    display: flex;
+  display: flex;
 }
 
 body {
-    background: #1a1b1b;
-    font-family: 'Source Sans Pro', sans-serif;
-    margin-top: 50px;
-    min-height: 100vh;
+  background: #1a1b1b;
+  font-family: "Source Sans Pro", sans-serif;
+  margin-top: 50px;
+  min-height: 100vh;
 }
 
-.container{
-    min-height: 100vh;
+.container {
+  min-height: 100vh;
 }
 
 .news {
-    flex-flow: row wrap;
+  flex-flow: row wrap;
 }
 
 .news .article {
-    overflow: hidden;
-    width: 350px;
-    height: 235px;
-    margin: 20px;
+  overflow: hidden;
+  width: 350px;
+  height: 235px;
+  margin: 20px;
+  border-radius: 50px;
 }
 
 .news .article img {
-    width: 100%;
-    min-height: 100%;
-    transition: 0.2s;
+  width: 100%;
+  min-height: 100%;
+  transition: 0.2s;
 }
 
-#name{
-    padding-top: 20px;
-    padding-left: 42%;
-    font-family: 'Source Sans Pro', sans-serif;
-    color: #ef233c;
-    align-items: center;
-    justify-content: center;
-    font-size: 40px;
+#name {
+  /* padding-top: 20px;
+  padding-left: 8%; */
+  /* margin: auto; */
+  font-family: "Source Sans Pro", sans-serif;
+  color: #ef233c;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  /* border-radius: 30px; */
 }
 
 .news .article figcaption {
-    position:absolute;
-    font-size: 14px;
-    font-family: 'Source Sans Pro', sans-serif;
-    text-shadow: 0 1px 0 rgba(51, 51, 51, 0.3);
-    color: #fff;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    padding: 40px;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
-    background: rgba(6, 18, 53, 0.6);
-    opacity: 0;
-    transform: scale(1.15);
-    transition: 0.2s;
+  position: absolute;
+  font-size: 14px;
+  font-family: "Source Sans Pro", sans-serif;
+  text-shadow: 0 1px 0 rgba(51, 51, 51, 0.3);
+  color: #fff;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 40px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  background: rgba(6, 18, 53, 0.6);
+  opacity: 0;
+  transform: scale(1.15);
+  transition: 0.2s;
 }
 
 .news .article figcaption h3 {
-    color: white;
-    font-size: 35px;
-    margin-bottom: 0;
-    font-weight: bold;
+  color: white;
+  font-size: 35px;
+  margin-bottom: 0;
+  font-weight: bold;
 }
 
 .news .article figcaption p {
-    /* color: white; */
-    font-size: 24px;
-    /* margin-bottom: 0; */
-    /* font-weight: bold; */
+  /* color: white; */
+  font-size: 24px;
+  /* margin-bottom: 0; */
+  /* font-weight: bold; */
 }
 
 .news .article:hover img,
 .news .article:focus img,
 .news .article:active img {
-    filter: blur(3px);
-    transform: scale(0.97);
-    cursor: pointer;
+  filter: blur(3px);
+  transform: scale(0.97);
+  cursor: pointer;
 }
 
 .news .article:hover figcaption,
 .news .article:focus figcaption,
 .news .article:active figcaption {
-    opacity: 1;
-    transform: none;
-    cursor: pointer;
+  opacity: 1;
+  transform: none;
+  cursor: pointer;
 }
 
 .eve {
-    display: flex;
-    margin-left: 15%;
-    padding-bottom: 20px;
+  display: flex;
+  margin-left: 15%;
+  padding-bottom: 20px;
 }
 
 .eve .name {
-    width: 400px;
+  width: 400px;
 }
 
 .eve .name h1 {
-    color: white;
-    font-family: 'Source Sans Pro', sans-serif;
+  color: white;
+  font-family: "Source Sans Pro", sans-serif;
 }
-.bg-modal{
+/* .bg-modal{
     height: 100%;
     width:100%;
     background-color: rgba(6, 18, 53, 0.6);
@@ -138,4 +141,45 @@ body {
     font-size: 45px;
     transform: rotate(45deg);
     color: black;
+} */
+
+.modal-bg {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s;
+}
+
+.modal {
+  position: relative;
+  background-color: white;
+  width: 30%;
+  height: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0px;
+  right: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transform: rotate(45deg);
+  font-size: 35px;
+}
+
+.bg-active {
+  visibility: visible;
+  opacity: 1;
 }

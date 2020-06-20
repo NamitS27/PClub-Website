@@ -21,7 +21,7 @@
     {% block stylesheet %}{% endblock %}
   </head>
 
-  <body>
+  <body onload="init();">
     <!-- Navbar -->
     <nav class="menu">
       <ol>
@@ -115,6 +115,7 @@
     {% block javascript %}{% endblock %}
 
     <!-- Other Javascripts -->
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
     <script>
       let tl = new TimelineLite(),
