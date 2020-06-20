@@ -162,3 +162,34 @@ label{
 #jw[type="checkbox"]{
   background-color: black;
 } */
+
+@media all and (max-width:1135px){
+  .contact-section .heading{
+    flex-direction: column;
+  }
+
+  .fa-youtube-play,.fa-instagram{
+    color: #fff;
+  }
+
+  .contact-section .heading .icons{
+    width: 300px;
+  }
+
+  .background{
+    height: 100vh;
+  }
+  
+}
+
+@media all and (max-width:800px){
+  .background{
+    height: 135vh;
+  }
+}
+
+@media all and (max-width:400px){
+  .background{
+    height: 115vh;
+  }
+}

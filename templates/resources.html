@@ -1,22 +1,32 @@
 {% extends "base.html" %}
 {% load static %}
 
+
 {% block stylesheet %}
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
 <link rel="stylesheet" href="{% static 'css/resources.css' %}">
 {% endblock %}
 
 {% block main%}
 
 <div class="main">
-    <div class="search"></div>
+    <div class="serch">
+        <div id="search"><input id="input" placeholder="Search Resources Here" /><button id="button"><i class="fa fa-search"></i></button>
+            <div class="spinner"><i class="fa fa-spinner"></i></div>
+        </div>
+    </div>
+    <div class="naming"><p>< All Resource Topics ></p></div>
     <div class="topics">
         {% for indtopic in resource %}
             <div class=ind-topic>
-                <div class="topic-name" id="topic-name" data-name="{{indtopic.resource_name}}">
+                <div class="topic-name" id="{{indtopic.id}}">
                     {{indtopic.resource_name}}
                 </div>
-                <div class="more">
-                    &#10094
+                <div class="more" data-name="{{indtopic.resource_name}}">
+                    <p>&#10094</p>
                     <!-- <div class="arrow-down"></div> -->
                 </div>
             </div>
@@ -34,7 +44,7 @@
         </div>
     </div>
     <div class="content">
-
+        <div class="content-disp" id="res-content"></div>
     </div>
   </div>
 
@@ -43,12 +53,11 @@
 {% block javascript %}
 <script type="text/javascript">
     $('.more').click(function(){
-        var topic_name = $('#topic-name').data('name');
+        var topic_name = $(this).data('name');
         console.log(topic_name);
         document.querySelector('.modal-bg').classList.add('bg-active');
-        //document.querySelector('.menu').hide();
         document.getElementById('topic_name').innerHTML = "";
-        
+        document.getElementById('res-content').innerHTML ="";
         $.ajax({
             type:"POST",
             url:"/resources/",
@@ -56,15 +65,46 @@
                 name:topic_name,
             },
             success:function(data){
-                console.log(topic_name);
+               // console.log(topic_name);
                 document.getElementById('topic_name').append(topic_name);
-                console.log(data);
+                //console.log(data);
                 var close = document.querySelector('.less');
+                //console.log(data['links'][0].type);
+                for(let i=0;i<data['links'].length;i++){
+                    var type = data['links'][i].type;
+                    var link = data['links'][i].link;
+                    var desc = data['links'][i].desc;
+
+                    $('#res-content').append('<div class="res-card">\n<div class="descp">\n<p>'+ desc+'</p></div><div class="side"><a href = "'+link+'" target=_blank><p>'+ type+'</p></a></div>');
+                }
+                
+
+
+
                 close.addEventListener('click',()=>{
                     document.querySelector('.modal-bg').classList.remove('bg-active');
                 });
             }
         });
     });
+
+    var search = document.getElementById('search');
+    var button = document.getElementById('button');
+    var input = document.getElementById('input');
+
+    function loading() {
+        search.classList.add('loading');
+        
+        setTimeout(function() {
+            search.classList.remove('loading');
+        }, 1500);
+    }
+
+    button.addEventListener('click', loading);
+
+    input.addEventListener('keydown', function() {
+        if(event.keyCode == 13) loading();
+    });
+
 </script>
 {% endblock %}

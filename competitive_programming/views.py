@@ -77,7 +77,7 @@ def contest(request):
                 content = {
                     'contest':contest,
                 }
-            # print(content)
+            print(content)
             return JsonResponse(content)
         else:
             r1 = int(request.POST['min'])
@@ -89,7 +89,7 @@ def contest(request):
 
 
 def get_contest(which_contest):
-    arr = ["CODECHEF","CODEFORCES","ATCODER","TOPCODER","HACKEREARTH","HACKERRANK","GOOGLE"]
+    arr = ["CODECHEF","CODEFORCES","ATCODER","HACKERRANK","HACKEREARTH","GOOGLE","TOPCODER"]
     plat = Platform.objects.filter(platform_name=arr[which_contest-2])
     platform = None
     for i in plat: platform = i

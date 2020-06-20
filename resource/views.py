@@ -18,7 +18,6 @@ def resource_list(request):
         for i in resource:
             resid = i.id
         x = ResourceLinks.objects.filter(rlink_id__id=resid)
-        links = [{'type':il.rtype,'link':il.rlink} for il in x]
-        print(links)
+        links = [{'type':il.rtype,'link':il.rlink,'desc':il.rdesp} for il in x]
         return JsonResponse({'links':links})
 
