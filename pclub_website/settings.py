@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_summernote',
-    'resources',
+    'resource',
     'contact_us',
     'about_us',
     'competitive_programming',

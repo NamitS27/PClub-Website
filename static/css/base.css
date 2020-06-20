@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+/* @import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700"); */
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
 
 * {
@@ -8,14 +8,11 @@
 }
 
 body {
-  /* width: 100%; */
-  /* min-height: 100vh; */
   font-family: "Source Sans Pro", sans-serif !important;
   margin: 0;
 }
 
 .menu a {
-	/* color: white; */
 	text-decoration: none;
 }
 /* /*  */
@@ -47,7 +44,7 @@ body {
   left:0;
   right:0;
   /* background: #e71d36; */
-  background: #24292E;
+  background: #111;
   /* background: rgb(197,113,18);
   background: linear-gradient(90deg, rgba(197,113,18,1) 10%, rgba(235,50,110,1) 51%, rgba(182,23,23,1) 91%); */
   /* margin: auto; */
@@ -90,7 +87,7 @@ body {
 
   position: absolute;
   left: 0%;
-  background:  #24292E;
+  background:  #111;
   /* background: linear-gradient(90deg, rgba(197,113,18,1) 10%, rgba(235,50,110,1) 51%, rgba(182,23,23,1) 91%); */
   top: 38px;
   padding: 0;
@@ -135,7 +132,7 @@ body {
   transition: 0.15s ease all;
 }
 .menu-item:nth-child(n + 3):nth-child(-n + 4):hover .sub-menu-item a:hover {
-  color: #E6E8EB;
+  color: #737373;
 }
 .menu-item:nth-child(n + 3):nth-child(-n + 4):hover .sub-menu-item:first-child {
   -webkit-transform: translateY(0px);

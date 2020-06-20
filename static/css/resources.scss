@@ -93,6 +93,7 @@
             transform: rotate(90deg);
             justify-content: center;
             align-items: center;
+            // transition: visibility 0s, opacity 0.5s;
         }
     }
 }
@@ -101,4 +102,5 @@
     visibility: visible;
     opacity: 1;
     z-index: 5000;
+    // transition: visibility 0s, opacity 0.5s;
 }

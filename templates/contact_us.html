@@ -6,17 +6,34 @@
 
 <!-- CSS -->
 {% block stylesheet%}
-<link rel="stylesheet" type="text/css" href="/static/css/contact_us.css" />
 <link
-    href="https://fonts.googleapis.com/css?family=Artifika"
     rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'css/contact_us.css' %}"
 />
 {% endblock %}
 
 <!-- Main -->
 {% block main %}
+<div class="background">
+    <div class="sec1"></div>
+    <div class="sec2"></div>
+</div>
 <div class="contact-section">
-    <h1>Contact Us</h1>
+    <div class="heading">
+        <h1>Contact Us</h1>
+        <div class="icons">
+            <a href="https://www.youtube.com/channel/UC6omkjRsql98-udXWNbVxFg" target="_blank" class="ic"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/pclub_au/" target="_blank"class="ic"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="#" target="_blank" class="ic"><i class="fa fa-github" aria-hidden="true"></i></a>
+            <a href="#" target="_blank" class="ic"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+    </div>
+
     <div class="cont">
         <form class="contact-form" action="contact.html" method="post">
             <input
@@ -29,16 +46,19 @@
                 type="email"
                 class="contact-form-text"
                 placeholder="Your email"
+                autocomplete="none"
             />
             <input
                 type="text"
                 class="contact-form-text"
                 placeholder="Your phone"
+                autocomplete="none"
             />
             <textarea
                 class="contact-form-text"
                 placeholder="Your message"
-                id = "texting"
+                id="texting"
+                autocomplete="none"
             ></textarea>
             <input type="checkbox" id="jw" name="jw" value="jw" />
             <label for="jw"> Join our Whatsapp group</label><br />
@@ -79,4 +99,5 @@
         resize();
     }
 </script>
+<script></script>
 {% endblock %}
