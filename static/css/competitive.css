@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
 .main-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -43,6 +44,7 @@
 
 .main-container #check .clist .name {
   height: 100px;
+  cursor: pointer;
   margin-bottom: 25px;
   border-radius: 20px;
 }
@@ -61,11 +63,10 @@
 }
 
 .main-container .ctst {
-  background-color: #f6f8fa;
+  background-color: white;
   margin-left: 24%;
   height: 100vh;
   width: 76%;
-  color: black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -150,6 +151,7 @@
           align-items: center;
   text-align: center;
   overflow-y: auto;
+  background-color: #c3073f;
 }
 
 .main-container .ctst #challenge .contest {
@@ -157,7 +159,6 @@
   display: -ms-flexbox;
   display: flex;
   height: 200px;
-  color: black;
   padding: 10px 10px;
   width: 100%;
 }
@@ -166,10 +167,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 30%;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  width: 25%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -182,14 +183,29 @@
 
 .main-container .ctst #challenge .contest .timer p {
   color: white;
+  font-size: 20px;
+  text-align: right;
+  font-style: italic;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.main-container .ctst #challenge .contest .timer .countdown {
+  color: white;
+  font-size: 30px;
+  font-family: 'Staatliches', cursive;
+  font-style: normal;
+  letter-spacing: 2px;
+  font-weight: lighter;
 }
 
 .main-container .ctst #challenge .contest .other {
-  border: 2px solid black;
+  border: 2px solid #111;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 70%;
+  width: 75%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -207,14 +223,19 @@
       -ms-flex-align: center;
           align-items: center;
   height: 30%;
+  color: #111;
+  font-size: 20px;
+  padding-left: 10px;
+  background-color: white;
 }
 
 .main-container .ctst #challenge .contest .other .sed {
   height: 50%;
-  background-color: palevioletred;
+  background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  color: #111;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   -webkit-box-align: center;
@@ -223,10 +244,10 @@
 }
 
 .main-container .ctst #challenge .contest .other .sed .sd {
-  background-color: orange;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  color: #111;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -236,16 +257,22 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-right: 2px solid #c3073f;
+  width: 33.33%;
 }
 
 .main-container .ctst #challenge .contest .other .sed .sd p {
-  color: white;
-  font-size: 10px;
+  color: #111;
+  font-size: 16px;
+}
+
+.main-container .ctst #challenge .contest .other .sed .sd:nth-child(3) {
+  border-right: none;
 }
 
 .main-container .ctst #challenge .contest .other .link {
-  background-color: lightcyan;
-  color: burlywood;
+  background-color: white;
+  color: #c3073f;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -257,6 +284,8 @@
       -ms-flex-align: center;
           align-items: center;
   text-decoration: none !important;
+  padding-left: 10px;
+  font-size: 15px;
 }
 
 .modal-bg {

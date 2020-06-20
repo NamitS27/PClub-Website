@@ -127,7 +127,7 @@
           var link = data['contest'][i]['link'];
           
 
-          $('#challenge').append('<div class="contest">\n <div class="timer">\n <p>Time to the Contest</p>\n<p class ="countdown" data-countdown="'+ start +'"></p>\n</div>\n<div class="other">\n <div class="title">\n'+ name +'\n</div>\n<div class="sed">\n<div>\n<p>Start</p>\n<p>'+ start +'</p>\n</div>\n<div>\n<p>End</p>\n<p>'+ end +'</p>\n</div>\n<div>\n<p>Duration</p>\n<p>'+ duration +'</p>\n</div>\n</div>\n<div class="link">\n'+ link +'\n</div>\n</div>\n</div>');
+          $('#challenge').append('<div class="contest">\n <div class="timer">\n <p class ="countdown" data-countdown="'+ start +'"></p>\n<p>to go</p>\n</div>\n<div class="other">\n <div class="title">\n'+ name +'\n</div>\n<div class="sed">\n<div class="sd">\n<p>Start</p>\n<p>'+ start +'</p>\n</div>\n<div class="sd">\n<p >End</p>\n<p>'+ end +'</p>\n</div>\n<div class="sd">\n<p>Duration</p>\n<p>'+ duration +'</p>\n</div>\n</div>\n<div class="link">\n'+ link +'\n</div>\n</div>\n</div>');
           
           /*if(respid=='1'){
             $('#challenge').append('<div class="contest"><p>' + name + '</p><p>' + start + "</p><p>" + end + "</p><p>" + duration + '<p><p class ="countdown" data-countdown="'+ start +'"><p> Platform : '+data['contest'][i]['platform'] + '</p></p><a id="here" href="' + link + '" target= "_blank">' + link + "</a></div>");
