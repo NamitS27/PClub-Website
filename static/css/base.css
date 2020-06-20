@@ -43,15 +43,7 @@ a:hover {
   top:0;
   left:0;
   right:0;
-  /* background: #e71d36; */
-<<<<<<< HEAD
-  /* background: #c57112; */
   background:#111;
-=======
-  background: #24292E;
-  /* background: rgb(197,113,18);
-  background: linear-gradient(90deg, rgba(197,113,18,1) 10%, rgba(235,50,110,1) 51%, rgba(182,23,23,1) 91%); */
->>>>>>> c8cec46c088d0b0aaed61888a5be11d8dfa9c566
   /* margin: auto; */
   text-align: center;
   padding: 0px;
@@ -92,11 +84,7 @@ a:hover {
 
   position: absolute;
   left: 0%;
-<<<<<<< HEAD
   background:  #111;
-=======
-  background:  #24292E;
->>>>>>> c8cec46c088d0b0aaed61888a5be11d8dfa9c566
   /* background: linear-gradient(90deg, rgba(197,113,18,1) 10%, rgba(235,50,110,1) 51%, rgba(182,23,23,1) 91%); */
   top: 38px;
   padding: 0;
@@ -286,12 +274,6 @@ a:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-<<<<<<< HEAD
   background: #c3073f;
-=======
-  background: #24292E;
-  
-  /* background: linear-gradient(45deg, rgba(197,113,18,1) 10%, rgba(235,50,110,1) 51%, rgba(182,23,23,1) 91%); */
->>>>>>> c8cec46c088d0b0aaed61888a5be11d8dfa9c566
   border-radius: 3px;
 } 
