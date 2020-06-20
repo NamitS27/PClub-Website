@@ -4,4 +4,58 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+body{
+    background-color: white;
+}
+.container1{
+    display:flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.logo{
+    flex-basis: 150px;
+    margin-top: 130px;
+    padding-right: 120px;
+}
+.disc{
+    flex-basis: 800px;
+    color: #595959;
+    margin-top: 130px;
+    font-size: 20px;
+}
+.team{
+    display:flex;
+    width: 100%;
+    align-items: center;
+    justify-content: justify;
+    flex-direction: row;
+    margin-top: 80px;
+    padding: 0;
+}
+.team .title{
+    flex-basis: 20%;
+    color: #c3073f;
+    font-size: 40px;
+    font-family: 'Staatliches', cursive;
+    font-weight: bold;
+    transform: rotate(-90deg);
+    text-align: center;
+    padding-right: 0;
+}
+.team .imgs{
+    flex-basis: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #595959;
+    margin: 50px;
+    margin-right: 0;
+}
+.team .imgs img{
+    width: 250px;
+    height: 250px;
+    padding: 20px;
+    border-radius: 50%;
+}

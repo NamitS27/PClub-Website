@@ -9,6 +9,8 @@
 {% block stylesheet %}
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
 <link rel="stylesheet" href="/static/css/about_us.css"> 
+<link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+
 {% endblock %}
 
 
@@ -16,18 +18,41 @@
 {% block main %}
     <div class="container1">
         <div class="logo">
-
+            <img src="{% static 'images/logoo.png'%}" alt="our_team">
         </div>
         <div class="disc">
-
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
         </div>
     </div>
     <div class="team">
-        <div class="name">
-
+        <div class="title">
+            <p>Team</p>
         </div>
         <div class="imgs">
+            <div class="item item1">
+                <img src="{{abt.faculty_advisor_photo.url}}" alt="our_team"><br>
+                <p>{{abt.faculty_advisor_fn}} {{abt.faculty_advisor_ln}}</p>
+            </div>
+            <div class="item item2">
+                <img src="{{abt.secretary_photo.url}}" alt="our_team"><br>
+                <p>{{abt.secretary_fn}} {{abt.secretary_ln}}</p>
+            </div>
+            <div class="item item3">
+                <img src="{{abt.joint_secretary_photo.url}}" alt="our_team">
+                <p>{{abt.joint_secretary_fn}} {{abt.joint_secretary_ln}}</p>
+            </div>
+            <div class="item item4">
+                <img src="{{abt.treasurer_photo.url}}" alt="our_team">
+                <p>{{abt.treasurer_fn}} {{abt.treasurer_ln}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="com">
+        <div class="title">
+            <p>Commitee</p>
+        </div>
+        <div class="name">
             
         </div>
     </div>
