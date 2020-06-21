@@ -97,10 +97,11 @@
 
 <!-- modal section -->
 <div class="modal-bg">
-  <div class="modal" id="test">
+  <div class="modal" id="pop-up">
   </div>
 </div>
 {% endblock %}
+
 
 <!--  Javacript -->
 {% block javascript %}
@@ -108,7 +109,7 @@
 <script>
   $('.news').click(function(e){
     document.querySelector('.modal-bg').classList.add('bg-active');
-    $('#test').html("");
+    $('#pop-up').html("");
     var event_id = $(this).data('event-id');
     var urlap = $('#name').data('event-type');
     if(urlap==="Upcoming Events"){
@@ -140,7 +141,7 @@
         if(data['event']['can_register']){
           html_to_write += '<p>Registration Link : <a href="'+data['event']['registration_link'] +'" id="fl">'+data['event']['registration_link']+'</a></p>';
         }
-        document.getElementById("test").innerHTML = html_to_write;
+        document.getElementById("pop-up").innerHTML = html_to_write;
         var close = document.querySelector('#close');
         console.log(close);
         close.addEventListener('click',()=>{

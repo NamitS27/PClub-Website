@@ -166,8 +166,10 @@ body {
   position: relative;
   background-color: white;
   width: 30%;
+  min-width: 375px;
   height: 50%;
   display: flex;
+  text-align: center;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
