@@ -6,7 +6,7 @@
 
 {% block contact %}
 <li class="menu-item active">
-    <a class="menu-item-links" href="/contact">Contact Us</a>
+    <a class="menu-item-links" href="/contact_us">Contact Us</a>
 </li>
 {% endblock %}
 
@@ -42,34 +42,37 @@
     </div>
 
     <div class="cont">
-        <form class="contact-form" action="contact.html" method="post">
+        <form class="contact-form" id="contact-form">
             <input
                 type="text"
                 class="contact-form-text"
                 placeholder="Your name"
+                id="name"
                 autocomplete="none"
             />
             <input
                 type="email"
                 class="contact-form-text"
                 placeholder="Your email"
+                id="email"
                 autocomplete="none"
             />
             <input
                 type="text"
                 class="contact-form-text"
-                placeholder="Your phone"
+                placeholder="Your Subject"
+                id="subject"
                 autocomplete="none"
             />
             <textarea
                 class="contact-form-text"
                 placeholder="Your message"
-                id="texting"
+                id="message"
                 autocomplete="none"
             ></textarea>
             <input type="checkbox" id="jw" name="jw" value="jw" />
             <label for="jw"> Join our Whatsapp group</label><br />
-            <input type="submit" class="contact-form-btn" value="Send" />
+            <button type="button" class="contact-form-btn">Send</button>
         </form>
     </div>
 </div>
@@ -86,7 +89,7 @@
         };
     }
     function init() {
-        var text = document.getElementById("texting");
+        var text = document.getElementById("message");
         function resize() {
             text.style.height = "auto";
             text.style.height = text.scrollHeight + "px";
@@ -106,5 +109,69 @@
         resize();
     }
 </script>
-<script></script>
+<script>
+    $('.contact-form-btn').click(function(){
+        var name =$('#name').val();
+        var email = $('#email').val();
+        var subject = $('#subject').val();
+        var message =$('#message').val();
+        var check = "No";
+        if($('#jw').prop("checked") == true){
+            check = "Yes";
+        }
+        if(document.getElementById('name').value.length==0 || document.getElementById('email').value.length==0 || document.getElementById('subject').value.length==0 || document.getElementById('message').value.length==0){ 
+            alert('Please fill the empty feilds');
+        }
+        else if(checkEmail(email)==='Not Valid'){
+            alert("Enter Valid Email ID");
+        }
+        else{
+            $.ajax({
+                type:'POST',
+                url:'/contact_us/',
+                data:{
+                    name:name,
+                    email:email,
+                    subject:subject,
+                    message:message,
+                    jw:check,
+                },
+                success:function(data){
+                    if(data['done']=="Send"){
+                        alert('Message Sent');
+                        document.getElementById('name').value = "";
+                        document.getElementById('email').value = "";
+                        document.getElementById('subject').value = "";
+                        document.getElementById('message').value = "";
+                        $('#jw').prop("checked",false);
+                    }
+                    else{
+                        alert('Connection error ! Try Again :(');
+                    }
+                },
+                failure:function(){
+                    alert('Error Occurred Try Again !!');
+                }
+            });
+        }
+    });
+
+    function checkEmail(email){
+        console.log(email);
+        var emailAddress = email;
+        var check = "No"
+        $.get("https://isitarealemail.com/api/email/validate?email=" +
+        emailAddress,
+        function responseHandler(data) {
+            if (data.status === 'valid') {
+                check = "Yes"
+            }
+        });
+        console.log(check);
+        if(check==='No') {
+            return 'Not Valid';
+        }
+    }
+
+</script>
 {% endblock %}

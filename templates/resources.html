@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block resources %}
+    <li class="menu-item active">
+        <a class="menu-item-links" href="/resources">Resources</a>
+    </li>
+{% endblock %}
+
 
 {% block stylesheet %}
 <link
@@ -8,7 +14,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
 />
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
 <link rel="stylesheet" href="{% static 'css/resources.css' %}">
 {% endblock %}
 
@@ -53,6 +59,7 @@
 {% endblock %}
 
 {% block javascript %}
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script type="text/javascript">
 
     function more(){

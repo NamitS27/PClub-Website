@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_summernote',
     'resource',
     'contact_us',
     'about_us',
@@ -138,4 +137,4 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-X_FRAME_OPTIONS = 'SAMEORIGIN'
+# X_FRAE_OPTIONS = 'SAMEORIGIN'

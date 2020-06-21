@@ -146,10 +146,15 @@ textarea.contact-form-text {
   transition: 0.5s;
   margin-top: 10px;
   margin-bottom: 30px;
+  outline: none;
 }
 .contact-form-btn:hover {
   background: #111;
   color:  #fff;
+}
+
+.contact-form-btn:active,.contact-form-btn:focus{
+  outline: none;
 }
 
 
@@ -198,3 +203,5 @@ label{
     height: 115vh;
   }
 } */
+
+color:dar
