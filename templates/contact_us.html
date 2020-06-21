@@ -4,6 +4,12 @@
 <!-- Title -->
 {% block title%} Contact Us {% endblock %}
 
+{% block contact %}
+<li class="menu-item active">
+    <a class="menu-item-links" href="/contact">Contact Us</a>
+</li>
+{% endblock %}
+
 <!-- CSS -->
 {% block stylesheet%}
 <link
@@ -19,11 +25,12 @@
 
 <!-- Main -->
 {% block main %}
-<div class="background">
-    <div class="sec1"></div>
-    <div class="sec2"></div>
-</div>
+
 <div class="contact-section">
+    <div class="background">
+        <div class="sec1"></div>
+        <div class="sec2"></div>
+    </div>
     <div class="heading">
         <h1>Contact Us</h1>
         <div class="icons">

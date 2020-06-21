@@ -10,6 +10,7 @@
 body {
   font-family: "Source Sans Pro", sans-serif !important;
   margin: 0;
+  min-height: 100vh;
 }
 
 .menu a {
@@ -75,7 +76,7 @@ body {
   transition: 0.2s ease-in-out 0.15s; */
 }
 
-.menu-item:hover{
+.menu-item:hover,.menu-item.active{
   border-bottom: 3px solid white;
   /* width: 100%; */
   /* left: 0%; */

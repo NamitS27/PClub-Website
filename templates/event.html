@@ -3,6 +3,63 @@
 <!-- Title -->
 {% block title %} Events {% endblock %}
 
+<!-- Active -->
+
+{% block event%}
+<li class="menu-item active">
+  <a class="menu-item-links"
+      >Events
+      <svg
+          version="1.1"
+          class="plus-icon"
+          viewBox="0 0 18 18"
+      >
+          <line
+              fill="none"
+              stroke-width="4"
+              stroke-linecap="round"
+              stroke-miterlimit="10"
+              x1="10"
+              y1="9"
+              x2="17"
+              y2="9"
+          />
+          <line
+              fill="none"
+              stroke-width="4"
+              stroke-linecap="round"
+              stroke-miterlimit="10"
+              x1="9"
+              y1="9"
+              x2="9"
+              y2="1"
+          />
+          <g id="lineGroup_1">
+              <line
+                  fill="none"
+                  stroke-width="4"
+                  stroke-linecap="round"
+                  stroke-miterlimit="10"
+                  x1="1"
+                  y1="9"
+                  x2="8"
+                  y2="9"
+              />
+              <line
+                  fill="none"
+                  stroke-width="4"
+                  stroke-linecap="round"
+                  stroke-miterlimit="10"
+                  x1="9"
+                  y1="17"
+                  x2="9"
+                  y2="9"
+              />
+          </g>
+      </svg>
+  </a>
+{% endblock %}
+
 <!-- CSS -->
 {% block stylesheet %}
 <link rel="stylesheet" href="{% static 'css/event.css' %}" /> {% endblock %}

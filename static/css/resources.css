@@ -29,6 +29,7 @@
 }
 
 .main .naming {
+  height: 5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -46,7 +47,7 @@
 }
 
 .main .topics {
-  height: 80%;
+  height: 85%;
   width: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -268,6 +269,12 @@
 .modal-bg .content .content-disp .res-card .side a:active {
   text-decoration: none !important;
   color: white;
+}
+
+.bg-active {
+  visibility: visible;
+  opacity: 1;
+  z-index: 5000;
 }
 
 #search {

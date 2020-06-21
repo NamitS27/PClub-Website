@@ -7,6 +7,8 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
 />
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <link rel="stylesheet" href="{% static 'css/resources.css' %}">
 {% endblock %}
 
@@ -19,7 +21,7 @@
         </div>
     </div>
     <div class="naming"><p>< All Resource Topics ></p></div>
-    <div class="topics">
+    <div class="topics" id="top">
         {% for indtopic in resource %}
             <div class=ind-topic>
                 <div class="topic-name" id="{{indtopic.id}}">
@@ -52,6 +54,8 @@
 
 {% block javascript %}
 <script type="text/javascript">
+
+    function more(){
     $('.more').click(function(){
         var topic_name = $(this).data('name');
         console.log(topic_name);
@@ -76,34 +80,84 @@
                     var desc = data['links'][i].desc;
 
                     $('#res-content').append('<div class="res-card">\n<div class="descp">\n<p>'+ desc+'</p></div><div class="side"><a href = "'+link+'" target=_blank><p>'+ type+'</p></a></div>');
-                }
-                
-
-
-
+                } 
                 close.addEventListener('click',()=>{
                     document.querySelector('.modal-bg').classList.remove('bg-active');
                 });
             }
         });
     });
-
+}
+    $(function(){
+        more();
+    });
     var search = document.getElementById('search');
     var button = document.getElementById('button');
     var input = document.getElementById('input');
 
-    function loading() {
+    /*function loading() {
         search.classList.add('loading');
         
         setTimeout(function() {
             search.classList.remove('loading');
         }, 1500);
-    }
+    }*/
+    String.prototype.format = function () {
+        var i = 0, args = arguments;
+        return this.replace(/{}/g, function () {
+          return typeof args[i] != 'undefined' ? args[i++] : '';
+        });
+      };
 
-    button.addEventListener('click', loading);
+    button.addEventListener('click', ajaxCall);
 
     input.addEventListener('keydown', function() {
-        if(event.keyCode == 13) loading();
+        if(event.keyCode == 13) ajaxCall();
+    });
+    
+    function ajaxCall(){
+        var value = document.getElementById('input').value;
+        $.ajax({
+            type:'POST',
+            url:'/resources/search/',
+            data:{
+                topic:value,
+            },
+            beforeSend:function(){
+                search.classList.add('loading');
+            },
+            success:function(data){
+                search.classList.remove('loading');
+                var ret = document.getElementById('top')
+                ret.innerHTML = "";
+                html_to_append = '';
+                var dt = data.topic;
+                for(let i=0;i<data.topic.length;i++){
+                    html_to_append += '<div class="ind-topic">\n<div class="topic-name" id="{}">\n{}\n</div>\n<div class="more" data-name="{}">\n<p>&#10094</p>\n</div>\n</div>\n'.format(dt[i][1],dt[i][0],dt[i][0]);
+                }
+                ret.innerHTML = html_to_append;
+                more();
+                console.log(data.topic);
+            }
+        });
+    }
+
+    $('#input').on('keyup',function(){
+        var value = $(this).val();
+        $.ajax({
+            url: "/resources/autocomplete/",
+            data:{
+                'type':'auto',
+                'search':value
+            },
+            success:function(data){
+                list = data.list;
+                $('#input').autocomplete({
+                    source:list,
+                    minLength:2
+                });
+            }
+        });
     });
 
 </script>
