@@ -246,19 +246,47 @@
     transition: visibility 0s, opacity 0.5s;
     .modal {
         position: relative;
-        background-color: white;
+        background-color: #111;
         width: 30%;
         height: 50%;
         display: flex;
         justify-content: space-around;
         align-items: center;
         flex-direction: column;
+        border-radius: 20px;
+        h2{
+            color: #c3073f;
+            font-size: 40px;
+            font-family: "Staatliches", cursive !important;
+            letter-spacing: 1px;
+            text-align: center;
+            margin-top: 2px;
+        }
+        #min,#max,#username,#tag{
+            background-color: white;
+            height: 10%;
+            width: 40%;
+            color: #111;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+        ::placeholder{
+            background-color: white;
+            color: #838383;
+            font-size: 12px;
+            border-radius: 10px;
+            text-align: center;
+        }
         .modalb {
-            padding: 10px 30px;
-            background-color: #2980b9;
-            color: white;
+            padding: 6px 20px;
+            background-color: #c3073f;
+            color: #111;
             border: none;
             cursor: pointer;
+            border-radius: 20px;
+            font-size: 15px;
+            font-weight: bold;
         }
         .modal-close {
             position: absolute;
@@ -268,6 +296,7 @@
             cursor: pointer;
             transform: rotate(45deg);
             font-size: 35px;
+            color: white;
         }
     }
 }

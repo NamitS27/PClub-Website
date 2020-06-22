@@ -1,6 +1,7 @@
 from django.shortcuts import render,get_object_or_404
 from .models import Events
 from datetime import datetime
+#from datetime import date
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
