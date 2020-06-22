@@ -28,14 +28,38 @@
 
 
 <div class="main-container">
+    <div id="particles-js">
     <div class="animation">
         <div class="logo">
             <img src="{% static 'images/logoo.png' %}" alt="">
+            {% if new_event%}
+            <a href="/events/live_events" ><p>New Events are waiting for you today! &nbsp;&#128197</p></a> 
+            {% endif%}
+            {% if contest_today%}
+            <a href="/cp/" ><p>Contests are waiting for you today! &nbsp; &#127942 </p></a>
+            {% endif %}
         </div>
         <div class="questions">
-
+            <div class=question-container>
+                <p id="line">
+                    If you know you know !
+                </p>
+                <div class="que" data-ques="{{question.question}}">
+                        <p><b>Q.</b> {{question.question}}</p>
+                </div>
+                <div class="answer-button">
+                        <button id="show-answer">IDK</button>
+                    </div>
+                    <div class="ans">
+                        <p><b>Ans.</b> {{question.answer}}</p>
+                    </div>
+            </div>
         </div>
     </div>
+</div>
+<div class="announce-title">
+    <p>Announcements</p>
+</div>
     <div class="container">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
@@ -135,6 +159,8 @@
 {% block javascript %}
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min.js"></script>
+<script type="text/javascript" src="{% static 'js/particles.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/app.js' %}"></script>
 <script>
 $(".carousel").swipe({
 
@@ -147,5 +173,31 @@ $(".carousel").swipe({
   allowPageScroll:"vertical"
 
 });
+
+
+$('#show-answer').click(()=>{
+    var anss = document.querySelector('.ans') ;
+    if(anss.style.display=="none"){
+        anss.style.display = "flex";
+        $('#show-answer').html("Now You Know");
+    }
+    else{
+        $('#show-answer').html("IDK");
+        anss.style.display = "none";
+    }
+});
+/*$('#show-answer').click(()=>{
+    $.ajax({
+        type:'POST',
+        url: '/home/',
+        data:{
+            question:$('.que').data('ques'),
+        },
+        success:function(data){
+            document.querySelector('.ans').innerHTML = ""
+        }
+
+    });
+})*/
 </script>
 {%endblock%}

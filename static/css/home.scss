@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
 .announce{
     display: flex;
     width: 100%;
@@ -22,7 +24,7 @@
             width: 80%;
             min-width: 500px;
             // height: 100%;
-            background-color: #111;
+            background-color: white;
             display: flex;
             flex-direction: column;
             .text{
@@ -34,7 +36,7 @@
                 padding-right: 160px;
                 p{
                     font-size: 20px;
-                    color: white;
+                    color: #111;
                 }
             }
             .other-details{
@@ -84,7 +86,7 @@
     padding-left: 0px !important;
     padding-right: 0px !important;
     #carousel-example-generic{
-        margin-top: 70px;
+        // margin-top: 70px;
         width: 100%;
         border: 2px solid #111;
         .carousel-indicators{
@@ -93,30 +95,130 @@
     }
 }
 
+.announce-title{
+    
+    // padding-bottom: 40px;
+    display: flex;
+    width: 100%;
+    background-color: #c3073f;
+    // color: #111;
+    justify-content: center;
+    align-items: center;
+    p{
+        font-family: "Staatliches", cursive;
+        font-size: 50px;
+        letter-spacing: 2px;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+        color: #111;
+    }
+
+}
+
 .main-container{
     display: flex;
     flex-direction: column;
-    min-height: 160vh;
+    // min-height: 160vh;
     .animation{
         display: flex;
+        position: absolute;
         width: 100%;
         height: 100vh;
-        background-color: #111;
+        // background-color: #111;
         color: white;
         .logo{
             display: flex;
-            width: 60%;
+            width: 50%;
             height: 100%;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
+            img{
+                padding-bottom: 50px;
+            }
+            a,a:hover,a:focus{
+                text-decoration: none !important;
+                p{
+                    color: white;
+                    font-size: 20px;
+                }
+            }
+            a:hover{
+                p{
+                    color: #c3073f;
+                }
+            }
+            
         }
         .questions{
             display: flex;
-            width: 40%;
+            width: 50%;
             height: 100%;
-            background-color: #c3073f;
+            // background-color: #111;
+            justify-content: center;
+            align-items: center;
+            .question-container{
+                display: flex;
+                flex-direction: column;
+                width: 80%;
+                height: 60%;
+                justify-content: center;
+                align-items: center;
+                #line{
+                    font-family: "Staatliches", cursive;
+                    font-size: 50px;
+                    letter-spacing: 2px;
+                    padding-bottom: 40px;
+                    color: #c3073f;
+                }
+                .que{
+                    display: flex;
+                    color: white;
+                    font-size: 27px;
+                    // padding-bottom: 40px;
+                }
+                .answer-button{
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    padding: 40px 0px;
+                    #show-answer{
+                        padding: 5px 30px;
+                        background-color: #c3073f;
+                        color: white;
+                        border: none;
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
+                    #show-answer{
+                        outline: none;
+                    }
+                    #show-answer:hover{
+                        background-color: white;
+                        color:#c3073f;
+                    }
+                }
+                .ans{
+                    display: none;
+                    justify-content: center;
+                    align-items: center;
+                    p{
+                        color: white;
+                        font-size: 25px;
+                    }
+                }
+            }
         }
     }
+}
+
+#particles-js{
+    height: 100%;
+    background-color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 

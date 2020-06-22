@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
 .announce {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -33,7 +34,7 @@
 .announce .details .description {
   width: 80%;
   min-width: 500px;
-  background-color: #111;
+  background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -60,7 +61,7 @@
 
 .announce .details .description .text p {
   font-size: 20px;
-  color: white;
+  color: #111;
 }
 
 .announce .details .description .other-details {
@@ -119,13 +120,35 @@
 }
 
 .container #carousel-example-generic {
-  margin-top: 70px;
   width: 100%;
   border: 2px solid #111;
 }
 
 .container #carousel-example-generic .carousel-indicators {
   bottom: 6px;
+}
+
+.announce-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  background-color: #c3073f;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.announce-title p {
+  font-family: "Staatliches", cursive;
+  font-size: 50px;
+  letter-spacing: 2px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  color: #111;
 }
 
 .main-container {
@@ -136,16 +159,15 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-height: 160vh;
 }
 
 .main-container .animation {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: absolute;
   width: 100%;
   height: 100vh;
-  background-color: #111;
   color: white;
 }
 
@@ -153,7 +175,42 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 60%;
+  width: 50%;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main-container .animation .logo img {
+  padding-bottom: 50px;
+}
+
+.main-container .animation .logo a, .main-container .animation .logo a:hover, .main-container .animation .logo a:focus {
+  text-decoration: none !important;
+}
+
+.main-container .animation .logo a p, .main-container .animation .logo a:hover p, .main-container .animation .logo a:focus p {
+  color: white;
+  font-size: 20px;
+}
+
+.main-container .animation .logo a:hover p {
+  color: #c3073f;
+}
+
+.main-container .animation .questions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
   height: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -163,12 +220,101 @@
           align-items: center;
 }
 
-.main-container .animation .questions {
+.main-container .animation .questions .question-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 40%;
-  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
+  height: 60%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-container .animation .questions .question-container #line {
+  font-family: "Staatliches", cursive;
+  font-size: 50px;
+  letter-spacing: 2px;
+  padding-bottom: 40px;
+  color: #c3073f;
+}
+
+.main-container .animation .questions .question-container .que {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+  font-size: 27px;
+}
+
+.main-container .animation .questions .question-container .answer-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 40px 0px;
+}
+
+.main-container .animation .questions .question-container .answer-button #show-answer {
+  padding: 5px 30px;
   background-color: #c3073f;
+  color: white;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.main-container .animation .questions .question-container .answer-button #show-answer {
+  outline: none;
+}
+
+.main-container .animation .questions .question-container .answer-button #show-answer:hover {
+  background-color: white;
+  color: #c3073f;
+}
+
+.main-container .animation .questions .question-container .ans {
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-container .animation .questions .question-container .ans p {
+  color: white;
+  font-size: 25px;
+}
+
+#particles-js {
+  height: 100%;
+  background-color: #111;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 /*# sourceMappingURL=home.css.map */
