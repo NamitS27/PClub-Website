@@ -164,15 +164,16 @@ body {
 
 .modal {
   position: relative;
-  background-color: white;
+  background-color: #111;
   width: 30%;
   min-width: 375px;
-  height: 50%;
+  height: 60%;
   display: flex;
   text-align: center;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
+  border-radius: 20px;
 }
 
 .modal-close {
@@ -183,9 +184,49 @@ body {
   cursor: pointer;
   transform: rotate(45deg);
   font-size: 35px;
+  color: white;
 }
 
 .bg-active {
   visibility: visible;
   opacity: 1;
+}
+
+.modal-bg .modal #eve_name{
+  color: #c3073f;
+  font-size: 40px;
+  font-family: "Staatliches", cursive !important;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-top: 2px;
+}
+.modal-bg .modal #eve_desc{
+  color: white;
+  font-size: 13px;
+  text-align: justify;
+  padding-left: 2px;
+  padding-right: 2px;
+  margin-top: 3px;
+}
+.modal-bg .modal #eve_date{
+  color: #c3073f;
+  font-size: 30px;
+  font-family: "Staatliches", cursive !important;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-top: 4px;
+}
+.modal-bg .modal #rd{
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 5px;
+}
+.modal-bg .modal #rl,
+.modal-bg .modal #fl,
+.modal-bg .modal #pl{
+  color: white;
+  font-size: 15px;
+  text-align: center;
+  margin: 0px;
 }
