@@ -14,3 +14,6 @@ class ResourceLinks(models.Model):
     rtype = models.CharField(max_length=50)
     rdesp = models.CharField(max_length=300)
     rfiles = models.FileField(upload_to='uploads/',blank=True)
+
+    def __str__(self):
+        return self.rtype

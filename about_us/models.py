@@ -16,6 +16,12 @@ class About(models.Model):
     treasurer_ln = models.CharField(max_length=30)
     treasurer_photo = models.ImageField(default=None,blank=True,upload_to="images/")
 
+    def __str__(self):
+        return self.id
+
 class Member(models.Model):
     member_fn = models.CharField(max_length=30)
     member_ln = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.member_fn
