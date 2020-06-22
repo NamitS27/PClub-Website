@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'about_us',
     'competitive_programming',
     'home_announce',
-    'testing',
+    # 'testing',
     'events',
 ]
 

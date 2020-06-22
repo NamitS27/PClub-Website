@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import date
 
 # Create your models here.
 class Announcement(models.Model):
@@ -10,6 +11,12 @@ class Announcement(models.Model):
 
     def __str__(self):
         return self.announcement_title
+
+class Daily(models.Model):
+    question = models.CharField(max_length=250)
+    answer = models.CharField(max_length=150)
+    question_isQuote = models.BooleanField(default=False)
+    question_tobeadded = models.DateField()
     
 
 

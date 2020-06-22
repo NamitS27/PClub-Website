@@ -12,7 +12,7 @@ urlpatterns = [
     path('about_us/',include("about_us.urls")),
     path('cp/',include("competitive_programming.urls")),
     path('home/',include("home_announce.urls")),
-    path('testing/',include("testing.urls")),
+    # path('testing/',include("testing.urls")),
 ]
 
 if settings.DEBUG:

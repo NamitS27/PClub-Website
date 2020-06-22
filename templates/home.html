@@ -26,15 +26,25 @@
 <!-- Main -->
 {% block main %}
 
+
 <div class="main-container">
-    <div class="animation"></div>
+    <div class="animation">
+        <p>{{upperd}}</p>
+    </div>
     <div class="container">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>  
+            <!-- <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>   -->
             
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <!-- <li data-target="#carousel-example-generic" data-slide-to="1"></li> -->
+            {% for i in upperd%}
+                {% if i.id == 0 %}
+                    <li data-target="#carousel-example-generic" data-slide-to="{{i.id}}" class="active"></li>
+                {% else %}
+                <li data-target="#carousel-example-generic" data-slide-to="{{i.id}}"></li>
+                {% endif%}
+            {% endfor %}
             <!-- <li data-target="#carousel-example-generic" data-slide-to="2"></li>
             <li data-target="#carousel-example-generic" data-slide-to="3"></li>
             <li data-target="#carousel-example-generic" data-slide-to="4"></li> -->
@@ -42,65 +52,71 @@
     
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
-            <div class="item active">
-            <div class="announce">
-                <div class="details">
-                <div class="img">
-                    <img src="/static/images/announcement-default.png" alt="test">
-                </div>
-                <div class="description">
-                    <div class="text">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam eligendi adipisci provident, magni corrupti officiis. Rem ipsum deserunt enim adipisci, quasi quod maxime aspernatur soluta aperiam, unde praesentium ipsam aliquid. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis illo veritatis magnam quis sit in cum eius architecto error obcaecati, ab et blanditiis, cupiditate consequatur ad tempore, sed molestias animi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi doloremque quaerat quod sed architecto molestiae voluptatibus cum, nobis reiciendis consequatur et, maiores consectetur nesciunt officiis omnis ipsa est exercitationem rem.
-                    </p>
+            {% for i in announce%}
+                {%if i.sr == 0 %}
+                    <div class="item active">
+                        <div class="announce">
+                            <div class="details">
+                            <div class="img">
+                                <img src="{{i.image.url}}">
+                            </div>
+                            <div class="description">
+                                <div class="text">
+                                <p>
+                                    {{i.description}}
+                                </p>
+                                </div>
+                                <div class="other-details">
+                                <div class="date">
+                                    <p>
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                    {{i.date}}
+                                    </p>
+                                </div>
+                                <div class="more">
+                                    <button type="button" class="go">
+                                    More
+                                    </button>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="other-details">
-                    <div class="date">
-                        <p>
-                        2 days ago
-                        </p>
+                {% else %}
+                    <div class="item">
+                        <div class="announce">
+                            <div class="details">
+                            <div class="img">
+                                <img src="{{i.image.url}}">
+                            </div>
+                            <div class="description">
+                                <div class="text">
+                                <p>
+                                    {{i.description}}
+                                </p>
+                                </div>
+                                <div class="other-details">
+                                <div class="date">
+                                    <p>
+                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                    {{i.date}}
+                                    </p>
+                                </div>
+                                <div class="more">
+                                    <button type="button" class="go">
+                                    More
+                                    </button>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="more">
-                        <button type="button" class="go">
-                        More
-                        </button>
-                    </div>
-                    </div>
-                </div>
-                </div>
-                
-            </div>
-            </div>
-            <div class="item">
-            <div class="announce">
-                <div class="details">
-                <div class="img">
-                    <img src="/media/images/11.jpg" alt="test">
-                </div>
-                <div class="description">
-                    <div class="text">
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, repudiandae dolorem. Omnis delectus voluptatum quam, dignissimos ipsum ipsa quae esse officia eveniet sapiente, fuga temporibus ducimus architecto eius doloribus unde. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam architecto eius laboriosam, nobis iure eligendi repudiandae quia laudantium quidem? Magnam repudiandae tempora quia numquam molestias, quam cum beatae sequi consequatur. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, cumque eius! Labore maxime quia dolor laudantium autem 
-                    </p>
-                    </div>
-                    <div class="other-details">
-                    <div class="date">
-                        <p>
-                        <i class="fa fa-clock-o" aria-hidden="true"></i>
-                        2 days ago
-                        </p>
-                    </div>
-                    <div class="more">
-                        <button type="button" class="go">
-                        More
-                        </button>
-                    </div>
-                    </div>
-                </div>
-                </div>
-            </div>
-            </div>
-            </div>
+                {% endif %}
+            {% endfor %}
+            
+        </div>
     
         <!-- Controls -->
         <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">

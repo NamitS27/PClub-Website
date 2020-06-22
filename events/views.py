@@ -1,6 +1,6 @@
 from django.shortcuts import render,get_object_or_404
 from .models import Events
-from datetime import datetime
+from datetime import datetime,date,timedelta
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
@@ -20,7 +20,14 @@ def upcoming_events(request):
 @csrf_exempt
 def live_events(request):
     if request.method =='GET':
-        live_events = Events.objects.filter(date=datetime.today())
+        today = str(date.today())
+        yy = int(today[:4])
+        mm = int(today[5:7])
+        dd = int(today[9:11])
+        startdate = date.today()
+        enddate = startdate + timedelta(days=1)
+    # Sample.objects.filter(date__range=[startdate, enddate])
+        live_events = Events.objects.filter(date__range=[startdate, enddate])
         eve_type = "Live Events"
         content = {
             "events":live_events,
