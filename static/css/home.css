@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .announce {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -127,29 +132,6 @@
   bottom: 6px;
 }
 
-.announce-title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  background-color: #c3073f;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.announce-title p {
-  font-family: "Staatliches", cursive;
-  font-size: 50px;
-  letter-spacing: 2px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  color: #111;
-}
-
 .main-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -160,21 +142,47 @@
           flex-direction: column;
 }
 
-.main-container .animation {
+.main-container #particles-js {
+  height: 100%;
+  width: 100%;
+  background-color: #111;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.main-container #particles-js .animation {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   position: absolute;
   width: 100%;
-  height: 100vh;
   color: white;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
-.main-container .animation .logo {
+.main-container #particles-js .animation .logo {
+  margin-top: 20px;
+  padding-top: 20px;
+  min-width: 568px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 50%;
+  -webkit-box-flex: 40%;
+      -ms-flex: 40%;
+          flex: 40%;
+  width: 100%;
   height: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -188,29 +196,72 @@
           flex-direction: column;
 }
 
-.main-container .animation .logo img {
+.main-container #particles-js .animation .logo img {
   padding-bottom: 50px;
+  -webkit-animation-name: bounce-1;
+          animation-name: bounce-1;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 
-.main-container .animation .logo a, .main-container .animation .logo a:hover, .main-container .animation .logo a:focus {
+@-webkit-keyframes bounce-1 {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes bounce-1 {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.main-container #particles-js .animation .logo a, .main-container #particles-js .animation .logo a:hover, .main-container #particles-js .animation .logo a:focus {
   text-decoration: none !important;
 }
 
-.main-container .animation .logo a p, .main-container .animation .logo a:hover p, .main-container .animation .logo a:focus p {
+.main-container #particles-js .animation .logo a p, .main-container #particles-js .animation .logo a:hover p, .main-container #particles-js .animation .logo a:focus p {
   color: white;
-  font-size: 20px;
+  font-size: 25px;
 }
 
-.main-container .animation .logo a:hover p {
+.main-container #particles-js .animation .logo a:hover p {
   color: #c3073f;
 }
 
-.main-container .animation .questions {
+.main-container #particles-js .animation .questions {
+  margin-top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 50%;
+  -webkit-box-flex: 40%;
+      -ms-flex: 40%;
+          flex: 40%;
+  width: 100%;
   height: 100%;
+  min-width: 568px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -219,7 +270,7 @@
           align-items: center;
 }
 
-.main-container .animation .questions .question-container {
+.main-container #particles-js .animation .questions .question-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -227,7 +278,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 80%;
+  width: 70%;
   height: 60%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -237,7 +288,7 @@
           align-items: center;
 }
 
-.main-container .animation .questions .question-container #line {
+.main-container #particles-js .animation .questions .question-container #line {
   font-family: "Staatliches", cursive;
   font-size: 50px;
   letter-spacing: 2px;
@@ -245,7 +296,7 @@
   color: #c3073f;
 }
 
-.main-container .animation .questions .question-container .que {
+.main-container #particles-js .animation .questions .question-container .que {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -253,7 +304,7 @@
   font-size: 27px;
 }
 
-.main-container .animation .questions .question-container .answer-button {
+.main-container #particles-js .animation .questions .question-container .answer-button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -266,7 +317,7 @@
   padding: 40px 0px;
 }
 
-.main-container .animation .questions .question-container .answer-button #show-answer {
+.main-container #particles-js .animation .questions .question-container .answer-button #show-answer {
   padding: 5px 30px;
   background-color: #c3073f;
   color: white;
@@ -275,16 +326,16 @@
   font-weight: bold;
 }
 
-.main-container .animation .questions .question-container .answer-button #show-answer {
+.main-container #particles-js .animation .questions .question-container .answer-button #show-answer {
   outline: none;
 }
 
-.main-container .animation .questions .question-container .answer-button #show-answer:hover {
+.main-container #particles-js .animation .questions .question-container .answer-button #show-answer:hover {
   background-color: white;
   color: #c3073f;
 }
 
-.main-container .animation .questions .question-container .ans {
+.main-container #particles-js .animation .questions .question-container .ans {
   display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -294,26 +345,34 @@
           align-items: center;
 }
 
-.main-container .animation .questions .question-container .ans p {
+.main-container #particles-js .animation .questions .question-container .ans p {
   color: white;
   font-size: 25px;
 }
 
-#particles-js {
-  height: 100%;
-  background-color: #111;
+.main-container .announce-title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
+  background-color: #c3073f;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+}
+
+.main-container .announce-title p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "Staatliches", cursive;
+  font-size: 50px;
+  letter-spacing: 2px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  color: #111;
 }
 /*# sourceMappingURL=home.css.map */
