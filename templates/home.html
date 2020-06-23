@@ -44,7 +44,7 @@
                 <p id="line">
                     If you know you know !
                 </p>
-                <div class="que" data-ques="{{question.question}}">
+                <div class="que">
                         <p><b>Q.</b> {{question.question}}</p>
                 </div>
                 <div class="answer-button">
@@ -186,18 +186,5 @@ $('#show-answer').click(()=>{
         anss.style.display = "none";
     }
 });
-/*$('#show-answer').click(()=>{
-    $.ajax({
-        type:'POST',
-        url: '/home/',
-        data:{
-            question:$('.que').data('ques'),
-        },
-        success:function(data){
-            document.querySelector('.ans').innerHTML = ""
-        }
-
-    });
-})*/
 </script>
 {%endblock%}

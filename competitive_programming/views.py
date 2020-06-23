@@ -57,7 +57,7 @@ def contest(request):
         # print(time_interval)
         if time_interval>10000:
             define_table()
-        return render(request,'cp.html')
+        return render(request,'cp_reloaded.html')
     elif request.is_ajax():
         if request.POST['choose']=="contests":
             cid = int(request.POST['id'])
