@@ -43,6 +43,10 @@
   font-size: 20px;
 }
 
+.main-container .practice .modal-btn:focus {
+  outline: none !important;
+}
+
 .main-container #heading {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -59,7 +63,7 @@
 
 .main-container #heading p {
   font-size: 30px;
-  font-family: "Staatliches", cursive;
+  font-family: "Staatliches", cursive !important;
   color: white;
   letter-spacing: 3px;
   padding-bottom: 0px;
@@ -301,7 +305,8 @@
 
 .modal-bg .modal {
   position: relative;
-  background-color: #111;
+  background-color: white;
+  min-width: 300px;
   width: 30%;
   height: 50%;
   display: -webkit-box;
@@ -329,42 +334,44 @@
 }
 
 .modal-bg .modal #min, .modal-bg .modal #max, .modal-bg .modal #username, .modal-bg .modal #tag {
-  background-color: white;
+  background-color: #111;
   height: 10%;
-  width: 40%;
-  color: #111;
-  font-size: 12px;
-  font-weight: bold;
+  width: 60%;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Source Sans Pro';
   border-radius: 10px;
+  border: none;
 }
 
-.modal-bg .modal ::-webkit-input-placeholder {
-  background-color: white;
-  color: #838383;
+.modal-bg .modal #min:focus, .modal-bg .modal #max:focus, .modal-bg .modal #username:focus, .modal-bg .modal #tag:focus {
+  outline: none;
+}
+
+.modal-bg .modal::-webkit-input-placeholder {
+  color: white;
   font-size: 12px;
   border-radius: 10px;
   text-align: center;
 }
 
-.modal-bg .modal :-ms-input-placeholder {
-  background-color: white;
-  color: #838383;
+.modal-bg .modal:-ms-input-placeholder {
+  color: white;
   font-size: 12px;
   border-radius: 10px;
   text-align: center;
 }
 
-.modal-bg .modal ::-ms-input-placeholder {
-  background-color: white;
-  color: #838383;
+.modal-bg .modal::-ms-input-placeholder {
+  color: white;
   font-size: 12px;
   border-radius: 10px;
   text-align: center;
 }
 
-.modal-bg .modal ::placeholder {
-  background-color: white;
-  color: #838383;
+.modal-bg .modal::placeholder {
+  color: white;
   font-size: 12px;
   border-radius: 10px;
   text-align: center;
@@ -390,7 +397,7 @@
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   font-size: 35px;
-  color: white;
+  color: #111;
 }
 
 .bg-active {
@@ -477,6 +484,12 @@
   }
   .main-container .ctst #challenge .contest .other .link {
     font-size: 13px;
+  }
+}
+
+@media all and (max-width: 870px) {
+  .main-container .practice p {
+    font-size: 18px;
   }
 }
 /*# sourceMappingURL=cp_reloaded.css.map */

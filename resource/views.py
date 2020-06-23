@@ -40,7 +40,7 @@ def search(request):
 @csrf_exempt
 def autocomplete(request):
     if request.is_ajax():
-        queryset = Resource.objects.filter(resource_name__startswith=request.GET.get('search',None))
+        queryset = Resource.objects.filter(resource_name__istartswith=request.GET.get('search',None))
         list = []
         for i in queryset:
             list.append(i.resource_name)

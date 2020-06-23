@@ -31,18 +31,22 @@
             color: white;
             margin-bottom: 0px;
         }
-            .modal-btn {
-                margin-left: 9px;
-                background-color: #111;
-                color: white;
-                border-radius: 20px;
-                border: 2px solid white !important;
-                cursor: pointer;
-                // height: 43px;
-                padding: 0px 20px;
-                font-size: 20px;
+        .modal-btn {
+            margin-left: 9px;
+            background-color: #111;
+            color: white;
+            border-radius: 20px;
+            border: 2px solid white !important;
+            cursor: pointer;
+            // height: 43px;
+            padding: 0px 20px;
+            font-size: 20px;
             // }
         }
+        .modal-btn:focus{
+            outline: none !important;
+        }
+
     }
     #heading{
         display: flex;
@@ -52,7 +56,7 @@
         background-color: #111;
         p{
             font-size: 30px;
-            font-family: "Staatliches", cursive;
+            font-family: "Staatliches", cursive !important;
             color: white;
             letter-spacing: 3px;
             padding-bottom: 0px;
@@ -223,7 +227,8 @@
     transition: visibility 0s, opacity 0.5s;
     .modal {
         position: relative;
-        background-color: #111;
+        background-color: white;
+        min-width: 300px;
         width: 30%;
         height: 50%;
         display: flex;
@@ -240,17 +245,23 @@
             margin-top: 2px;
         }
         #min,#max,#username,#tag{
-            background-color: white;
+            background-color: #111;
             height: 10%;
-            width: 40%;
-            color: #111;
-            font-size: 12px;
-            font-weight: bold;
+            width: 60%;
+            color: white;
+            text-align: center;
+            font-size: 14px;
+            // font-weight: bold;
+            font-family: 'Source Sans Pro';
             border-radius: 10px;
+            border: none;
         }
-        ::placeholder{
-            background-color: white;
-            color: #838383;
+        #min:focus,#max:focus,#username:focus,#tag:focus{
+            outline: none;
+        }
+        &::placeholder{
+            // background-color: #111;
+            color: white;
             font-size: 12px;
             border-radius: 10px;
             text-align: center;
@@ -273,7 +284,7 @@
             cursor: pointer;
             transform: rotate(45deg);
             font-size: 35px;
-            color: white;
+            color: #111;
         }
     }
 }
@@ -380,6 +391,16 @@
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+@media all and (max-width:870px){
+    .main-container{
+        .practice{
+            p{
+                font-size: 18px;
             }
         }
     }
