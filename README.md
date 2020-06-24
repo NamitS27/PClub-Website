@@ -1,13 +1,16 @@
-<img src="/static/images/icon.png" height=200 width=200 />
+<p align="center">
+<img src="/static/images/icon.png" height=100 width=100/>
+</p>
 
 <h3 align='center'>Programming Club Website</h3>
 
 <p align='center'>
     This website was build under a competition organised by the Programming Club of School of Engineering and Applied Science (SEAS), Ahmedabad University (AU) 
 </p>
-----
 
-<h4>Table of Contents</h4>
+-------------
+
+<h3>Table of Contents</h3>
 
 * [About The Project](#about-the-project)
   * [Build with](#build-with)
@@ -21,7 +24,7 @@
 * [Acknowledgements](#acknowledgements)
 
 
-
+<br><br>
 ### About The Project
 
 #### Build With
@@ -38,43 +41,61 @@
 * Postgres SQL
 
 
-
+<br>
 ### Getting Started
 
 #### Installation
 
 * Clone
 
-  ````bash
+  ````sh
   git clone https://github.com/sp2605/PClub-Website.git
   ````
 
-* Database
+* Database (As per settings.py)
 
-  ```
-  
-  ```
+  * Creating the databse
+    ```sql
+    CREATE DATABASE pclub;
+    ```
+  * Creating a user for the database
+    ```sql
+    CREATE USER adminuser WITH PASSWORD 'admin123';
+    ```
+  * Altering roles for timezones,encoding and default transaction isolation
+    ```sql
+    ALTER ROLE adminuser SET client_encoding TO 'utf8';
+    ALTER ROLE adminuser SET default_transaction_isolation TO 'read committed';
+    ALTER ROLE adminuser SET timezone TO 'Asia/Kolkata';
+    ```
 
 * Project
+  * Creating Virtual Environment 
+    ```sh
+    virtualvenv myvenv
+    ```
+  * Install the required packages to run the project
+    ````sh
+    pip install requirements.txt
+    ````
 
-  ```python
-  virtualvenv myvenv
-  ```
-
-  ````python
-  pip install requirements.txt
-  ````
-
-  ````python
-  python manage.py makemigrations
-  python manage.py migrate
-  ````
-
-  ```python
-  python manage.py runserver
-  ```
+  * Following are the commands to create the tables
+    ````sh
+    python manage.py makemigrations
+    python manage.py migrate
+    ````
+  * Final command to run the server
+    ```sh
+    python manage.py runserver
+    ```
 
 #### Dependencies 
+
+* CSS
+  * [https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css)
+  * [https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css](https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css)
+  * [https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css](https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css)
+
 
 * JavaScript
   * [https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js](https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js)
@@ -82,20 +103,15 @@
   * [https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js](https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js)
   * [https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min.js](https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min.js)
   * [https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js](https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js)
-* CSS
-  * [https://use.fontawesome.com/releases/v5.8.1/css/all.css](https://use.fontawesome.com/releases/v5.8.1/css/all.css)
-  * [https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css)
-  * [https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css](https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css)
-  * [https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css](https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css)
 
 
-
+<br>
 ### Usage
 
 Any educational institutions who wants a website to showcase the activities done by the club. 
 
 
-
+<br>
 ### Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -108,15 +124,14 @@ Contributions are what make the open source community such an amazing place to b
 5. Open a Pull Request
 
    
-
+<br>
 ### Contact
 
-Suhanee Patel  suhanee.p@ahduni.edu.in  - [LinkedIn](https://www.linkedin.com/in/suhanee-patel-44aa1219b/) - [GitHub](https://github.com/sp2605)
+Suhanee Patel - suhanee.p@ahduni.edu.in  - [LinkedIn](https://www.linkedin.com/in/suhanee-patel-44aa1219b/) - [GitHub](https://github.com/sp2605)
 
 Project Link: [https://github.com/sp2605/PClub-Website](https://github.com/sp2605/PClub-Website)
 
-
-
+<br>
 ### Acknowledgements
 
 * [Codeforces API](https://codeforces.com/apiHelp)

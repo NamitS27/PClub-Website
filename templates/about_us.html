@@ -13,7 +13,6 @@
 
 <!-- CSS Files -->
 {% block stylesheet %}
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
 <link rel="stylesheet" href="{% static 'css/about_us.css'%}"> 
 <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
@@ -77,19 +76,19 @@
         <div class="imgs">
             <div class="item item1">
                 <img src="{{abt.faculty_advisor_photo.url}}" alt="our_team"><br>
-                <p>{{abt.faculty_advisor_fn}} {{abt.faculty_advisor_ln}}</p>
+                <p>{{abt.faculty_advisor_fn}} {{abt.faculty_advisor_ln}} (Mentor)</p>
             </div>
             <div class="item item2">
                 <img src="{{abt.secretary_photo.url}}" alt="our_team"><br>
-                <p>{{abt.secretary_fn}} {{abt.secretary_ln}}</p>
+                <p>{{abt.secretary_fn}} {{abt.secretary_ln}} (Secretory)</p>
             </div>
             <div class="item item3">
                 <img src="{{abt.joint_secretary_photo.url}}" alt="our_team">
-                <p>{{abt.joint_secretary_fn}} {{abt.joint_secretary_ln}}</p>
+                <p>{{abt.joint_secretary_fn}} {{abt.joint_secretary_ln}} (Joint Secretory)</p>
             </div>
             <div class="item item4">
                 <img src="{{abt.treasurer_photo.url}}" alt="our_team">
-                <p>{{abt.treasurer_fn}} {{abt.treasurer_ln}}</p>
+                <p>{{abt.treasurer_fn}} {{abt.treasurer_ln}} (Treasurer)</p>
             </div>
         </div>
     </div>
