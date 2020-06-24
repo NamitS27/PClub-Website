@@ -27,11 +27,12 @@
 
 <div class="main-container">
     <!-- <div id="particles-js"> -->
+        <div id="particles-js"></div>
         <div class="animation">
             <div class="logo">
                 <img src="{% static 'images/logoo.png' %}" class="box bounce-1">
                 {% if new_event%}
-                <a href="/events/live_events">
+                <a href="/events/today_events">
                     <p>New Events are waiting for you today! &nbsp;&#128197</p>
                 </a>
                 {% endif%}
