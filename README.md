@@ -54,7 +54,7 @@
   git clone https://github.com/sp2605/PClub-Website.git
   ````
 
-* Database (As per settings.py)
+* Database (As per [settings.py](https://github.com/NamitS27/PClub-Website/blob/master/pclub_website/settings.py))
 
   * Creating the databse
     ```sql
@@ -81,11 +81,18 @@
     pip install requirements.txt
     ````
 
-  * Following are the commands to create the tables
-    ````sh
-    python manage.py makemigrations
+  * Following are the commands to create the tables 
+    * Do make migrations for all the apps individually
+    ```sh
+    python manage.py makemigrations <app_name>
+    ```
+    ```
     python manage.py migrate
     ````
+  * Create Super User for the Admin Panel (Enter username/password as per your wish)
+    ```sh
+    python manage.py createsuperuser
+    ```
   * Final command to run the server
     ```sh
     python manage.py runserver
