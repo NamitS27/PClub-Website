@@ -2,7 +2,6 @@ asgiref==3.2.7
 certifi==2020.4.5.2
 chardet==3.0.4
 Django==3.0.6
-django-summernote==0.8.11.6
 idna==2.9
 Pillow==7.1.2
 psycopg2==2.8.5
