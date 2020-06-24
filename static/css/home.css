@@ -15,41 +15,54 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  width: 100%;
-  height: 100%;
-}
-
-.announce .details .img {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 20%;
-  min-width: 100px;
-  height: 100%;
-}
-
-.announce .details .img img {
-  width: 100%;
-  height: 300px;
-}
-
-.announce .details .description {
-  width: 80%;
-  min-width: 500px;
-  background-color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 100%;
+  min-height: 300px;
 }
 
-.announce .details .description .text {
-  height: 90%;
+.announce .details .text {
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0px 150px;
+}
+
+.announce .details .text #title {
+  font-weight: bold;
+  font-size: 30px;
+  color: #111;
+}
+
+.announce .details .text p {
+  font-size: 20px;
+  color: #111;
+}
+
+.announce .details .other-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 20%;
+  background-color: #c3073f;
+}
+
+.announce .details .other-details .date {
+  padding-left: 20px;
+  width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -59,62 +72,50 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0px 20px;
-  padding-right: 160px;
 }
 
-.announce .details .description .text p {
-  font-size: 20px;
-  color: #111;
-}
-
-.announce .details .description .other-details {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 20%;
-  background-color: #c3073f;
-}
-
-.announce .details .description .other-details .date {
-  padding-left: 20px;
-  width: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.announce .details .description .other-details .date p {
+.announce .details .other-details .date p {
+  font-weight: bold;
   margin: 0px;
   font-size: 16px;
 }
 
-.announce .details .description .other-details .date p .fa-clock-o {
+.announce .details .other-details .date p .fa-clock-o {
   font-size: 15px;
 }
 
-.announce .details .description .other-details .more {
+.announce .details .other-details .more {
+  z-index: 5000;
   width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-right: 260px;
 }
 
-.announce .details .description .other-details .more .go {
-  padding: 3px 3px;
+.announce .details .other-details .more a {
+  text-decoration: none !important;
+}
+
+.announce .details .other-details .more a .go {
+  z-index: 5000;
+  cursor: pointer;
+  border: none;
+  background-color: #111;
+  color: white;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 17px;
+  border-radius: 5px;
+  padding: 5px 20px;
+}
+
+.announce .details .other-details .more a .go:focus {
+  outline: none;
 }
 
 .container {
@@ -124,12 +125,17 @@
 }
 
 .container #carousel-example-generic {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
   border: 2px solid #111;
 }
 
 .container #carousel-example-generic .carousel-indicators {
   bottom: 6px;
+  width: 33%;
+  margin-left: -17%;
 }
 
 .main-container {
@@ -353,7 +359,7 @@
   display: -ms-flexbox;
   display: flex;
   font-family: "Staatliches", cursive;
-  font-size: 50px;
+  font-size: 40px;
   letter-spacing: 2px;
   margin-bottom: 0px;
   padding-bottom: 0px;

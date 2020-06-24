@@ -73,7 +73,7 @@
         </div>
     <!-- </div> -->
     <div class="announce-title">
-        <p>Announcements</p>
+        <p>< Announcements ></p>
     </div>
     <div class="container">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -87,7 +87,6 @@
                 {% endif%}
                 {% endfor %}
             </ol>
-
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
                 {% for i in announce%}
@@ -95,11 +94,13 @@
                 <div class="item active">
                     <div class="announce">
                         <div class="details">
-                            <div class="img">
-                                <img src="{{i.image.url}}">
-                            </div>
-                            <div class="description">
+                            <!-- <div class="title"> -->
+                                <!-- <img src="{{i.image.url}}"> -->
+                                <!-- {{i.title}} -->
+                            <!-- </div> -->
+                            <!-- <div class="description"> -->
                                 <div class="text">
+                                    <p id="title"> {{i.title}}</p>
                                     <p>
                                         {{i.description}}
                                     </p>
@@ -112,12 +113,13 @@
                                         </p>
                                     </div>
                                     <div class="more">
-                                        <button type="button" class="go">
-                                            More
-                                        </button>
+                                        {% if i.isevent%}
+                                        <a href="/events/upcoming_events"><button type="button" class="go">
+                                            Know More!
+                                        </button></a>
+                                        {% endif %}
                                     </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -125,11 +127,13 @@
                 <div class="item">
                     <div class="announce">
                         <div class="details">
-                            <div class="img">
-                                <img src="{{i.image.url}}">
-                            </div>
-                            <div class="description">
+                            <!-- <div class="title"> -->
+                                <!-- <img src="{{i.image.url}}"> -->
+                                <!-- {{i.title}} -->
+                            <!-- </div> -->
+                            <!-- <div class="description"> -->
                                 <div class="text">
+                                    <p id="title"> {{i.title}}</p>
                                     <p>
                                         {{i.description}}
                                     </p>
@@ -142,12 +146,13 @@
                                         </p>
                                     </div>
                                     <div class="more">
-                                        <button type="button" class="go">
-                                            More
-                                        </button>
+                                        {% if i.isevent%}
+                                        <a href="/events/upcoming_events"><button type="button" class="go">
+                                            Know More!
+                                        </button></a>
+                                        {% endif %}
                                     </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
                 </div>

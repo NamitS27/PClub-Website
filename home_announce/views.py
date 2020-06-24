@@ -29,7 +29,8 @@ def make_announce(request):
                 x['title'] = i.announcement_title
                 x['date'] = ta.format(i.announcement_date,datetime.now(tz))
                 x['description'] = i.announcement_description
-                x['image'] = i.announcement_image
+                x['isevent'] = "Yes" if i.announcement_isofEvent else None
+                # x['image'] = i.announcement_image
             announcements.append(x)
             cnt += 1
         quest = {}

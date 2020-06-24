@@ -9,12 +9,11 @@ def send(name,semail,subjects,messages,jw):
     email = 'noreplyahdunipclub@gmail.com'
     password = 'Noreply@Pclub9'
     send_to_email = ''
-    send_to_emails = ['suhanee.p@ahduni.edu.in','namit.s@ahduni.edu.in'] # List of bcc
+    send_to_emails = [semail,'suhanee.p@ahduni.edu.in','namit.s@ahduni.edu.in'] # List of bcc
     subject = subjects
     message = f"Sender Detials : <br> <b>Name</b> : {name} <br><b>Email</b> : {semail} <br> <b>Message</b> : {messages}<br>" 
     if jw=="Yes":
         message += f"I want to join WhatsApp group"   
-
     try:
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.starttls()
