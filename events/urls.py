@@ -7,7 +7,7 @@ app_name = "events"
 
 urlpatterns = [
     path('upcoming_events',views.upcoming_events,name="upcoming_events"),
-    path('live_events',views.live_events,name="live_events"),
+    path('today_events',views.today_events,name="today_events"),
     path('past_events',views.past_events,name="past_events"),
     # path('<slug:slug>',views.view_details,name="view_details"),
 ]

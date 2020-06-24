@@ -37,7 +37,7 @@
         <h1>Contact Us</h1>
         <div class="icons">
             <a href="https://www.youtube.com/channel/UC6omkjRsql98-udXWNbVxFg" target="_blank" class="ic"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
-            <a href="https://www.instagram.com/pclub_au/" target="_blank"class="ic"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/ahduni_programmingclub/" target="_blank"class="ic"><i class="fa fa-instagram" aria-hidden="true"></i></a>
             <a href="#" target="_blank" class="ic"><i class="fa fa-github" aria-hidden="true"></i></a>
             <a href="#" target="_blank" class="ic"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
         </div>
@@ -112,19 +112,21 @@
     }
 </script>
 <script>
-    $('.contact-form-btn').click(function(){
+    $('.contact-form-btn').click(async function(){
         var name =$('#name').val();
         var email = $('#email').val();
         var subject = $('#subject').val();
         var message =$('#message').val();
         var check = "No";
+        var valid = "";
         if($('#jw').prop("checked") == true){
             check = "Yes";
         }
+        valid = await checkEmail(email);
         if(document.getElementById('name').value.length==0 || document.getElementById('email').value.length==0 || document.getElementById('subject').value.length==0 || document.getElementById('message').value.length==0){ 
             alert('Please fill the empty feilds');
         }
-        else if(checkEmail(email)==='Not Valid'){
+        else if(valid==="No"){
             alert("Enter Valid Email ID");
         }
         else{
@@ -158,21 +160,20 @@
         }
     });
 
-    function checkEmail(email){
-        console.log(email);
-        var emailAddress = email;
-        var check = "No"
-        $.get("https://isitarealemail.com/api/email/validate?email=" +
-        emailAddress,
+    async function checkEmail(email){
+        var check = "No";
+        await $.get("https://isitarealemail.com/api/email/validate?email=" +
+        email,
         function responseHandler(data) {
             if (data.status === 'valid') {
-                check = "Yes"
+                check = "Yes";
+                console.log("the email is valid and the mail box is active")
+            } else {
+                console.log("the email is incorrect or unable to be tested.")
             }
         });
         console.log(check);
-        if(check==='No') {
-            return 'Not Valid';
-        }
+        return check;
     }
 
 </script>

@@ -32,39 +32,43 @@
     <div class="clist">
         <!-- <div class="platform-names"> -->
       <div class="name" id="1">
-        <img src="{% static 'images/cc1.png'%}">
+        <img src="{% static 'images/pc1.png'%}">
       </div>
       <div class="name" id="2">
           <img src="{% static 'images/cc1.png' %}">
       </div>
       <div class="name" id="3">
-        <img src="{% static 'images/cc1.png' %}"
+        <img src="{% static 'images/cf1.png' %}"
         />
       </div>
       <div class="name" id="4">
-       <img src="{% static 'images/cc1.png' %}"
+       <img src="{% static 'images/at.png' %}"
         />
       </div>
       <div class="name" id="5">
-         <img src="{% static 'images/cf1.png' %}"
+         <img src="{% static 'images/hk.png' %}"
         />
       </div>
       <div class="name" id="6">
-        <img src="{% static 'images/cf1.png' %}"
+        <img src="{% static 'images/he1.png' %}"
         />
       </div>
       <div class="name" id="7">
-        <img src="{% static 'images/cf1.png' %}"
+        <img src="{% static 'images/gg.png' %}"
         />
       </div>
       <div class="name" id="8">
-        <img src="{% static 'images/cf1.png' %}"
+        <img src="{% static 'images/tc.png' %}"
         />
       </div>
     <!-- </div> -->
     </div>
   <div class="ctst">
-    <div id="challenge"></div>
+    <div id="challenge">
+      <div class="instructions">
+        <p>To get the information about upcoming contests of any of the competitive platforms given above please click on them</p>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -112,12 +116,16 @@
 
           $('#challenge').append('<div class="contest">\n <div class="timer">\n <p class ="countdown" data-countdown="'+ start +'"></p>\n<p>to go</p>\n</div>\n<div class="other">\n <div class="title">\n'+ name +'\n</div>\n<div class="sed">\n<div class="sd">\n<p>Start</p>\n<p>'+ start +'</p>\n</div>\n<div class="sd">\n<p >End</p>\n<p>'+ end +'</p>\n</div>\n<div class="sd">\n<p>Duration</p>\n<p>'+ duration +'</p>\n</div>\n</div>\n<div class="link">\n<a href="'+ link +'" target="_blank">'+link +'</a>\n</div>\n</div>\n</div>');
           
+          
           /*if(respid=='1'){
             $('#challenge').append('<div class="contest"><p>' + name + '</p><p>' + start + "</p><p>" + end + "</p><p>" + duration + '<p><p class ="countdown" data-countdown="'+ start +'"><p> Platform : '+data['contest'][i]['platform'] + '</p></p><a id="here" href="' + link + '" target= "_blank">' + link + "</a></div>");
           }  
           else{
             $('#challenge').append('<div class="contest"><p>' + name + '</p><p>' + start + "</p><p>" + end + "</p><p>" + duration + '<p><p class ="countdown" data-countdown="'+ start +'"></p><a id="here" href="' + link + '" target= "_blank">' + link + "</a></div>");
           }*/
+        }
+        if(data['contest'].length==0){
+          $('#challenge').append('<div class="no-contest"> <p> No contests </p> </div>');
         }
         $('[data-countdown]').each(function() {
           var $this = $(this), finalDate = $(this).data('countdown');
@@ -169,7 +177,7 @@
                   console.log(data['prob']);
                   $('#loading').hide();
                   if(data['prob'].length==0){
-                    alert("No Questions Found");
+                    alert("No Questions Found/Connection Error Occured !");
                   }
                   //document.getElementById('sub-id').style.display="block";
                   else{

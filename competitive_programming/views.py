@@ -84,7 +84,10 @@ def contest(request):
             r2 = int(request.POST['max'])
             cf = request.POST['username']
             tag = request.POST['tag']
-            prob = sp.get_problems(r1,r2,cf,tag)
+            try:
+                prob = sp.get_problems(r1,r2,cf,tag)
+            except:
+                prob = []
             return JsonResponse({'prob':prob})
 
 

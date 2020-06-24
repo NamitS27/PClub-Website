@@ -36,6 +36,10 @@ body {
   padding: 10px 0px;
 }
 
+a:focus{
+  outline: none !important;
+}
+
 .menu {
   position: fixed;
   top:0;
@@ -264,18 +268,18 @@ body {
   }
 }
  ::-webkit-scrollbar {
-  width: 7px;
+  width:10px;
   visibility: visible;
   
 }
 
 ::-webkit-scrollbar-track {
-  border: 7px solid #232943;
+  border: 7px solid white;
   box-shadow: inset 0 0 2.5px 2px rgba(0, 0, 0, 0.5);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #24292E;
+  background: #c3073f;
   
   /* background: linear-gradient(45deg, rgba(197,113,18,1) 10%, rgba(235,50,110,1) 51%, rgba(182,23,23,1) 91%); */
   border-radius: 3px;

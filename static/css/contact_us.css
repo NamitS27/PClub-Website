@@ -19,7 +19,7 @@
   /* flex-basis: 100rem; */
   /* display: flex; */
   width: 50%;
-  background-color: #111;
+  background-color: #c30735;
 }
 
 .sec2{
@@ -30,7 +30,7 @@
   /* flex-basis: 100rem; */
   /* display: flex; */
   width: 50%;
-  background-color: #c30735;
+  background-color: #111;
 }
 
 .contact-section {
@@ -61,7 +61,7 @@
   /* font-weight: bold; */
   font-size: 45px;
   font-family: "Staatliches", cursive !important;
-  color: #ffffff;
+  color: white;
   letter-spacing: 3px;
 }
 .contact-section .heading .icons{
@@ -75,13 +75,13 @@
 
 .ic,
 .ic:visited{
-  color: #111;
+  color: white;
   text-decoration: none !important;
 }
 
 .ic:hover,
 .ic:active{
-  color: #111;
+  color: white;
   text-decoration: none !important;
 }
 
@@ -146,7 +146,7 @@ textarea.contact-form-text {
   outline: none;
 }
 .contact-form-btn:hover {
-  background: #111;
+  background: #c30735;
   color:  #fff;
 }
 

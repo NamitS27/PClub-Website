@@ -14,9 +14,12 @@ class Announcement(models.Model):
 
 class Daily(models.Model):
     question = models.CharField(max_length=250)
-    answer = models.CharField(max_length=150)
+    answer = models.CharField(max_length=150,blank=True,null=True)
     question_isQuote = models.BooleanField(default=False)
     question_tobeadded = models.DateField()
+
+    def __str__(self):
+        return str(self.question_tobeadded)
     
 
 

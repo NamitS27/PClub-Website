@@ -26,10 +26,10 @@
 
 
 <div class="main-container">
-    <div id="particles-js">
+    <!-- <div id="particles-js"> -->
         <div class="animation">
             <div class="logo">
-                <img src="{% static 'images/logoo.png' %}" alt="" class="box bounce-1">
+                <img src="{% static 'images/logoo.png' %}" class="box bounce-1">
                 {% if new_event%}
                 <a href="/events/live_events">
                     <p>New Events are waiting for you today! &nbsp;&#128197</p>
@@ -43,22 +43,35 @@
             </div>
             <div class="questions">
                 <div class=question-container>
-                    <p id="line">
-                        If you know you know !
-                    </p>
+                    {% if question.isQuote %}
+                        <p id="line">
+                            If you know you know !
+                        </p>
+                    {% else %}
+                        <p id="line">Quote of the day !</p>
+                    {% endif %}
+                    
                     <div class="que">
-                        <p><b>Q.</b> {{question.question}}</p>
+                        {% if question.isQuote %}
+                            <p><b>Q.</b> {{question.question}}</p>
+                        {% else %}
+                            <p><b>{{question.question}}</b></p>
+                        {% endif %}
                     </div>
+                
+                    
+                    {% if question.isQuote %}
                     <div class="answer-button">
                         <button id="show-answer">IDK</button>
                     </div>
                     <div class="ans">
                         <p><b>Ans.</b> {{question.answer}}</p>
                     </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
-    </div>
+    <!-- </div> -->
     <div class="announce-title">
         <p>Announcements</p>
     </div>

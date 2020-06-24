@@ -7,7 +7,7 @@ from django.views.decorators.csrf import csrf_exempt
 @csrf_exempt
 def upcoming_events(request):
     if request.method =='GET':
-        up_events = Events.objects.filter(date__gt=datetime.today())
+        up_events = Events.objects.filter(date__gt=datetime.today()).order_by('date')
         eve_type = "Upcoming Events"
         content = {
             "events":up_events,
@@ -18,7 +18,7 @@ def upcoming_events(request):
         return JsonResponse(view_details(request.POST['id']))
 
 @csrf_exempt
-def live_events(request):
+def today_events(request):
     if request.method =='GET':
         today = str(date.today())
         yy = int(today[:4])
@@ -27,8 +27,8 @@ def live_events(request):
         startdate = date.today()
         enddate = startdate + timedelta(days=1)
     # Sample.objects.filter(date__range=[startdate, enddate])
-        live_events = Events.objects.filter(date__range=[startdate, enddate])
-        eve_type = "Live Events"
+        live_events = Events.objects.filter(date__range=[startdate, enddate]).order_by('date')
+        eve_type = "Events Today"
         content = {
             "events":live_events,
             "eve_type":eve_type,
@@ -40,7 +40,7 @@ def live_events(request):
 @csrf_exempt
 def past_events(request):
     if request.method =='GET':
-        past_events = Events.objects.filter(date__lt=datetime.today())
+        past_events = Events.objects.filter(date__lt=datetime.today()).order_by('date')
         eve_type = "Past Events"
         content = {
             "events":past_events,

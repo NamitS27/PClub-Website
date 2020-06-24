@@ -142,40 +142,22 @@
           flex-direction: column;
 }
 
-.main-container #particles-js {
-  height: 100%;
+.main-container .animation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
+  padding-top: 50px;
+  min-height: 100vh;
   background-color: #111;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.main-container #particles-js .animation {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: absolute;
-  width: 100%;
   color: white;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -ms-flex-item-align: center;
       align-self: center;
 }
 
-.main-container #particles-js .animation .logo {
+.main-container .animation .logo {
   margin-top: 20px;
   padding-top: 20px;
-  min-width: 568px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -183,7 +165,6 @@
       -ms-flex: 40%;
           flex: 40%;
   width: 100%;
-  height: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -196,7 +177,7 @@
           flex-direction: column;
 }
 
-.main-container #particles-js .animation .logo img {
+.main-container .animation .logo img {
   padding-bottom: 50px;
   -webkit-animation-name: bounce-1;
           animation-name: bounce-1;
@@ -214,8 +195,8 @@
             transform: translateY(0);
   }
   50% {
-    -webkit-transform: translateY(-50px);
-            transform: translateY(-50px);
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
   }
   100% {
     -webkit-transform: translateY(0);
@@ -229,8 +210,8 @@
             transform: translateY(0);
   }
   50% {
-    -webkit-transform: translateY(-50px);
-            transform: translateY(-50px);
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
   }
   100% {
     -webkit-transform: translateY(0);
@@ -238,20 +219,24 @@
   }
 }
 
-.main-container #particles-js .animation .logo a, .main-container #particles-js .animation .logo a:hover, .main-container #particles-js .animation .logo a:focus {
+.main-container .animation .logo a,
+.main-container .animation .logo a:hover,
+.main-container .animation .logo a:focus {
   text-decoration: none !important;
 }
 
-.main-container #particles-js .animation .logo a p, .main-container #particles-js .animation .logo a:hover p, .main-container #particles-js .animation .logo a:focus p {
+.main-container .animation .logo a p,
+.main-container .animation .logo a:hover p,
+.main-container .animation .logo a:focus p {
   color: white;
   font-size: 25px;
 }
 
-.main-container #particles-js .animation .logo a:hover p {
+.main-container .animation .logo a:hover p {
   color: #c3073f;
 }
 
-.main-container #particles-js .animation .questions {
+.main-container .animation .questions {
   margin-top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -260,8 +245,6 @@
       -ms-flex: 40%;
           flex: 40%;
   width: 100%;
-  height: 100%;
-  min-width: 568px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -270,7 +253,7 @@
           align-items: center;
 }
 
-.main-container #particles-js .animation .questions .question-container {
+.main-container .animation .questions .question-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -288,15 +271,16 @@
           align-items: center;
 }
 
-.main-container #particles-js .animation .questions .question-container #line {
+.main-container .animation .questions .question-container #line {
   font-family: "Staatliches", cursive;
   font-size: 50px;
   letter-spacing: 2px;
   padding-bottom: 40px;
+  text-align: center;
   color: #c3073f;
 }
 
-.main-container #particles-js .animation .questions .question-container .que {
+.main-container .animation .questions .question-container .que {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -304,7 +288,7 @@
   font-size: 27px;
 }
 
-.main-container #particles-js .animation .questions .question-container .answer-button {
+.main-container .animation .questions .question-container .answer-button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -317,7 +301,7 @@
   padding: 40px 0px;
 }
 
-.main-container #particles-js .animation .questions .question-container .answer-button #show-answer {
+.main-container .animation .questions .question-container .answer-button #show-answer {
   padding: 5px 30px;
   background-color: #c3073f;
   color: white;
@@ -326,16 +310,16 @@
   font-weight: bold;
 }
 
-.main-container #particles-js .animation .questions .question-container .answer-button #show-answer {
+.main-container .animation .questions .question-container .answer-button #show-answer {
   outline: none;
 }
 
-.main-container #particles-js .animation .questions .question-container .answer-button #show-answer:hover {
+.main-container .animation .questions .question-container .answer-button #show-answer:hover {
   background-color: white;
   color: #c3073f;
 }
 
-.main-container #particles-js .animation .questions .question-container .ans {
+.main-container .animation .questions .question-container .ans {
   display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -345,7 +329,7 @@
           align-items: center;
 }
 
-.main-container #particles-js .animation .questions .question-container .ans p {
+.main-container .animation .questions .question-container .ans p {
   color: white;
   font-size: 25px;
 }
@@ -374,5 +358,63 @@
   margin-bottom: 0px;
   padding-bottom: 0px;
   color: #111;
+}
+
+@media all and (max-width: 1300px) {
+  .main-container .animation .logo a p {
+    font-size: 23px;
+  }
+  .main-container .animation .questions .question-container #line {
+    font-size: 43px;
+  }
+  .main-container .animation .questions .question-container .que,
+  .main-container .animation .questions .question-container .ans p {
+    font-size: 23px;
+  }
+}
+
+@media all and (max-width: 1130px) {
+  .main-container .animation .logo a p {
+    font-size: 19px;
+  }
+  .main-container .animation .logo img {
+    width: 230px;
+    height: 310px;
+  }
+  .main-container .animation .questions .question-container #line {
+    font-size: 35px;
+  }
+  .main-container .animation .questions .question-container .que,
+  .main-container .animation .questions .question-container .ans p {
+    font-size: 19px;
+  }
+  .main-container .animation .questions .question-container .answer-button #show-answer {
+    font-size: 14px;
+  }
+}
+
+@media all and (max-width: 830px) {
+  .main-container .animation .logo a p {
+    font-size: 15px;
+  }
+  .main-container .animation .questions .question-container #line {
+    font-size: 26px;
+  }
+  .main-container .animation .questions .question-container .que,
+  .main-container .animation .questions .question-container .ans p {
+    font-size: 15px;
+  }
+  .main-container .animation .questions .question-container .answer-button #show-answer {
+    font-size: 13px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .main-container .animation {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 /*# sourceMappingURL=home.css.map */
