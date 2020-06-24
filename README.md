@@ -1,4 +1,4 @@
-<img src="/static/images/icon.png" style="zoom: 25%;" />
+<img src="/static/images/icon.png" height=200 width=200 />
 
 <h3 align='center'>Programming Club Website</h3>
 
@@ -7,7 +7,7 @@
 </p>
 ----
 
-<h5>Table of Contents</h5>
+<h4>Table of Contents</h4>
 
 * [About The Project](#about-the-project)
   * [Build with](#build-with)
@@ -15,7 +15,7 @@
 * [Getting Started](#getting-started)
 * [Installation](#installation)
   * [Dependencies](#dependencies)
-* [Usage][#usage]
+* [Usage](#usage)
 * [Contributing](#contributing)
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
