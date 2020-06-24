@@ -17,7 +17,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        // text-align: center;
         font-family: "Staatliches", cursive !important;
         letter-spacing: 3px;
         font-size: 30px;
@@ -33,14 +32,12 @@
             width: 100%;
             height: 70px;
             display: flex;
-            // margin-bottom: 10px;
             background: rgb(255, 255, 255);
             background: linear-gradient(
                 90deg,
                 rgba(255, 255, 255, 1) 50%,
                 rgba(89, 89, 89, 1) 100%
             );
-            // background-color: white;
             font-family: "Staatliches", cursive !important;
             color: #111;
             letter-spacing: 2px;
@@ -53,45 +50,26 @@
                 align-items: center;
                 justify-content: flex-start;
                 padding-left: 20px;
-                // color: black;
             }
 
             .more {
-                // color: white;
                 cursor: pointer;
                 display: flex;
                 width: 10%;
                 height: 100%;
                 font-size: 40px;
                 font-style: bold;
-                // transform: rotate(-90deg);
                 justify-content: center;
                 align-items: center;
                 p {
                     transform: rotate(-90deg);
                 }
-                // .arrow-down {
-                //     width: 0;
-                //     height: 0;
-                //     border-left: 20px solid transparent;
-                //     border-right: 20px solid transparent;
-                //     border-top: 20px solid white;
-                // }
             }
         }
-        // .ind-topic:nth-child(odd) {
-        //     background-color: white;
-        //     color: black;
-        // }
-        // .ind-topic:nth-child(even) {
-        //     background-color: #111;
-        //     color: white;
-        // }
     }
 }
 
 .modal-bg {
-    // margin-top:100px;
     position: fixed;
     width: 100%;
     height: 100vh;
@@ -102,7 +80,6 @@
     visibility: hidden;
     flex-direction: column;
     opacity: 0;
-    // margin-bottom: 100px;
     transition: all ease-in-out 0.5s;
     .modal {
         background: rgb(255, 255, 255);
@@ -124,7 +101,6 @@
             font-family: "Staatliches", cursive !important;
             letter-spacing: 2px;
             color: #111;
-            // color: black;
         }
         .less {
             color: #111;
@@ -137,7 +113,6 @@
             transform: rotate(90deg);
             justify-content: center;
             align-items: center;
-            // transition: visibility 0s, opacity 0.5s;
         }
     }
     .content {
@@ -155,7 +130,6 @@
             align-items: center;
             padding-bottom: 100px;
             .res-card {
-
                 display: flex;
                 margin: 40px 5%;
                 min-width: 545px;
@@ -164,7 +138,6 @@
                 background-color: white;
                 .descp {
                     padding: 0px 15px;
-                    // height: 100%;
                     display: flex;
                     text-align: center;
                     justify-content: center;
@@ -175,13 +148,11 @@
                 }
                 .side {
                     margin-left: 2px;
-                    // height: 100%;
                     width: 10%;
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     background-color: #c3073f;
-                    // transform: rotate(90deg);
                     a {
                         color: black;
                         text-transform: none !important;
@@ -202,22 +173,20 @@
                         color: white;
                     }
                 }
-                @media(max-width:576px){
+                @media (max-width: 576px) {
                     min-width: 350px;
                 }
             }
-
         }
     }
 }
 
-.bg-active{
+.bg-active {
     visibility: visible;
-    display:flex;
+    display: flex;
     opacity: 1;
     z-index: 5000;
 }
-
 
 #search {
     align-items: center;
@@ -246,8 +215,6 @@
     border: 0;
     color: inherit;
     font: inherit;
-    // color: #111;
-    // font-family: "Source Sans Pro", sans-serif ;
     font-size: 18px;
     outline: 0;
 }
@@ -265,7 +232,7 @@
     color: #111;
 }
 
-#search:hover input::placeholder{
+#search:hover input::placeholder {
     color: white;
 }
 
@@ -292,24 +259,20 @@
     }
 }
 
-@media(max-width:780px){
-    body{
+@media (max-width: 780px) {
+    body {
         width: 101vw;
-        // padding-right: 3vw;
     }
 }
 
-@media(max-width:640px){
-    body{
+@media (max-width: 640px) {
+    body {
         width: 103vw;
-        // padding-right: 3vw;
     }
 }
 
-@media(max-width:615px){
-    body{
+@media (max-width: 615px) {
+    body {
         width: 104vw;
-        // padding-right: 3vw;
     }
 }
-

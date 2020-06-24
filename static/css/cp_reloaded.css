@@ -213,7 +213,7 @@
 .main-container .ctst #challenge .contest .timer .countdown {
   color: white;
   font-size: 30px;
-  font-family: 'Staatliches', cursive;
+  font-family: "Staatliches", cursive;
   font-style: normal;
   letter-spacing: 2px;
   font-weight: lighter;
@@ -365,19 +365,25 @@
   margin-top: 2px;
 }
 
-.modal-bg .modal #min, .modal-bg .modal #max, .modal-bg .modal #username, .modal-bg .modal #tag {
+.modal-bg .modal #min,
+.modal-bg .modal #max,
+.modal-bg .modal #username,
+.modal-bg .modal #tag {
   background-color: #111;
   height: 10%;
   width: 60%;
   color: white;
   text-align: center;
   font-size: 14px;
-  font-family: 'Source Sans Pro';
+  font-family: "Source Sans Pro";
   border-radius: 10px;
   border: none;
 }
 
-.modal-bg .modal #min:focus, .modal-bg .modal #max:focus, .modal-bg .modal #username:focus, .modal-bg .modal #tag:focus {
+.modal-bg .modal #min:focus,
+.modal-bg .modal #max:focus,
+.modal-bg .modal #username:focus,
+.modal-bg .modal #tag:focus {
   outline: none;
 }
 

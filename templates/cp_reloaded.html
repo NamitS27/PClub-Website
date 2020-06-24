@@ -155,7 +155,6 @@
 </script>
 <script type="text/javascript">
        $('#sub_id').click(function(e){
-           //$('.loading').show();
           if(document.getElementById('min').value.length==0 || document.getElementById('max').value.length==0 || document.getElementById('max').value.length==0){ 
             alert('Please fill the empty feilds');
           }
@@ -174,19 +173,15 @@
                   loadingShow();
               },
               success:function(data){
-                  console.log(data['prob']);
                   $('#loading').hide();
                   if(data['prob'].length==0){
                     alert("No Questions Found/Connection Error Occured !");
                   }
-                  //document.getElementById('sub-id').style.display="block";
                   else{
                     for(let i=0;i<data['prob'].length;i++){
                       window.open(data['prob'][i],'_blank');
                     }
                   }
-                  //window.open(data['prob'][1],'_blank');
-                  //document.getElementById("prob-form").reset();
                   document.getElementById('min').value = '';
                   document.getElementById('max').value = '';
                   document.getElementById('username').value = '';
@@ -199,7 +194,6 @@
         }
       });              
       function loadingShow(){
-          //document.getElementById('sub-id').style.display="none";
           $('#loading').show();
       }
 </script>

@@ -78,7 +78,10 @@
         </form>
     </div>
 </div>
-{% endblock %} {% block javascript %}
+{% endblock %} 
+
+<!-- JavaScript -->
+{% block javascript %}
 <script>
     var observe;
     if (window.attachEvent) {
@@ -96,7 +99,6 @@
             text.style.height = "auto";
             text.style.height = text.scrollHeight + "px";
         }
-        /* 0-timeout to get the already changed text */
         function delayedResize() {
             window.setTimeout(resize, 0);
         }
@@ -167,14 +169,10 @@
         function responseHandler(data) {
             if (data.status === 'valid') {
                 check = "Yes";
-                console.log("the email is valid and the mail box is active")
             } else {
-                console.log("the email is incorrect or unable to be tested.")
             }
         });
-        console.log(check);
         return check;
     }
-
 </script>
 {% endblock %}

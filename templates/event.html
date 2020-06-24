@@ -124,7 +124,6 @@
       urlap = 'past_events';
     }
     var url = "/events/"+urlap; 
-    console.log(event_id);
     $.ajax({
       type:'POST',
       url:url,
@@ -132,7 +131,6 @@
         id:event_id,
       },
       success:function(data){
-        console.log(data['event']);
         var html_to_write = "";
         html_to_write += '<div class="modal-close" id="close">+</div><p id= "eve_name" >'+data['event']['name']+'</p> <p id="eve_desc">'+data['event']['description']+'</p> <p id="eve_date">'+data['event']['date']+'</p>';
         html_to_write += '<p id= "rd">Registration Date : '+data['event']['registration_date']+'</p>'
@@ -147,7 +145,6 @@
         }
         document.getElementById("pop-up").innerHTML = html_to_write;
         var close = document.querySelector('#close');
-        console.log(close);
         close.addEventListener('click',()=>{
         document.querySelector('.modal-bg').classList.remove('bg-active');
       });

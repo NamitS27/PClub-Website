@@ -26,7 +26,6 @@ def today_events(request):
         dd = int(today[9:11])
         startdate = date.today()
         enddate = startdate + timedelta(days=1)
-    # Sample.objects.filter(date__range=[startdate, enddate])
         live_events = Events.objects.filter(date__range=[startdate, enddate]).order_by('date')
         eve_type = "Events Today"
         content = {
@@ -54,7 +53,6 @@ def past_events(request):
 def view_details(slug):
     slug = int(slug)
     event = get_object_or_404(Events,pk=slug) 
-    # print(type(event_obj))
     image_logo = "/media/"+str(event.logo)
     events = {'name': event.name,'description':event.description,'logo':image_logo,'date':event.date,'can_register':event.can_register,'feedback_link':event.feedback_link,'photos_link':event.photos_link,'registration_date':event.registration_date,'registration_link':event.registration_link}
     data = {

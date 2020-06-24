@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 class About(models.Model):
     club_description = models.TextField()
     faculty_advisor_fn = models.CharField(max_length=30)

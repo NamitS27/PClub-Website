@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 class Platform(models.Model):
     platform_name = models.CharField(max_length=200)
     platform_link = models.URLField(max_length=200)

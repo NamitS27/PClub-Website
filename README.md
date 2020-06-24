@@ -81,8 +81,11 @@
     pip install requirements.txt
     ````
 
-  * Following are the commands to create the tables 
-    * Do make migrations for all the apps individually
+  * Following are the commands to create the tables
+    ```sh
+    python manage.py makemigrations
+    ``` 
+    * If the above part doesn't work, do makemigrations for all the apps individually
     ```sh
     python manage.py makemigrations <app_name>
     ```
@@ -132,7 +135,6 @@ Contributions are what make the open source community such an amazing place to b
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
-
 5. Open a Pull Request
 
    
@@ -141,7 +143,6 @@ Contributions are what make the open source community such an amazing place to b
 ### Contact
 
 Suhanee Patel - suhanee.p@ahduni.edu.in  - [LinkedIn](https://www.linkedin.com/in/suhanee-patel-44aa1219b/) - [GitHub](https://github.com/sp2605)
-
 Project Link: [https://github.com/sp2605/PClub-Website](https://github.com/sp2605/PClub-Website)
 
 <br>
@@ -153,6 +154,6 @@ Project Link: [https://github.com/sp2605/PClub-Website](https://github.com/sp260
 * [Font Awsome](https://fontawesome.com)
 * [JQuery for Countdown](http://hilios.github.io/jQuery.countdown/)
 * [Email verification API](https://isitarealemail.com/)
-
+* [Particle.js](https://github.com/VincentGarreau/particles.js/)
 
 

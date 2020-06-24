@@ -1,8 +1,6 @@
 from django.db import models
 from datetime import *
-# from ckeditor.fields import RichTextField
 
-# Create your models here.
 
 class Events(models.Model):
     name = models.CharField(max_length=200,null=False)

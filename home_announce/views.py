@@ -7,7 +7,7 @@ import timeago as ta
 import pytz
 from competitive_programming.models import Contest,PClub_contest
 from events.models import Events
-# Create your views here.
+
 @csrf_exempt
 def make_announce(request):
     if request.method =='GET':
@@ -30,7 +30,6 @@ def make_announce(request):
                 x['date'] = ta.format(i.announcement_date,datetime.now(tz))
                 x['description'] = i.announcement_description
                 x['isevent'] = "Yes" if i.announcement_isofEvent else None
-                # x['image'] = i.announcement_image
             announcements.append(x)
             cnt += 1
         quest = {}
@@ -58,16 +57,7 @@ def make_announce(request):
             content['new_event'] = "yes"
         if len(contests) + len(pcontests)>0:
             content['contest_today'] = "yes"
-        # print(content)
-        # print(content)
         return render(request,'home.html',content)
-    # else:
-    #     if request.is_ajax():
-    #         answer = Daily.objects.filter(question = request.POST['question'])
-    #         ans = None
-    #         for i in answer:
-    #             ans = i.answer
-    #         return JsonResponse({'ans':ans})
 
 
 

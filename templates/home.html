@@ -26,7 +26,6 @@
 
 
 <div class="main-container">
-    <!-- <div id="particles-js"> -->
         <div id="particles-js"></div>
         <div class="animation">
             <div class="logo">
@@ -72,7 +71,6 @@
                 </div>
             </div>
         </div>
-    <!-- </div> -->
     <div class="announce-title">
         <p>< Announcements ></p>
     </div>
@@ -95,11 +93,6 @@
                 <div class="item active">
                     <div class="announce">
                         <div class="details">
-                            <!-- <div class="title"> -->
-                                <!-- <img src="{{i.image.url}}"> -->
-                                <!-- {{i.title}} -->
-                            <!-- </div> -->
-                            <!-- <div class="description"> -->
                                 <div class="text">
                                     <p id="title"> {{i.title}}</p>
                                     <p>
@@ -128,32 +121,27 @@
                 <div class="item">
                     <div class="announce">
                         <div class="details">
-                            <!-- <div class="title"> -->
-                                <!-- <img src="{{i.image.url}}"> -->
-                                <!-- {{i.title}} -->
-                            <!-- </div> -->
-                            <!-- <div class="description"> -->
-                                <div class="text">
-                                    <p id="title"> {{i.title}}</p>
+                            <div class="text">
+                                <p id="title"> {{i.title}}</p>
+                                <p>
+                                    {{i.description}}
+                                </p>
+                            </div>
+                            <div class="other-details">
+                                <div class="date">
                                     <p>
-                                        {{i.description}}
+                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                        {{i.date}}
                                     </p>
                                 </div>
-                                <div class="other-details">
-                                    <div class="date">
-                                        <p>
-                                            <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                            {{i.date}}
-                                        </p>
-                                    </div>
-                                    <div class="more">
-                                        {% if i.isevent%}
-                                        <a href="/events/upcoming_events"><button type="button" class="go">
-                                            Know More!
-                                        </button></a>
-                                        {% endif %}
-                                    </div>
+                                <div class="more">
+                                    {% if i.isevent%}
+                                    <a href="/events/upcoming_events"><button type="button" class="go">
+                                        Know More!
+                                    </button></a>
+                                    {% endif %}
                                 </div>
+                            </div>
                         </div>
                     </div>
                 </div>

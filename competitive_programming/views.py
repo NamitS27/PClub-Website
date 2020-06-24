@@ -36,7 +36,6 @@ def define_table():
             events = []
             cnt += 1
             duration = str(timedelta(seconds=event['duration']))
-            # print(cl.change_time(event['start']),cl.change_time(event['end']))
             start,end = cl.change_time(event['start']),cl.change_time(event['end'])
             name = event['event']
             link = event['href']
@@ -54,30 +53,25 @@ def contest(request):
         for t in get_time:
             ser_tm = t.server_update_time
         time_interval = int((datetime.now(tz)-ser_tm).total_seconds())
-        # print(time_interval)
         if time_interval>1000:
             define_table()
         return render(request,'cp_reloaded.html')
     elif request.is_ajax():
         if request.POST['choose']=="contests":
             cid = int(request.POST['id'])
-            # print(cid)
             if cid>1:
                 platform_name,contests = get_contest(cid)
                 contest = [{'name': cont.contest_name, 'start': str(cont.contest_start + timedelta(hours=5, minutes=30))[:19],'end':str(cont.contest_end + timedelta(hours=5, minutes=30))[:19],'duration':cont.contest_duration,'link':cont.contest_link} for cont in contests]
                 content ={
                     'platform':platform_name,
                     'contest':contest,
-                    # 'number_of_contest':len(contest),
                 }
-                # print(contest)
             else:
                 contests = PClub_contest.objects.all();
                 contest = [{'platform':eachc.platform_name,'name':eachc.contest_name,'duration':eachc.contest_duration,'start':eachc.contest_start.strftime("%Y-%m-%d %H:%M:%S"),'end':eachc.contest_end.strftime("%Y-%m-%d %H:%M:%S"),'link':eachc.contest_link} for eachc in contests]
                 content = {
                     'contest':contest,
                 }
-            print(content)
             return JsonResponse(content)
         else:
             r1 = int(request.POST['min'])
