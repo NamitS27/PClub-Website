@@ -143,6 +143,7 @@ Contributions are what make the open source community such an amazing place to b
 ### Contact
 
 Suhanee Patel - suhanee.p@ahduni.edu.in  - [LinkedIn](https://www.linkedin.com/in/suhanee-patel-44aa1219b/) - [GitHub](https://github.com/sp2605)
+
 Project Link: [https://github.com/sp2605/PClub-Website](https://github.com/sp2605/PClub-Website)
 
 <br>
