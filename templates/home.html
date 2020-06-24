@@ -71,9 +71,15 @@
                 </div>
             </div>
         </div>
+    
     <div class="announce-title">
-        <p>< Announcements ></p>
+        {% if any_announcement %}
+            <p>< Announcements ></p>
+        {% else %}
+            <p>< No Announcements ></p>
+        {% endif %}
     </div>
+    {% if any_announcement %}
     <div class="container">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
@@ -161,40 +167,16 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-
     </div>
+    {% endif %}
 </div>
 {% endblock %}
 
+<!-- JavaScript -->
 {% block javascript %}
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min.js"></script>
 <script type="text/javascript" src="{% static 'js/particles.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
-<script>
-    $(".carousel").swipe({
-
-        swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
-
-            if (direction == 'left') $(this).carousel('next');
-            if (direction == 'right') $(this).carousel('prev');
-
-        },
-        allowPageScroll: "vertical"
-
-    });
-
-
-    $('#show-answer').click(() => {
-        var anss = document.querySelector('.ans');
-        if (anss.style.display == "none") {
-            anss.style.display = "flex";
-            $('#show-answer').html("Now You Know");
-        }
-        else {
-            $('#show-answer').html("IDK");
-            anss.style.display = "none";
-        }
-    });
-</script>
+<script type="text/javascript" src="{% static 'js/home.js' %}"></script>
 {%endblock%}

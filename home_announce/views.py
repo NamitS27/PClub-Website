@@ -50,6 +50,7 @@ def make_announce(request):
         pcontests = PClub_contest.objects.filter(contest_start__range=[startdate, enddate])
         content={
             'announce':announcements,
+            'any_announcements': "Yes" if len(announcements)>0 else None,
             'upperd':upperd,
             'question':quest,
         }
