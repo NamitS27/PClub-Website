@@ -24,7 +24,8 @@
 * [Acknowledgements](#acknowledgements)
 
 
-<br><br>
+<br>
+
 ### About The Project
 
 #### Build With
@@ -42,6 +43,7 @@
 
 
 <br>
+
 ### Getting Started
 
 #### Installation
@@ -106,12 +108,14 @@
 
 
 <br>
+
 ### Usage
 
 Any educational institutions who wants a website to showcase the activities done by the club. 
 
 
 <br>
+
 ### Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -125,6 +129,7 @@ Contributions are what make the open source community such an amazing place to b
 
    
 <br>
+
 ### Contact
 
 Suhanee Patel - suhanee.p@ahduni.edu.in  - [LinkedIn](https://www.linkedin.com/in/suhanee-patel-44aa1219b/) - [GitHub](https://github.com/sp2605)
@@ -132,6 +137,7 @@ Suhanee Patel - suhanee.p@ahduni.edu.in  - [LinkedIn](https://www.linkedin.com/i
 Project Link: [https://github.com/sp2605/PClub-Website](https://github.com/sp2605/PClub-Website)
 
 <br>
+
 ### Acknowledgements
 
 * [Codeforces API](https://codeforces.com/apiHelp)
