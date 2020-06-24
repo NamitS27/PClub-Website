@@ -6,10 +6,10 @@ from email import encoders
 import os.path
 
 def send(name,semail,subjects,messages,jw):
-    email = 'namit.s@ahduni.edu.in'
-    password = 'Nsahduni27'
-    send_to_email = 'suhanee.p@ahduni.edu.in'
-    send_to_emails = [] # List of bcc
+    email = 'noreplyahdunipclub@gmail.com'
+    password = 'Noreply@Pclub9'
+    send_to_email = ''
+    send_to_emails = ['suhanee.p@ahduni.edu.in','namit.s@ahduni.edu.in'] # List of bcc
     subject = subjects
     message = f"Sender Detials : <br> <b>Name</b> : {name} <br><b>Email</b> : {semail} <br> <b>Message</b> : {messages}<br>" 
     if jw=="Yes":
