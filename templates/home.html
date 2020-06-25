@@ -9,7 +9,7 @@
 <!-- Nav Active -->
 {% block home %}
 <li class="menu-item active">
-    <a class="menu-item-links" href="/home">Home</a>
+    <a class="menu-item-links" href="/">Home</a>
 </li>
 {% endblock %}
 
@@ -71,19 +71,18 @@
                 </div>
             </div>
         </div>
-    
     <div class="announce-title">
-        {% if any_announcement %}
+        {% if any_announcements %}
             <p>< Announcements ></p>
         {% else %}
             <p>< No Announcements ></p>
         {% endif %}
     </div>
-    {% if any_announcement %}
+    {% if any_announcements %}
     <div class="container">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
-            <ol class="carousel-indicators">
+            <!-- <ol class="carousel-indicators">
                 {% for i in upperd%}
                 {% if i.id == 0 %}
                 <li data-target="#carousel-example-generic" data-slide-to="{{i.id}}" class="active"></li>
@@ -91,7 +90,7 @@
                 <li data-target="#carousel-example-generic" data-slide-to="{{i.id}}"></li>
                 {% endif%}
                 {% endfor %}
-            </ol>
+            </ol> -->
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
                 {% for i in announce%}
