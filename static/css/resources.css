@@ -53,6 +53,18 @@ body {
   margin-bottom: 0px;
 }
 
+@media (max-width: 700px) {
+  .main .naming {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 400px) {
+  .main .naming {
+    font-size: 20px;
+  }
+}
+
 .main .topics {
   height: 85%;
   width: 100%;
@@ -93,6 +105,18 @@ body {
           justify-content: flex-start;
 }
 
+@media (max-width: 700px) {
+  .main .topics .ind-topic .topic-name {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 400px) {
+  .main .topics .ind-topic .topic-name {
+    font-size: 20px;
+  }
+}
+
 .main .topics .ind-topic .more {
   cursor: pointer;
   margin-left: auto;
@@ -104,6 +128,30 @@ body {
   margin: 0px !important;
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
+}
+
+@media (max-width: 700px) {
+  .main .topics .ind-topic .more {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 400px) {
+  .main .topics .ind-topic .more {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 700px) {
+  .main .topics .ind-topic {
+    height: 60px;
+  }
+}
+
+@media (max-width: 400px) {
+  .main .topics .ind-topic {
+    height: 50px;
+  }
 }
 
 .modal-bg {
