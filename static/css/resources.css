@@ -61,7 +61,7 @@ body {
 
 @media (max-width: 400px) {
   .main .naming {
-    font-size: 19px;
+    font-size: 20px;
   }
 }
 
@@ -113,7 +113,7 @@ body {
 
 @media (max-width: 400px) {
   .main .topics .ind-topic .topic-name {
-    font-size: 19px;
+    font-size: 20px;
   }
 }
 
