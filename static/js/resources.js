@@ -5,6 +5,8 @@ function more() {
         document.querySelector('.modal-bg').classList.add('bg-active');
         document.getElementById('topic_name').innerHTML = "";
         document.getElementById('res-content').innerHTML = "";
+        document.body.style.overflow = "hidden";
+        // document.body.style.backgroundAttachment = "fixed";
         $.ajax({
             type: "POST",
             url: "/resources/",
@@ -22,7 +24,7 @@ function more() {
                     $('#res-content').append('<div class="res-card">\n<div class="descp">\n<p>' + desc + '</p></div><div class="side"><a href = "' + link + '" target=_blank><p>' + type + '</p></a></div>');
                 }
                 close.addEventListener('click', () => {
-
+                    document.body.style.overflow = "auto";
                     document.querySelector('.modal-bg').classList.remove('bg-active');
 
                 });
@@ -68,7 +70,8 @@ function ajaxCall() {
         },
         success: function (data) {
             search.classList.remove('loading');
-            var ret = document.getElementById('top')
+            var ret = document.getElementById('top');
+            document.querySelector('.naming').innerHTML = "<p>< All Resource topics ></p>";
             ret.innerHTML = "";
             html_to_append = '';
             var dt = data.topic;
@@ -76,6 +79,9 @@ function ajaxCall() {
                 html_to_append += '<div class="ind-topic">\n<div class="topic-name" id="{}">\n{}\n</div>\n<div class="more" data-name="{}">\n<p>&#10094</p>\n</div>\n</div>\n'.format(dt[i][1], dt[i][0], dt[i][0]);
             }
             ret.innerHTML = html_to_append;
+            if(data.topic.length==0){
+                document.querySelector('.naming').innerHTML = "<p>< No Topics Found ></p>";
+            }
             more();
             console.log(data.topic);
         }

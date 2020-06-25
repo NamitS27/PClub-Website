@@ -1,3 +1,8 @@
+body{
+    min-height: none;
+    height: 70vh;
+}
+
 .main {
     margin-top: 50px;
     height: 120vh;
@@ -22,6 +27,9 @@
         font-size: 30px;
         color: white;
         background-color: #111;
+        p{
+            margin-bottom: 0px;
+        }
     }
     .topics {
         height: 85%;
@@ -38,6 +46,8 @@
                 rgba(255, 255, 255, 1) 50%,
                 rgba(89, 89, 89, 1) 100%
             );
+            padding: 0px 30px ;
+            // padding-right: 30px;
             font-family: "Staatliches", cursive !important;
             color: #111;
             letter-spacing: 2px;
@@ -45,23 +55,25 @@
             .topic-name {
                 color: #111;
                 display: flex;
-                width: 90%;
+                // width: 90%;
                 font-size: 30px;
                 align-items: center;
                 justify-content: flex-start;
-                padding-left: 20px;
+                // padding-left: 20px;
             }
 
             .more {
                 cursor: pointer;
-                display: flex;
-                width: 10%;
-                height: 100%;
+                // display: flex;
+                // width: 10%;
+                // height: 100%;
+                margin-left: auto;
                 font-size: 40px;
                 font-style: bold;
-                justify-content: center;
-                align-items: center;
+                // justify-content: center;
+                // align-items: center;
                 p {
+                    margin: 0px !important;
                     transform: rotate(-90deg);
                 }
             }
@@ -129,6 +141,7 @@
             justify-content: center;
             align-items: center;
             padding-bottom: 100px;
+            background-color: #111;
             .res-card {
                 display: flex;
                 margin: 40px 5%;
@@ -256,23 +269,5 @@
     }
     100% {
         transform: rotate(360deg);
-    }
-}
-
-@media (max-width: 780px) {
-    body {
-        width: 101vw;
-    }
-}
-
-@media (max-width: 640px) {
-    body {
-        width: 103vw;
-    }
-}
-
-@media (max-width: 615px) {
-    body {
-        width: 104vw;
     }
 }
