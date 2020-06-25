@@ -25,6 +25,9 @@ def empty_table():
 
 def define_table():
     empty_table()
+    st = Server_time()
+    st.server_update_time = datetime.now(tz)
+    st.save()
     site = [["codeforces.com","CODEFORCES"],["codechef.com","CODECHEF"],["atcoder.jp","ATCODER"],["topcoder.com","TOPCODER"],["hackerearth.com","HACKEREARTH"],["codingcompetitions.withgoogle.com","GOOGLE"],["hackerrank.com","HACKERRANK"]]
     for eacheve in site:
         cnt = 1
@@ -41,9 +44,7 @@ def define_table():
             link = event['href']
             cts = Contest(contest_name=name,contest_duration=duration,contest_start=start,contest_end=end,contest_link=link,contest_id=pt)
             cts.save()
-    st = Server_time()
-    st.server_update_time = datetime.now(tz)
-    st.save()
+    
 
 @csrf_exempt
 def contest(request):
@@ -53,7 +54,7 @@ def contest(request):
         for t in get_time:
             ser_tm = t.server_update_time
         time_interval = int((datetime.now(tz)-ser_tm).total_seconds())
-        if time_interval>1000:
+        if time_interval>200:
             define_table()
         return render(request,'cp_reloaded.html')
     elif request.is_ajax():
@@ -66,12 +67,14 @@ def contest(request):
                     'platform':platform_name,
                     'contest':contest,
                 }
+                # print(content)
             else:
                 contests = PClub_contest.objects.all();
                 contest = [{'platform':eachc.platform_name,'name':eachc.contest_name,'duration':eachc.contest_duration,'start':eachc.contest_start.strftime("%Y-%m-%d %H:%M:%S"),'end':eachc.contest_end.strftime("%Y-%m-%d %H:%M:%S"),'link':eachc.contest_link} for eachc in contests]
                 content = {
                     'contest':contest,
                 }
+
             return JsonResponse(content)
         else:
             r1 = int(request.POST['min'])

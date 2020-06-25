@@ -19,17 +19,14 @@ $('.name').click(function (e) {
 
 
                 $('#challenge').append('<div class="contest">\n <div class="timer">\n <p class ="countdown" data-countdown="' + start + '"></p>\n<p>to go</p>\n</div>\n<div class="other">\n <div class="title">\n' + name + '\n</div>\n<div class="sed">\n<div class="sd">\n<p>Start</p>\n<p>' + start + '</p>\n</div>\n<div class="sd">\n<p >End</p>\n<p>' + end + '</p>\n</div>\n<div class="sd">\n<p>Duration</p>\n<p>' + duration + '</p>\n</div>\n</div>\n<div class="link">\n<a href="' + link + '" target="_blank">' + link + '</a>\n</div>\n</div>\n</div>');
-
-
-                /*if(respid=='1'){
-                  $('#challenge').append('<div class="contest"><p>' + name + '</p><p>' + start + "</p><p>" + end + "</p><p>" + duration + '<p><p class ="countdown" data-countdown="'+ start +'"><p> Platform : '+data['contest'][i]['platform'] + '</p></p><a id="here" href="' + link + '" target= "_blank">' + link + "</a></div>");
-                }  
-                else{
-                  $('#challenge').append('<div class="contest"><p>' + name + '</p><p>' + start + "</p><p>" + end + "</p><p>" + duration + '<p><p class ="countdown" data-countdown="'+ start +'"></p><a id="here" href="' + link + '" target= "_blank">' + link + "</a></div>");
-                }*/
             }
             if (data['contest'].length == 0) {
-                $('#challenge').append('<div class="no-contest"> <p> No contests </p> </div>');
+                if(respid==3){
+                    $('#challenge').append('<div class="no-contest"> <p> No contests/Contest is going so cannot fetch </p> </div>');
+                }
+                else{
+                    $('#challenge').append('<div class="no-contest"> <p> No contests </p> </div>');
+                }
             }
             $('[data-countdown]').each(function () {
                 var $this = $(this), finalDate = $(this).data('countdown');

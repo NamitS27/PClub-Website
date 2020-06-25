@@ -6,7 +6,6 @@ function more() {
         document.getElementById('topic_name').innerHTML = "";
         document.getElementById('res-content').innerHTML = "";
         document.body.style.overflow = "hidden";
-        // document.body.style.backgroundAttachment = "fixed";
         $.ajax({
             type: "POST",
             url: "/resources/",
