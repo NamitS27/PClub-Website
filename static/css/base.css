@@ -33,6 +33,7 @@ body {
 }
 
 a:focus {
+    text-decoration: none !important;
     outline: none !important;
 }
 
