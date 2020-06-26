@@ -22,10 +22,52 @@
                 font-weight: bold;
                 font-size: 30px;
                 color: #111;
+                @media (max-width:880px){
+                    font-size: 26px;
+                }
+                @media (max-width:700px){
+                    font-size: 24px;
+                }
+                @media (max-width:575px){
+                    font-size: 21px;
+                }
+                @media (max-width:400px){
+                    font-size: 19px;
+                }
+                @media (max-width:290px){
+                    font-size: 17px;
+                }
             }
             p {
                 font-size: 20px;
                 color: #111;
+                @media (max-width:880px){
+                    font-size: 17px;
+                }
+                @media (max-width:700px){
+                    font-size: 15px;
+                }
+                @media (max-width:575px){
+                    font-size: 14px;
+                }
+                @media (max-width:400px){
+                    font-size: 12px;
+                }
+                @media (max-width:290px){
+                    font-size: 10px;
+                }
+            }
+            @media (max-width:700px){
+                padding: 0px 100px;
+            }
+            @media (max-width:575px){
+                padding: 0px 90px;
+            }
+            @media (max-width:400px){
+                padding: 0px 70px;
+            }
+            @media (max-width:290px){
+                padding: 0px 40px;
             }
         }
         .other-details {
@@ -44,6 +86,18 @@
                     font-size: 16px;
                     .fa-clock-o {
                         font-size: 15px;
+                    }
+                    @media (max-width:1300px){
+                        font-size: 15px;
+                    }
+                    @media (max-width:1130px){
+                        font-size: 14px;
+                    }
+                    @media (max-width:880px){
+                        font-size: 13px;
+                    }
+                    @media (max-width:700px){
+                        font-size: 11px;
                     }
                 }
             }
@@ -66,6 +120,22 @@
                         border-radius: 5px;
                         padding: 5px 20px;
                         // z-index: 5000;
+                        @media (max-width:1300px){
+                            font-size: 15px;
+                            padding: 5px 18px;
+                        }
+                        @media (max-width:1130px){
+                            font-size: 13px;
+                            padding: 5px 15px;
+                        }
+                        @media (max-width:880px){
+                            font-size: 11px;
+                            padding: 5px 13px;
+                        }
+                        @media (max-width:700px){
+                            font-size: 9px;
+                            padding: 5px 11px;
+                        }
                     }
                     .go:focus {
                         outline: none;
@@ -119,6 +189,10 @@
                 animation-timing-function: linear;
                 animation-duration: 5s;
                 animation-iteration-count: infinite;
+                @media (max-width:1130px){
+                    width: 230px;
+                    height: 310px;
+                }
             }
             @keyframes bounce-1 {
                 0% {
@@ -138,6 +212,15 @@
                 p {
                     color: white;
                     font-size: 25px;
+                    @media (max-width:1300px){
+                        font-size: 23px;
+                    }
+                    @media (max-width:1130px){
+                        font-size: 19px;
+                    }
+                    @media (max-width:830px){
+                        font-size: 15px;
+                    }
                 }
             }
             a:hover {
@@ -153,6 +236,19 @@
             width: 100%;
             justify-content: center;
             align-items: center;
+            .not-found{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 70%;
+                height: 60%;
+                p{
+                    font-size: 40px;
+                    letter-spacing: 2px;
+                    color: #c3073f;
+                    font-family:"Staatliches", cursive ;
+                }
+            }
             .question-container {
                 display: flex;
                 flex-direction: column;
@@ -167,11 +263,29 @@
                     padding-bottom: 40px;
                     text-align: center;
                     color: #c3073f;
+                    @media (max-width:1300px){
+                        font-size: 43px;
+                    }
+                    @media (max-width:1130px){
+                        font-size: 35px;
+                    }
+                    @media (max-width:830px){
+                        font-size: 26px;
+                    }
                 }
                 .que {
                     display: flex;
                     color: white;
                     font-size: 27px;
+                    @media (max-width:1300px){
+                        font-size: 23px;
+                    }
+                    @media (max-width:1130px){
+                        font-size: 19px;
+                    }
+                    @media (max-width:830px){
+                        font-size: 15px;
+                    }
                 }
                 .answer-button {
                     display: flex;
@@ -185,8 +299,14 @@
                         border: none;
                         font-size: 20px;
                         font-weight: bold;
+                        @media (max-width:1130px){
+                            font-size: 14px;
+                        }
+                        @media (max-width:830px){
+                            font-size: 13px;
+                        }
                     }
-                    #show-answer {
+                    #show-answer:focus {
                         outline: none;
                     }
                     #show-answer:hover {
@@ -201,9 +321,24 @@
                     p {
                         color: white;
                         font-size: 25px;
+                        @media (max-width:1300px){
+                            font-size: 23px;
+                        }
+                        @media (max-width:1130px){
+                            font-size: 19px;
+                        }
+                        @media (max-width:830px){
+                            font-size: 15px;
+                        }
                     }
                 }
             }
+            @media (max-width:600px){
+                background-color: #111;
+            }
+        }
+        @media (max-width:600px){
+            flex-direction: column;
         }
     }
 
@@ -221,7 +356,20 @@
             margin-bottom: 0px;
             padding-bottom: 0px;
             color: #111;
+            @media (max-width:1300px){
+                font-size: 36px;
+            }
+            @media (max-width:1130px){
+                font-size: 31px;
+            }
+            @media (max-width: 600px){
+                font-size: 25px;
+            }
+            @media (max-width:300px){
+                font-size: 22px;
+            }
         }
+        
     }
 }
 
@@ -237,303 +385,303 @@
     z-index: -1;
 }
 
-@media all and (max-width: 1300px) {
-    .main-container {
-        .announce-title{
-            p{
-                font-size: 36px;
-            }
-        }
-        .animation {
-            .logo {
-                a {
-                    p {
-                        font-size: 23px;
-                    }
-                }
-            }
-            .questions {
-                .question-container {
-                    #line {
-                        font-size: 43px;
-                    }
-                    .que,
-                    .ans p {
-                        font-size: 23px;
-                    }
-                }
-            }
-        }
-    }
-    .announce{
-        .details{
-            .other-details{
-                .date{
-                    p{
-                        font-size: 15px;
-                    }
-                }
-                .more{
-                    a{
-                        .go{
-                            font-size: 15px;
-                            padding: 5px 18px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
+// @media all and (max-width: 1300px) {
+//     .main-container {
+//         .announce-title{
+//             p{
+//                 font-size: 36px;
+//             }
+//         }
+//         .animation {
+//             .logo {
+//                 a {
+//                     p {
+//                         font-size: 23px;
+//                     }
+//                 }
+//             }
+//             .questions {
+//                 .question-container {
+//                     #line {
+//                         font-size: 43px;
+//                     }
+//                     .que,
+//                     .ans p {
+//                         font-size: 23px;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     .announce{
+//         .details{
+//             .other-details{
+//                 .date{
+//                     p{
+//                         font-size: 15px;
+//                     }
+//                 }
+//                 .more{
+//                     a{
+//                         .go{
+//                             font-size: 15px;
+//                             padding: 5px 18px;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
 
-@media all and (max-width: 1130px) {
-    .main-container {
-        .announce-title{
-            p{
-                font-size: 31px;
-            }
-        }
-        .animation {
-            .logo {
-                a {
-                    p {
-                        font-size: 19px;
-                    }
-                }
-                img {
-                    width: 230px;
-                    height: 310px;
-                }
-            }
-            .questions {
-                .question-container {
-                    #line {
-                        font-size: 35px;
-                    }
-                    .que,
-                    .ans p {
-                        font-size: 19px;
-                    }
-                    .answer-button {
-                        #show-answer {
-                            font-size: 14px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    .announce{
-        .details{
-            .other-details{
-                .date{
-                    p{
-                        font-size: 14px;
-                    }
-                }
-                .more{
-                    a{
-                        .go{
-                            font-size: 13px;
-                            padding: 5px 15px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    .carousel-indicators li{
-        width: 8px;
-        height: 8px;
-    }.carousel-indicators .active{
-        width: 10px;
-        height: 10px;
-    }
-}
+// @media all and (max-width: 1130px) {
+//     .main-container {
+//         .announce-title{
+//             p{
+//                 font-size: 31px;
+//             }
+//         }
+//         .animation {
+//             .logo {
+//                 a {
+//                     p {
+//                         font-size: 19px;
+//                     }
+//                 }
+//                 img {
+//                     width: 230px;
+//                     height: 310px;
+//                 }
+//             }
+//             .questions {
+//                 .question-container {
+//                     #line {
+//                         font-size: 35px;
+//                     }
+//                     .que,
+//                     .ans p {
+//                         font-size: 19px;
+//                     }
+//                     .answer-button {
+//                         #show-answer {
+//                             font-size: 14px;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     .announce{
+//         .details{
+//             .other-details{
+//                 .date{
+//                     p{
+//                         font-size: 14px;
+//                     }
+//                 }
+//                 .more{
+//                     a{
+//                         .go{
+//                             font-size: 13px;
+//                             padding: 5px 15px;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     .carousel-indicators li{
+//         width: 8px;
+//         height: 8px;
+//     }.carousel-indicators .active{
+//         width: 10px;
+//         height: 10px;
+//     }
+// }
 
-@media all and (max-width:880px){
-    .announce{
-        .details{
-            .text{
-                #title{
-                    font-size: 26px;
-                }
-                p{
-                    font-size: 17px;
-                }
-            }
-            .other-details{
-                .date{
-                    p{
-                        font-size: 13px;
-                    }
-                }
-                .more{
-                    a{
-                        .go{
-                            font-size: 11px;
-                            padding: 5px 13px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    .carousel-indicators li{
-        width: 8px;
-        height: 8px;
-    }.carousel-indicators .active{
-        width: 10px;
-        height: 10px;
-    }
-}
+// @media all and (max-width:880px){
+//     .announce{
+//         .details{
+//             .text{
+//                 #title{
+//                     font-size: 26px;
+//                 }
+//                 p{
+//                     font-size: 17px;
+//                 }
+//             }
+//             .other-details{
+//                 .date{
+//                     p{
+//                         font-size: 13px;
+//                     }
+//                 }
+//                 .more{
+//                     a{
+//                         .go{
+//                             font-size: 11px;
+//                             padding: 5px 13px;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     .carousel-indicators li{
+//         width: 8px;
+//         height: 8px;
+//     }.carousel-indicators .active{
+//         width: 10px;
+//         height: 10px;
+//     }
+// }
 
-@media all and (max-width:700px){
-    .announce{
-        .details{
-            .text{
-                padding: 0px 100px;
-                #title{
-                    font-size: 24px;
-                }
-                p{
-                    font-size: 15px;
-                }
-            }
-            .other-details{
-                .date{
-                    p{
-                        font-size: 11px;
-                    }
-                }
-                .more{
-                    a{
-                        .go{
-                            font-size: 9px;
-                            padding: 5px 11px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    .carousel-indicators li{
-        width: 7px;
-        height: 7px;
-    }.carousel-indicators .active{
-        width: 9px;
-        height: 9px;
-    }
-}
+// @media all and (max-width:700px){
+//     .announce{
+//         .details{
+//             .text{
+//                 padding: 0px 100px;
+//                 #title{
+//                     font-size: 24px;
+//                 }
+//                 p{
+//                     font-size: 15px;
+//                 }
+//             }
+//             .other-details{
+//                 .date{
+//                     p{
+//                         font-size: 11px;
+//                     }
+//                 }
+//                 .more{
+//                     a{
+//                         .go{
+//                             font-size: 9px;
+//                             padding: 5px 11px;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     .carousel-indicators li{
+//         width: 7px;
+//         height: 7px;
+//     }.carousel-indicators .active{
+//         width: 9px;
+//         height: 9px;
+//     }
+// }
 
-@media all and (max-width:575px){
-    .announce{
-        .details{
-            .text{
-                padding: 0px 90px;
-                #title{
-                    font-size: 21px;
-                }
-                p{
-                    font-size: 14px;
-                }
-            }
-        }
-    }
-    .carousel-indicators li{
-        width: 6px;
-        height: 6px;
-    }.carousel-indicators .active{
-        width: 8px;
-        height: 8px;
-    }
-}
+// @media all and (max-width:575px){
+//     .announce{
+//         .details{
+//             .text{
+//                 padding: 0px 90px;
+//                 #title{
+//                     font-size: 21px;
+//                 }
+//                 p{
+//                     font-size: 14px;
+//                 }
+//             }
+//         }
+//     }
+//     .carousel-indicators li{
+//         width: 6px;
+//         height: 6px;
+//     }.carousel-indicators .active{
+//         width: 8px;
+//         height: 8px;
+//     }
+// }
 
-@media all and (max-width:400px){
-    .announce{
-        .details{
-            .text{
-                padding: 0px 70px;
-                #title{
-                    font-size: 19px;
-                }
-                p{
-                    font-size: 12px;
-                }
-            }
-        }
-    }
-}
+// @media all and (max-width:400px){
+//     .announce{
+//         .details{
+//             .text{
+//                 padding: 0px 70px;
+//                 #title{
+//                     font-size: 19px;
+//                 }
+//                 p{
+//                     font-size: 12px;
+//                 }
+//             }
+//         }
+//     }
+// }
 
-@media all and (max-width:290px){
-    .announce{
-        .details{
-            .text{
-                padding: 0px 40px;
-                #title{
-                    font-size: 17px;
-                }
-                p{
-                    font-size: 10px;
-                }
-            }
-        }
-    }
-}
+// @media all and (max-width:290px){
+//     .announce{
+//         .details{
+//             .text{
+//                 padding: 0px 40px;
+//                 #title{
+//                     font-size: 17px;
+//                 }
+//                 p{
+//                     font-size: 10px;
+//                 }
+//             }
+//         }
+//     }
+// }
 
-@media all and (max-width: 830px) {
-    .main-container {
-        .animation {
-            .logo {
-                a {
-                    p {
-                        font-size: 15px;
-                    }
-                }
-            }
-            .questions {
-                .question-container {
-                    #line {
-                        font-size: 26px;
-                    }
-                    .que,
-                    .ans p {
-                        font-size: 15px;
-                    }
-                    .answer-button {
-                        #show-answer {
-                            font-size: 13px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
+// @media all and (max-width: 830px) {
+//     .main-container {
+//         .animation {
+//             .logo {
+//                 a {
+//                     p {
+//                         font-size: 15px;
+//                     }
+//                 }
+//             }
+//             .questions {
+//                 .question-container {
+//                     #line {
+//                         font-size: 26px;
+//                     }
+//                     .que,
+//                     .ans p {
+//                         font-size: 15px;
+//                     }
+//                     .answer-button {
+//                         #show-answer {
+//                             font-size: 13px;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
 
-@media all and (max-width: 600px) {
-    .main-container {
-        .announce-title{
-            p{
-                font-size: 25px;
-            }
-        }
-        .animation {
-            flex-direction: column;
-            .questions{
-                background-color: #111;
-            }
-        }
-    }
-}
+// @media all and (max-width: 600px) {
+//     .main-container {
+//         .announce-title{
+//             p{
+//                 font-size: 25px;
+//             }
+//         }
+//         .animation {
+//             flex-direction: column;
+//             .questions{
+//                 background-color: #111;
+//             }
+//         }
+//     }
+// }
 
-@media all and (max-width:300px){
-    .main-container{
-        .announce-title{
-            p{
-                font-size: 22px;
-            }
-        }
-    }
-}
+// @media all and (max-width:300px){
+//     .main-container{
+//         .announce-title{
+//             p{
+//                 font-size: 22px;
+//             }
+//         }
+//     }
+// }
 

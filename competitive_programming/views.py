@@ -54,7 +54,7 @@ def contest(request):
         for t in get_time:
             ser_tm = t.server_update_time
         time_interval = int((datetime.now(tz)-ser_tm).total_seconds())
-        if time_interval>200:
+        if time_interval>100:
             define_table()
         return render(request,'cp_reloaded.html')
     elif request.is_ajax():
@@ -74,7 +74,7 @@ def contest(request):
                 content = {
                     'contest':contest,
                 }
-
+            print(content)
             return JsonResponse(content)
         else:
             r1 = int(request.POST['min'])

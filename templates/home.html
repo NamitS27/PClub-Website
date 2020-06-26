@@ -42,6 +42,7 @@
                 {% endif %}
             </div>
             <div class="questions">
+                {% if question.not_found %}
                 <div class=question-container>
                     {% if question.isQuote %}
                         <p id="line">
@@ -69,6 +70,11 @@
                     </div>
                     {% endif %}
                 </div>
+                {% else %}
+                    <div class="not-found"> 
+                        <p>No Questions/Quotes Today</p>
+                    </div>
+                {% endif %}
             </div>
         </div>
     <div class="announce-title">

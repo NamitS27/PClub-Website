@@ -38,12 +38,15 @@ def make_announce(request):
             question = Daily.objects.filter(question_tobeadded=date.today())
             ques = None
             for i in question:
+                # print(i.question_isQuote)
                 ques = [i.question,i.question_isQuote,i.answer]
+            # print(ques)
             quest['question'] = ques[0]
-            quest['isQuote'] = None if ques[1] else "Yes"
+            quest['isQuote'] = None if ques[1] else "Yes" # Logic is set as per the html file
             quest['answer'] = ques[2]
+            quest['not_found'] = "Yes" # logic is set as per the html file
         except:
-            question = None
+            quest['not_found'] = None # Logic is set as per the html file
         startdate = date.today()
         enddate = startdate + timedelta(days=1)
         events = Events.objects.filter(date__range=[startdate, enddate])
@@ -55,7 +58,7 @@ def make_announce(request):
             'upperd':upperd,
             'question':quest,
         }
-        print(announcements)
+        # print(quest)
         if len(events)>0:
             content['new_event'] = "yes"
         if len(contests) + len(pcontests)>0:
