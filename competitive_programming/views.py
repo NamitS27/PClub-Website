@@ -14,27 +14,26 @@ tz = pytz.timezone("Asia/Kolkata")
 
 def empty_table():
     st = Server_time.objects.all()
+    temp = None
     for i in st:
-        i.delete()
+        temp = i
+    st = Server_time.objects.get(id=temp.id)
+    st.server_update_time =  datetime.now(tz)
+    st.save()
     contests = Contest.objects.all()
     for i in contests:
-        i.delete()
-    platforms = Platform.objects.all()
-    for i in platforms:
         i.delete()
 
 def define_table():
     empty_table()
-    st = Server_time()
-    st.server_update_time = datetime.now(tz)
-    st.save()
+    
     site = [["codeforces.com","CODEFORCES"],["codechef.com","CODECHEF"],["atcoder.jp","ATCODER"],["topcoder.com","TOPCODER"],["hackerearth.com","HACKEREARTH"],["codingcompetitions.withgoogle.com","GOOGLE"],["hackerrank.com","HACKERRANK"]]
     for eacheve in site:
         cnt = 1
-        pt = Platform()
-        pt.platform_name = eacheve[1]
-        pt.platform_link = eacheve[0]
-        pt.save()
+        ind_platform = Platform.objects.filter(platform_name = eacheve[1])
+        pt = None
+        for i in ind_platform:
+            pt = i
         for event in cl.geturl(eacheve[0])['objects']:
             events = []
             cnt += 1
@@ -57,6 +56,7 @@ def contest(request):
         if time_interval>100:
             define_table()
         return render(request,'cp_reloaded.html')
+    
     elif request.is_ajax():
         if request.POST['choose']=="contests":
             cid = int(request.POST['id'])
@@ -74,7 +74,7 @@ def contest(request):
                 content = {
                     'contest':contest,
                 }
-            print(content)
+            # print(content)
             return JsonResponse(content)
         else:
             r1 = int(request.POST['min'])
@@ -93,17 +93,20 @@ def get_contest(which_contest):
     plat = Platform.objects.filter(platform_name=arr[which_contest-2])
     platform = None
     for i in plat: platform = i
-    contests = Contest.objects.filter(contest_id__id=platform.id)
+    try:
+        contests = Contest.objects.filter(contest_id__id=platform.id)
+    except:
+        contests = []
     return platform.platform_name,contests
 
 
-def show_contest(request,v):
-    platform_name,contests = get_contest(v)
-    content ={
-        'con':contests,
-        'platform':platform_name
-    }
-    return render(request,"contest.html",content)
+# def show_contest(request,v):
+#     platform_name,contests = get_contest(v)
+#     content ={
+#         'con':contests,
+#         'platform':platform_name
+#     }
+#     return render(request,"contest.html",content)
 
 
     

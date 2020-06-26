@@ -3,6 +3,7 @@ from .models import Events
 from datetime import datetime,date,timedelta
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from datetime import datetime,timedelta
 
 @csrf_exempt
 def upcoming_events(request):
@@ -54,7 +55,7 @@ def view_details(slug):
     slug = int(slug)
     event = get_object_or_404(Events,pk=slug) 
     image_logo = "/media/"+str(event.logo)
-    events = {'name': event.name,'description':event.description,'logo':image_logo,'date':event.date,'can_register':event.can_register,'feedback_link':event.feedback_link,'photos_link':event.photos_link,'registration_date':event.registration_date,'registration_link':event.registration_link}
+    events = {'name': event.name,'description':event.description,'logo':image_logo,'date':(event.date + timedelta(hours=5, minutes=30)).strftime('%b %d,%Y %I:%M %p'),'can_register':event.can_register,'feedback_link':event.feedback_link,'photos_link':event.photos_link,'registration_date':(event.registration_date + timedelta(hours=5, minutes=30)).strftime('%b %d,%Y %I:%M %p'),'registration_link':event.registration_link}
     data = {
         "event" : events,
     }

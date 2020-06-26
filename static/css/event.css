@@ -120,7 +120,7 @@ body {
     height: 100vh;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -141,6 +141,7 @@ body {
     align-items: center;
     flex-direction: column;
     border-radius: 20px;
+    border: 2px solid white;
 }
 
 .modal-close {
@@ -174,10 +175,11 @@ body {
     padding-left: 2px;
     padding-right: 2px;
     margin-top: 3px;
+    font-family: 'Source Sans Pro',sans-serif;
 }
 .modal-bg .modal #eve_date {
     color: #c3073f;
-    font-size: 30px;
+    font-size: 28px;
     font-family: "Staatliches", cursive !important;
     letter-spacing: 1px;
     text-align: center;
@@ -196,4 +198,13 @@ body {
     font-size: 15px;
     text-align: center;
     margin: 0px;
+}
+
+.modal-bg .modal a{
+    text-decoration: underline !important;
+}
+
+.modal-bg .modal a:hover{
+    color: #c3073f !important;
+    /* text-decoration: underline !important; */
 }

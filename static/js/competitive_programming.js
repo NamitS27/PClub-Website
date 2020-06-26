@@ -25,7 +25,7 @@ $('.name').click(function (e) {
                     $('#challenge').append('<div class="no-contest"> <p> No contests/Contest is going so cannot fetch </p> </div>');
                 }
                 else{
-                    $('#challenge').append('<div class="no-contest"> <p> No contests </p> </div>');
+                    $('#challenge').append('<div class="no-contest"> <p> No contests / Network Error </p> </div>');
                 }
             }
             $('[data-countdown]').each(function () {
