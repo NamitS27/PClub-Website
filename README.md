@@ -20,7 +20,7 @@
   * [Dependencies](#dependencies)
 * [Usage](#usage)
 * [Contributing](#contributing)
-* [Contact](#contact)
+* [Authors](#authors)
 * [Acknowledgements](#acknowledgements)
 
 
@@ -39,7 +39,7 @@
 
 #### Database Used
 
-* Postgres SQL
+* [PostgreSQL](https://www.postgresql.org/) (To install postgres click on it)
 
 
 <br>
@@ -140,11 +140,10 @@ Contributions are what make the open source community such an amazing place to b
    
 <br>
 
-### Contact
+### Authors
 
-Suhanee Patel - suhanee.p@ahduni.edu.in  - [LinkedIn](https://www.linkedin.com/in/suhanee-patel-44aa1219b/) - [GitHub](https://github.com/sp2605)
-
-Project Link: [https://github.com/sp2605/PClub-Website](https://github.com/sp2605/PClub-Website)
+* [Suhanee Patel](https://github.com/sp2605)
+* [Namit Shah](https://github.com/NamitS27)
 
 <br>
 

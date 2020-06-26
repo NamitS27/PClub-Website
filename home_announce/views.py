@@ -30,7 +30,8 @@ def make_announce(request):
                 x['date'] = ta.format(i.announcement_date,datetime.now(tz))
                 x['description'] = i.announcement_description
                 x['isevent'] = "Yes" if i.announcement_isofEvent else None
-            announcements.append(x)
+            if len(x)>0:
+                announcements.append(x)
             cnt += 1
         quest = {}
         try:
@@ -54,6 +55,7 @@ def make_announce(request):
             'upperd':upperd,
             'question':quest,
         }
+        print(announcements)
         if len(events)>0:
             content['new_event'] = "yes"
         if len(contests) + len(pcontests)>0:
