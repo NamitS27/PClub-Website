@@ -25,7 +25,7 @@ SECRET_KEY = '5&)psvwuiape0%8w))djru5spen^x21p+_h9#ro%eqcwf1*9&v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['programmingclub.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -42,12 +42,12 @@ INSTALLED_APPS = [
     'about_us',
     'competitive_programming',
     'home_announce',
-    # 'testing',
     'events',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -83,11 +83,11 @@ WSGI_APPLICATION = 'pclub_website.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'pclub',
-        'USER': 'adminuser',
-        'PASSWORD': 'admin123',
-        'HOST': 'localhost',
-        'PORT': '',
+        'NAME': 'd2ire9ciat5bg2',
+        'USER': 'owrtatpfigkbum',
+        'PASSWORD': 'a196ac51b16502c24df58cbc728c381848321c34c656aa6699b214b1f299362e',
+        'HOST': 'ec2-35-173-94-156.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -129,7 +129,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static'),
 ]
