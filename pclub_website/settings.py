@@ -76,9 +76,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'pclub_website.wsgi.application'
 
+print(os.environ.get('DATABASE_URL'))
 
-# Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
