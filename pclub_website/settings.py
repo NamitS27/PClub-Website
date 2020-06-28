@@ -92,7 +92,7 @@ DATABASES = {
         'PASSWORD': password,
         'HOST': host,
         'PORT': port,
-    },
+    }
 }
 
 
