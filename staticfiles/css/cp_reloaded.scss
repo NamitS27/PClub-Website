@@ -1,0 +1,466 @@
+.main-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #111;
+    .practice {
+        margin-top: 50px;
+        display: flex;
+        min-height: 70px;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        background-color: #c3073f;
+        p {
+            font-size: 25px;
+            color: white;
+            margin-bottom: 0px;
+            @media (max-width:870px) {
+                font-size: 18px;
+            }
+        }
+        .modal-btn {
+            margin-left: 9px;
+            background-color: #111;
+            color: white;
+            border-radius: 20px;
+            border: 2px solid white !important;
+            cursor: pointer;
+            padding: 0px 20px;
+            font-size: 20px;
+        }
+        .modal-btn:focus {
+            outline: none !important;
+        }
+    }
+    #heading {
+        display: flex;
+        height: 60px;
+        justify-content: center;
+        align-items: center;
+        background-color: #111;
+        p {
+            font-size: 30px;
+            font-family: "Staatliches", cursive !important;
+            color: white;
+            letter-spacing: 3px;
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+        }
+    }
+    .clist {
+        min-height: 150px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: #c3073f;
+        .name {
+            height: 100px;
+            display: flex;
+            cursor: pointer;
+            margin: 10px 5px;
+            border-radius: 10px;
+            background-color: transparent;
+            img {
+                border-radius: 10px;
+                border: 2px solid white;
+            }
+            &:hover {
+                transform: scale(1.025, 1.025);
+                box-shadow: 2px 2px 15px 10px rgba(0, 0, 0, 0.25),
+                    -2px -2px 15px 10px rgba(0, 0, 0, 0.22);
+            }
+        }
+    }
+    .ctst {
+        background-color: #111;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        #challenge {
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            overflow-y: auto;
+            background-color: #111;
+            .instructions {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 200px;
+                color: white;
+                font-size: 27px;
+                @media (max-width:935px){
+                    font-size: 24px;
+                }
+                @media (max-width:750px){
+                    font-size: 19px;
+                }
+                @media (max-width:680px){
+                    font-size: 15px;
+                }
+            }
+            .no-contest {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 200px;
+                color: white;
+                font-size: 35px;
+            }
+            .contest {
+                display: flex;
+                min-height: 250px;
+                padding: 25px 30px;
+                width: 100%;
+                .timer {
+                    display: flex;
+                    width: 25%;
+                    border: 2px solid #111;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    background-color: #c3073f;
+                    p {
+                        margin-bottom: 0px;
+                        color: white;
+                        font-size: 20px;
+                        font-style: italic;
+                        @media (max-width:935px){
+                            font-size: 15px;
+                        }
+                        @media (max-width:750px){
+                            font-size: 12px;
+                        }
+                        @media (max-width:680px){
+                            font-size: 15px;
+                        }
+                    }
+                    .countdown {
+                        color: white;
+                        font-size: 30px;
+                        font-family: "Staatliches", cursive;
+                        font-style: normal;
+                        letter-spacing: 2px;
+                        font-weight: lighter;
+                        @media (max-width:935px){
+                            font-size: 20px;
+                        }
+                        @media (max-width:750px){
+                            font-size: 15px;
+                        }
+                    }
+                    @media (max-width:680px){
+                        width: 100%;
+                        height: 20%;
+                        flex-direction: row;
+                    }
+                }
+                .other {
+                    border: 2px solid #111;
+                    display: flex;
+                    width: 75%;
+                    flex-direction: column;
+                    .title {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        height: 30%;
+                        color: #111;
+                        font-size: 20px;
+                        padding-left: 10px;
+                        background-color: white;
+                        @media (max-width:750px){
+                            font-size: 15px;
+                        }
+                        @media (max-width: 680px) {
+                            height: 15%;
+                        }
+                    }
+                    .sed {
+                        height: 50%;
+                        background-color: white;
+                        display: flex;
+                        color: #111;
+                        justify-content: space-around;
+                        align-items: center;
+                        .sd {
+                            display: flex;
+                            color: #111;
+                            flex-direction: column;
+                            justify-content: space-around;
+                            align-items: center;
+                            border-right: 2px solid #111;
+                            width: 33.33%;
+                            p {
+                                color: #111;
+                                font-size: 16px;
+                                @media (max-width:750px){
+                                    font-size: 13px;
+                                    margin-bottom: 0px;
+                                }
+                            }
+                            @media (max-width:680px){
+                                width: 100%;
+                                flex-direction: row;
+                                border-right: none;
+                            }
+                        }
+                        .sd:nth-child(3) {
+                            border-right: none;
+                        }
+                        @media (max-width:680px){
+                            flex-direction: column;
+                        }
+                    }
+                    .link {
+                        background-color: white;
+                        color: #111;
+                        display: flex;
+                        height: 20%;
+                        cursor: pointer;
+                        justify-content: flex-start;
+                        align-items: center;
+                        text-decoration: none !important;
+                        padding-left: 10px;
+                        font-size: 15px;
+                        a {
+                            color: #111 !important;
+                            text-decoration: underline;
+                        }
+                        @media (max-width: 680px) {
+                            font-size: 13px;
+                        }
+                    }
+                    @media (max-width:680px){
+                        width: 100%;
+                        height:80%;
+                    }
+                }
+                @media (max-width: 680px) {
+                    height: 300px;
+                    flex-direction: column;
+                    min-height: 0px;
+                    padding-bottom: 0px;
+                }
+            }
+        }
+    }
+}
+
+.modal-bg {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+    .modal {
+        position: relative;
+        background-color: white;
+        min-width: 300px;
+        width: 30%;
+        height: 50%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 20px;
+        h2 {
+            color: #c3073f;
+            font-size: 40px;
+            font-family: "Staatliches", cursive !important;
+            letter-spacing: 1px;
+            text-align: center;
+            margin-top: 2px;
+        }
+        #min,
+        #max,
+        #username,
+        #tag {
+            background-color: #111;
+            height: 10%;
+            width: 60%;
+            color: white;
+            text-align: center;
+            font-size: 14px;
+            font-family: "Source Sans Pro";
+            border-radius: 10px;
+            border: none;
+        }
+        #min:focus,
+        #max:focus,
+        #username:focus,
+        #tag:focus {
+            outline: none;
+        }
+        &::placeholder {
+            color: white;
+            font-size: 12px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .modalb {
+            padding: 6px 20px;
+            background-color: #c3073f;
+            color: #111;
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .modalb:focus {
+            outline: none;
+        }
+        .modal-close {
+            position: absolute;
+            top: 0px;
+            right: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            transform: rotate(45deg);
+            font-size: 35px;
+            color: #111;
+        }
+    }
+}
+
+.bg-active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.loading {
+    width: 16px;
+    height: 16px;
+    font-size: 0px;
+    display: none;
+}
+
+// @media all and (max-width: 935px) {
+//     .main-container {
+//         .ctst {
+//             #challenge {
+//                 .instructions {
+//                     font-size: 24px;
+//                 }
+//                 .contest {
+//                     .timer {
+//                         p {
+//                             font-size: 15px;
+//                         }
+//                         .countdown {
+//                             font-size: 20px;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// @media all and (max-width: 750px) {
+//     .main-container {
+//         .ctst {
+//             #challenge {
+//                 .instructions {
+//                     font-size: 19px;
+//                 }
+//                 .contest {
+//                     .timer {
+//                         p {
+//                             font-size: 12px;
+//                         }
+//                         .countdown {
+//                             font-size: 15px;
+//                         }
+//                     }
+//                     .other {
+//                         .title {
+//                             font-size: 15px;
+//                         }
+//                         .sed {
+//                             .sd {
+//                                 p {
+//                                     font-size: 13px;
+//                                 }
+//                             }
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// @media all and (max-width: 680px) {
+//     .main-container {
+//         .ctst {
+//             #challenge {
+//                 .instructions {
+//                     font-size: 15px;
+//                 }
+//                 .contest {
+//                     height: 300px;
+//                     flex-direction: column;
+//                     min-height: 0px;
+//                     padding-bottom: 0px;
+//                     .timer {
+//                         width: 100%;
+//                         height: 20%;
+//                         flex-direction: row;
+//                         p {
+//                             font-size: 15px;
+//                             margin-bottom: 0px;
+//                         }
+//                     }
+//                     .other {
+//                         width: 100%;
+//                         height: 80%;
+//                         .title {
+//                             height: 15%;
+//                         }
+//                         .sed {
+//                             flex-direction: column;
+//                             .sd {
+//                                 width: 100%;
+//                                 flex-direction: row;
+//                                 border-right: none;
+//                                 p {
+//                                     margin-bottom: 0px;
+//                                 }
+//                             }
+//                         }
+//                         .link {
+//                             font-size: 13px;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// @media all and (max-width: 870px) {
+//     .main-container {
+//         .practice {
+//             p {
+//                 font-size: 18px;
+//             }
+//         }
+//     }
+// }

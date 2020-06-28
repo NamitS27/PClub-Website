@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.background {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+.sec1 {
+    height: 50%;
+    background-color: #111;
+    min-height: 100vh;
+}
+
+.sec2 {
+    height: 50%;
+    background-color: white;
+}
+.main_content {
+    z-index: 1000;
+    width: 100%;
+    padding-top: 100px;
+    position: relative;
+    overflow-x: hidden;
+    background: src(".background");
+    justify-items: center;
+    align-items: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.container1 {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    flex-basis: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.logo path {
+    fill: transparent;
+    stroke-width: 30;
+    stroke: #c3073f;
+    stroke-dasharray: 3000;
+    stroke-dashoffset: 0;
+    animation: animate 10s infinite;
+}
+@keyframes animate {
+    0% {
+        stroke-dashoffset: 0;
+        fill: transparent;
+    }
+    100% {
+        stroke-dashoffset: 6000;
+        stroke: #111;
+        stroke-width: 1;
+        fill: white;
+    }
+}
+.disc {
+    flex-basis: 800px;
+    color: #d1d1d1;
+    font-size: 22px;
+    padding: 20px;
+}
+.head_team {
+    color: #c3073f;
+    font-size: 60px;
+    font-family: "Staatliches", cursive !important;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-top: 90px;
+}
+.team {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 20px;
+    margin-top: 10px;
+    padding: 0;
+    flex-wrap: wrap;
+}
+.team .imgs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.items {
+    display: flex;
+}
+.team .imgs img {
+    width: 250px;
+    border: 10px solid #111;
+    padding: 0px;
+    margin: 20px;
+}
+
+.team .imgs img {
+    filter: grayscale(100%);
+}
+
+.team .imgs img:hover {
+    filter: none;
+}
+.team .imgs p {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #111;
+}
+.head_com {
+    color: #c3073f;
+    font-size: 60px;
+    font-family: "Staatliches", cursive !important;
+    letter-spacing: 2px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 0;
+}
+.com {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.it {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #111;
+    padding: 20px;
+}

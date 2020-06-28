@@ -1,0 +1,676 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.announce {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  min-height: 300px;
+}
+
+.announce .details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  min-height: 300px;
+}
+
+.announce .details .text {
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0px 150px;
+}
+
+.announce .details .text #title {
+  font-weight: bold;
+  font-size: 30px;
+  color: #111;
+}
+
+@media (max-width: 880px) {
+  .announce .details .text #title {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 700px) {
+  .announce .details .text #title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 575px) {
+  .announce .details .text #title {
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 400px) {
+  .announce .details .text #title {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 290px) {
+  .announce .details .text #title {
+    font-size: 17px;
+  }
+}
+
+.announce .details .text p {
+  font-size: 20px;
+  color: #111;
+}
+
+@media (max-width: 880px) {
+  .announce .details .text p {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 700px) {
+  .announce .details .text p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 575px) {
+  .announce .details .text p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  .announce .details .text p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 290px) {
+  .announce .details .text p {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 700px) {
+  .announce .details .text {
+    padding: 0px 100px;
+  }
+}
+
+@media (max-width: 575px) {
+  .announce .details .text {
+    padding: 0px 90px;
+  }
+}
+
+@media (max-width: 400px) {
+  .announce .details .text {
+    padding: 0px 70px;
+  }
+}
+
+@media (max-width: 290px) {
+  .announce .details .text {
+    padding: 0px 40px;
+  }
+}
+
+.announce .details .other-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 20%;
+  background-color: #c3073f;
+}
+
+.announce .details .other-details .date {
+  padding-left: 20px;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.announce .details .other-details .date p {
+  font-weight: bold;
+  margin: 0px;
+  font-size: 16px;
+}
+
+.announce .details .other-details .date p .fa-clock-o {
+  font-size: 15px;
+}
+
+@media (max-width: 1300px) {
+  .announce .details .other-details .date p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1130px) {
+  .announce .details .other-details .date p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 880px) {
+  .announce .details .other-details .date p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 700px) {
+  .announce .details .other-details .date p {
+    font-size: 11px;
+  }
+}
+
+.announce .details .other-details .more {
+  z-index: 5000;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.announce .details .other-details .more a {
+  text-decoration: none !important;
+}
+
+.announce .details .other-details .more a .go {
+  z-index: 5000;
+  cursor: pointer;
+  border: none;
+  background-color: #111;
+  color: white;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 17px;
+  border-radius: 5px;
+  padding: 5px 20px;
+}
+
+@media (max-width: 1300px) {
+  .announce .details .other-details .more a .go {
+    font-size: 15px;
+    padding: 5px 18px;
+  }
+}
+
+@media (max-width: 1130px) {
+  .announce .details .other-details .more a .go {
+    font-size: 13px;
+    padding: 5px 15px;
+  }
+}
+
+@media (max-width: 880px) {
+  .announce .details .other-details .more a .go {
+    font-size: 11px;
+    padding: 5px 13px;
+  }
+}
+
+@media (max-width: 700px) {
+  .announce .details .other-details .more a .go {
+    font-size: 9px;
+    padding: 5px 11px;
+  }
+}
+
+.announce .details .other-details .more a .go:focus {
+  outline: none;
+}
+
+.container {
+  width: 100%;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.container #carousel-example-generic {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  border: 2px solid #111;
+}
+
+.container #carousel-example-generic .carousel-indicators {
+  bottom: 6px;
+  width: 33%;
+  margin-left: -17%;
+}
+
+.main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main-container .animation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  width: 100%;
+  padding-top: 50px;
+  min-height: 100vh;
+  background: src("#particles-js");
+  color: white;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.main-container .animation .logo {
+  margin-top: 20px;
+  padding-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 40%;
+      -ms-flex: 40%;
+          flex: 40%;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main-container .animation .logo img {
+  padding-bottom: 50px;
+  -webkit-animation-name: bounce-1;
+          animation-name: bounce-1;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@media (max-width: 1130px) {
+  .main-container .animation .logo img {
+    width: 230px;
+    height: 310px;
+  }
+}
+
+@-webkit-keyframes bounce-1 {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes bounce-1 {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.main-container .animation .logo a,
+.main-container .animation .logo a:hover,
+.main-container .animation .logo a:focus {
+  text-decoration: none !important;
+}
+
+.main-container .animation .logo a p,
+.main-container .animation .logo a:hover p,
+.main-container .animation .logo a:focus p {
+  color: white;
+  font-size: 25px;
+}
+
+@media (max-width: 1300px) {
+  .main-container .animation .logo a p,
+  .main-container .animation .logo a:hover p,
+  .main-container .animation .logo a:focus p {
+    font-size: 23px;
+  }
+}
+
+@media (max-width: 1130px) {
+  .main-container .animation .logo a p,
+  .main-container .animation .logo a:hover p,
+  .main-container .animation .logo a:focus p {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 830px) {
+  .main-container .animation .logo a p,
+  .main-container .animation .logo a:hover p,
+  .main-container .animation .logo a:focus p {
+    font-size: 15px;
+  }
+}
+
+.main-container .animation .logo a:hover p {
+  color: #c3073f;
+}
+
+.main-container .animation .questions {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 40%;
+      -ms-flex: 40%;
+          flex: 40%;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-container .animation .questions .not-found {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 70%;
+  height: 60%;
+}
+
+.main-container .animation .questions .not-found p {
+  font-size: 40px;
+  letter-spacing: 2px;
+  color: #c3073f;
+  font-family: "Staatliches", cursive;
+}
+
+.main-container .animation .questions .question-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 70%;
+  height: 60%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-container .animation .questions .question-container #line {
+  font-family: "Staatliches", cursive;
+  font-size: 50px;
+  letter-spacing: 2px;
+  padding-bottom: 40px;
+  text-align: center;
+  color: #c3073f;
+}
+
+@media (max-width: 1300px) {
+  .main-container .animation .questions .question-container #line {
+    font-size: 43px;
+  }
+}
+
+@media (max-width: 1130px) {
+  .main-container .animation .questions .question-container #line {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 830px) {
+  .main-container .animation .questions .question-container #line {
+    font-size: 26px;
+  }
+}
+
+.main-container .animation .questions .question-container .que {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+  font-size: 27px;
+}
+
+@media (max-width: 1300px) {
+  .main-container .animation .questions .question-container .que {
+    font-size: 23px;
+  }
+}
+
+@media (max-width: 1130px) {
+  .main-container .animation .questions .question-container .que {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 830px) {
+  .main-container .animation .questions .question-container .que {
+    font-size: 15px;
+  }
+}
+
+.main-container .animation .questions .question-container .answer-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 40px 0px;
+}
+
+.main-container .animation .questions .question-container .answer-button #show-answer {
+  padding: 5px 30px;
+  background-color: #c3073f;
+  color: white;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+@media (max-width: 1130px) {
+  .main-container .animation .questions .question-container .answer-button #show-answer {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 830px) {
+  .main-container .animation .questions .question-container .answer-button #show-answer {
+    font-size: 13px;
+  }
+}
+
+.main-container .animation .questions .question-container .answer-button #show-answer:focus {
+  outline: none;
+}
+
+.main-container .animation .questions .question-container .answer-button #show-answer:hover {
+  background-color: white;
+  color: #c3073f;
+}
+
+.main-container .animation .questions .question-container .ans {
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-container .animation .questions .question-container .ans p {
+  color: white;
+  font-size: 25px;
+}
+
+@media (max-width: 1300px) {
+  .main-container .animation .questions .question-container .ans p {
+    font-size: 23px;
+  }
+}
+
+@media (max-width: 1130px) {
+  .main-container .animation .questions .question-container .ans p {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 830px) {
+  .main-container .animation .questions .question-container .ans p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-container .animation .questions {
+    background-color: #111;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-container .animation {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.main-container .announce-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  background-color: #c3073f;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-container .announce-title p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "Staatliches", cursive;
+  font-size: 40px;
+  letter-spacing: 2px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  color: #111;
+}
+
+@media (max-width: 1300px) {
+  .main-container .announce-title p {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 1130px) {
+  .main-container .announce-title p {
+    font-size: 31px;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-container .announce-title p {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 300px) {
+  .main-container .announce-title p {
+    font-size: 22px;
+  }
+}
+
+#particles-js {
+  height: 100%;
+  background-color: #111;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+/*# sourceMappingURL=home.css.map */

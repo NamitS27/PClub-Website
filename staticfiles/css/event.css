@@ -1,0 +1,210 @@
+.news .article figcaption {
+    position: absolute;
+}
+
+.news .article {
+    position: relative;
+    border-radius: 0;
+}
+
+.news {
+    display: flex;
+}
+
+body {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 1) 67%,
+        rgba(175, 175, 175, 1) 100%
+    );
+    font-family: "Source Sans Pro", sans-serif;
+    margin-top: 50px;
+    min-height: 100vh;
+}
+
+.container {
+    min-height: 100vh;
+}
+
+.news {
+    flex-flow: row wrap;
+}
+
+.news .article {
+    overflow: hidden;
+    width: 350px;
+    height: 235px;
+    margin: 20px;
+    border-radius: 50px;
+}
+
+.news .article img {
+    width: 100%;
+    min-height: 100%;
+    transition: 0.2s;
+}
+
+#name {
+    font-family: "Staatliches", cursive !important;
+    letter-spacing: 2px;
+    color: #111;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.news .article figcaption {
+    position: absolute;
+    font-size: 14px;
+    font-family: "Source Sans Pro", sans-serif;
+    text-shadow: 0 1px 0 rgba(51, 51, 51, 0.3);
+    color: #fff;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 40px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+    background: rgba(6, 18, 53, 0.6);
+    opacity: 0;
+    transform: scale(1.15);
+    transition: 0.2s;
+}
+
+.news .article figcaption h3 {
+    color: white;
+    font-size: 35px;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.news .article figcaption p {
+    font-size: 20px;
+}
+
+.news .article:hover img,
+.news .article:focus img,
+.news .article:active img {
+    filter: blur(3px);
+    transform: scale(0.97);
+    cursor: pointer;
+}
+
+.news .article:hover figcaption,
+.news .article:focus figcaption,
+.news .article:active figcaption {
+    opacity: 1;
+    transform: none;
+    cursor: pointer;
+}
+
+.eve {
+    display: flex;
+    margin-left: 15%;
+    padding-bottom: 20px;
+}
+
+.eve .name {
+    width: 400px;
+}
+
+.eve .name h1 {
+    color: white;
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+.modal-bg {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+}
+
+.modal {
+    position: relative;
+    background-color: #111;
+    width: 30%;
+    min-width: 375px;
+    height: 60%;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    border: 2px solid white;
+}
+
+.modal-close {
+    position: absolute;
+    top: 0px;
+    right: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transform: rotate(45deg);
+    font-size: 35px;
+    color: white;
+}
+
+.bg-active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-bg .modal #eve_name {
+    color: #c3073f;
+    font-size: 40px;
+    font-family: "Staatliches", cursive !important;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-top: 2px;
+}
+.modal-bg .modal #eve_desc {
+    color: white;
+    font-size: 13px;
+    text-align: justify;
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-top: 3px;
+    font-family: 'Source Sans Pro',sans-serif;
+}
+.modal-bg .modal #eve_date {
+    color: #c3073f;
+    font-size: 28px;
+    font-family: "Staatliches", cursive !important;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-top: 4px;
+}
+.modal-bg .modal #rd {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 5px;
+}
+.modal-bg .modal #rl,
+.modal-bg .modal #fl,
+.modal-bg .modal #pl {
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    margin: 0px;
+}
+
+.modal-bg .modal a{
+    text-decoration: underline !important;
+}
+
+.modal-bg .modal a:hover{
+    color: #c3073f !important;
+    /* text-decoration: underline !important; */
+}
