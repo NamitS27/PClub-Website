@@ -16,6 +16,7 @@
 .sec1 {
     height: 50%;
     background-color: #111;
+    min-height: 100vh;
 }
 
 .sec2 {
