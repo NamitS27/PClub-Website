@@ -76,18 +76,23 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'pclub_website.wsgi.application'
 
-print(os.environ.get('DATABASE_URL'))
+
+database = os.environ.get('DATABASE_URL')
+
+user,other,last = database.split('//')[1].split(':')
+password,host = other.split('@')
+port,name = last.split('/')
 
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd2ire9ciat5bg2',
-        'USER': 'owrtatpfigkbum',
-        'PASSWORD': 'a196ac51b16502c24df58cbc728c381848321c34c656aa6699b214b1f299362e',
-        'HOST': 'ec2-35-173-94-156.compute-1.amazonaws.com',
-        'PORT': '5432',
-    }
+        'NAME': name,
+        'USER': user,
+        'PASSWORD': password,
+        'HOST': host,
+        'PORT': port,
+    },
 }
 
 
