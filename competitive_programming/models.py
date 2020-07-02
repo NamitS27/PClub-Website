@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 
 class Platform(models.Model):
     platform_name = models.CharField(max_length=200)
@@ -18,7 +19,7 @@ class Contest(models.Model):
     def __str__(self):
         return self.contest_name
 class Server_time(models.Model):
-    server_update_time = models.DateTimeField(null=False)
+    server_update_time = models.DateTimeField(null=False,default=datetime.now())
 
     def __str__(self):
         return str(self.server_update_time)
