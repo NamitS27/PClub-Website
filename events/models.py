@@ -10,7 +10,7 @@ class Events(models.Model):
     can_register = models.BooleanField(default=False, blank=True)
     feedback_link = models.URLField(max_length=200,blank=True,default=None)
     photos_link = models.URLField(max_length=200,blank=True)
-    registration_date = models.DateTimeField(default=None,blank=True)
+    registration_date = models.DateTimeField(default=None,blank=True,null=True)
     registration_link = models.URLField(max_length=200,blank=True) 
 
     def __str__(self):
