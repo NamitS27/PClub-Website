@@ -51,24 +51,38 @@
 * Clone
 
   ````bash
-  git clone https://github.com/sp2605/PClub-Website.git
+  git clone https://github.com/NamitS27/PClub-Website.git
   ````
 
-* Database (As per [settings.py](https://github.com/NamitS27/PClub-Website/blob/master/pclub_website/settings.py))
+* Database (If you are using Postgres)
+
+  * Settings.py code 
+  ```python
+  DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': '<database_name>',
+        'USER': '<new_user>',
+        'PASSWORD': '<password>',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+  }
+  ```
 
   * Creating the databse
     ```sql
-    CREATE DATABASE pclub;
+    CREATE DATABASE <database_name>;
     ```
   * Creating a user for the database
     ```sql
-    CREATE USER adminuser WITH PASSWORD 'admin123';
+    CREATE USER <new_user> WITH PASSWORD '<password>';
     ```
   * Altering roles for timezones,encoding and default transaction isolation
     ```sql
-    ALTER ROLE adminuser SET client_encoding TO 'utf8';
-    ALTER ROLE adminuser SET default_transaction_isolation TO 'read committed';
-    ALTER ROLE adminuser SET timezone TO 'Asia/Kolkata';
+    ALTER ROLE <new_user> SET client_encoding TO 'utf8';
+    ALTER ROLE <new_user> SET default_transaction_isolation TO 'read committed';
+    ALTER ROLE <new_user> SET timezone TO '<timezone>';
     ```
 
 * Project
