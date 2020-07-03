@@ -77,7 +77,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'pclub_website.wsgi.application'
 
 
-database = os.environ.get('DATABASE_URL')
+database = 'postgres://cikezskqvvqkvm:6f8ae6f03e53df5d95d586038fe380fb77c5101ac372f4fe9da656e4c4a6b910@ec2-52-207-25-133.compute-1.amazonaws.com:5432/dfcj6udbl4ir59'# os.environ.get('DATABASE_URL')
 
 user,other,last = database.split('//')[1].split(':')
 password,host = other.split('@')
