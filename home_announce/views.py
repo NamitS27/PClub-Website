@@ -35,7 +35,7 @@ def make_announce(request):
             cnt += 1
         quest = {}
         try:
-            question = Daily.objects.filter(question_tobeadded=date.today())
+            question = Daily.objects.filter(question_tobeadded__day=date.today().day)
             ques = None
             for i in question:
                 # print(i.question_isQuote)
