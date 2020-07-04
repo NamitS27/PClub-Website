@@ -6,7 +6,7 @@ import pytz
 import os
 
 
-def geturl(site,username='noreply9',api_key='6faa6c9be710c1bd97238ac97922b7f7dcf3cd73'): # change username and api-key
+def geturl(site,username=os.environ.get('CLIST_USERNAME'),api_key=os.environ.get('CLIST_API_KEY')): # change username and api-key
     tz = pytz.timezone('UTC')
     date = datetime.now(tz).strftime("%Y-%m-%dT%H:%M:%S")
     final = datetime.today()+ relativedelta(months=1)
