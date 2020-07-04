@@ -3,7 +3,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
 from email import encoders
-import os.path
+import os
 
 def send(name,semail,subjects,messages,jw):
     email = os.environ.get('EMAIL')
